@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuSelector : MonoBehaviour
 {
+    public GameObject Level;
+    public Camera MapCamera, MainCamera;
     public GameObject Mouse, Pad;
     public KeyCode OpenMouse;
     public string OpenPad;
@@ -19,6 +21,9 @@ public class MenuSelector : MonoBehaviour
         if(Input.GetKeyDown(OpenMouse))
         {
             Mouse.SetActive(!Mouse.activeSelf);
+            MainCamera.gameObject.SetActive(!MainCamera.gameObject.activeSelf);
+            MapCamera.gameObject.SetActive(!MapCamera.gameObject.activeSelf);
+            Level.SetActive(!Level.activeSelf);
         }
         else if(Input.GetAxis(OpenPad) != 0)
         {
