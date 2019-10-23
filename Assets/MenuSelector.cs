@@ -6,8 +6,8 @@ public class MenuSelector : MonoBehaviour
 {
     public GameObject Level;
     public Camera MapCamera, MainCamera;
-    public GameObject Mouse, Pad;
-    public KeyCode OpenMouse;
+    public GameObject Mouse, Pad, Pin;
+    public KeyCode OpenMouse, OpenPin;
     public string OpenPad;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,13 @@ public class MenuSelector : MonoBehaviour
         if(Input.GetKeyDown(OpenMouse))
         {
             Mouse.SetActive(!Mouse.activeSelf);
+            MainCamera.gameObject.SetActive(!MainCamera.gameObject.activeSelf);
+            MapCamera.gameObject.SetActive(!MapCamera.gameObject.activeSelf);
+            Level.SetActive(!Level.activeSelf);
+        }
+        if (Input.GetKeyDown(OpenPin))
+        {
+            Pin.SetActive(!Pin.activeSelf);
             MainCamera.gameObject.SetActive(!MainCamera.gameObject.activeSelf);
             MapCamera.gameObject.SetActive(!MapCamera.gameObject.activeSelf);
             Level.SetActive(!Level.activeSelf);

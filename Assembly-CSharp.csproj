@@ -63,6 +63,7 @@
     <Compile Include="Assets\Cell.cs" />
     <Compile Include="Assets\DrawTest.cs" />
     <Compile Include="Assets\DrawTestPad.cs" />
+    <Compile Include="Assets\DrawTestPin.cs" />
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\EnemyNavController.cs" />
     <Compile Include="Assets\FieldOfView.cs" />
