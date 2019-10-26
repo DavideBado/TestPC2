@@ -21,10 +21,14 @@ public class FieldOfView : MonoBehaviour
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
 
+    public EnemyNavController navController;
+
     private void Start()
     {
-        viewMesh = new Mesh();
-        viewMesh.name = "View Mesh";
+        viewMesh = new Mesh
+        {
+            name = "View Mesh"
+        };
         viewMeshFilter.mesh = viewMesh;
 
         StartCoroutine("FindTargetsWithDElay", .2f);
@@ -61,6 +65,7 @@ public class FieldOfView : MonoBehaviour
                 }
             }
         }
+        navController.visibleTargets = visibleTargets;
     }
 
     void DrawFieldOfView()
