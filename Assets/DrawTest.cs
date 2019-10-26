@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DrawTest : MonoBehaviour
 {
+    public Camera MapCamera;
     public GameObject LinerendPrefab;
     LineRenderer lineRenderer;
     Vector3 prevMousePos = new Vector3();
@@ -16,9 +17,10 @@ public class DrawTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject newLinerendererObj = GameObject.Instantiate(LinerendPrefab, Vector3.zero, Quaternion.identity);
+            newLinerendererObj.transform.parent = transform;
             lineRenderer = newLinerendererObj.GetComponent<LineRenderer>();
             lineRenderer.positionCount = 0;
         }
@@ -27,7 +29,7 @@ public class DrawTest : MonoBehaviour
             lineRenderer.positionCount++;
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10;
-            Vector3 point = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector3 point = MapCamera.ScreenToWorldPoint(mousePos);
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(point.x, point.y));
             prevMousePos = Input.mousePosition;
         }
