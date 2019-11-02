@@ -8,7 +8,7 @@ public class EnemyNavController : MonoBehaviour
     public List<Transform> Targets = new List<Transform>();
     [HideInInspector]
     public Transform visibleTarget;
-    [HideInInspector]
+    //[HideInInspector]
     public int visibleTargetArea;
     public NavMeshAgent agent;
     int destinationIndex = 0;
@@ -32,7 +32,6 @@ public class EnemyNavController : MonoBehaviour
     [Range(0, 5)]
     public List<float> ModCounters = new List<float>();
 
-    float counter_Alert;
     public float Counter_Alert_MaxValue;
 
     float counter_Pursue;
@@ -66,7 +65,7 @@ public class EnemyNavController : MonoBehaviour
 
         }
 
-        LookTheNearestTarget();
+        //LookTheNearestTarget();
     }
 
     void LookTheNearestTarget()

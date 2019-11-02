@@ -170,6 +170,8 @@ GameObject:
   - component: {fileID: 803927139432897172}
   - component: {fileID: 803927139432897166}
   - component: {fileID: 803927139432897167}
+  - component: {fileID: 8177613512493657892}
+  - component: {fileID: 1914245489120665552}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -184,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803927139432897175}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.949585, y: -24.83541, z: 122.1529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -290,7 +292,17 @@ MonoBehaviour:
   Targets:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   visibleTarget: {fileID: 0}
+  visibleTargetArea: 0
   agent: {fileID: 803927139432897173}
   FermatiAGuardare: 1
   fieldOfView: {fileID: 803927139432897166}
@@ -298,6 +310,12 @@ MonoBehaviour:
   LunghezzaMaxCono: 6
   AttesaTraLeRotazioni: 1
   VelocitaTraLeRotazioni: 3
+  ModCounters:
+  - 0.5
+  - 1
+  - 1.5
+  Counter_Alert_MaxValue: 4
+  Counter_Pursue_MaxValue: 4
 --- !u!114 &803927139432897166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 3
-  viewAngle: []
+  viewAngle:
+  - 45
+  - 120
+  - 180
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -343,6 +364,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8177613512493657892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803927139432897175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3373412174c5f64e9bb8b1cd790d25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PursueTrgger: ToPursue
+  AlertTrigger: ToAlert
+  PatrolTrigger: ToPatrol
+  AIState: {fileID: 1914245489120665552}
+--- !u!95 &1914245489120665552
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803927139432897175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0824fcbc5f77dce45a9de9132c48576e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6701573584194290142
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,11 +26,12 @@ public class FieldOfView : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < viewMeshFilters.Count; i++)
-        {
-            viewMeshes.Add(new Mesh());
+        { 
+            Mesh mesh = new Mesh
             {
-                name = "View Mesh_" + i;
+                name = "View Mesh_" + i
             };
+            viewMeshes.Add(mesh);
             viewMeshFilters[i].mesh = viewMeshes[i];
         }
 
@@ -62,21 +63,32 @@ public class FieldOfView : MonoBehaviour
         int targetArea = -1;
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
-        for(int i = 0; i < targetsInViewRadius.Length; i++)
+        for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle[_viewAngleIndex] / 2)
+            if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle[_viewAngleIndex] / 2)
             {
                 float distToTarget = Vector3.Distance(transform.position, target.position);
-                if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
+                if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
-                    visibleTarget = target;
-                    targetArea = _viewAngleIndex;
+                    visibleTarget = target;                    
                 }
             }
         }
         navController.visibleTarget = visibleTarget;
+        if (visibleTarget)
+        {
+            float angle = Vector3.Angle(transform.forward, (visibleTarget.position - transform.position).normalized);
+            for (int i = 0; i < viewAngle.Count; i++)
+            {
+                if(angle <= viewAngle[i] / 2)
+                {
+                    targetArea = i;
+                    break;
+                }
+            }
+        }
         navController.visibleTargetArea = targetArea;
     }
 

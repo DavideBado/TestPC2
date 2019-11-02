@@ -60,17 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AlertState.cs" />
     <Compile Include="Assets\Cell.cs" />
     <Compile Include="Assets\DrawTest.cs" />
     <Compile Include="Assets\DrawTestPad.cs" />
     <Compile Include="Assets\DrawTestPin.cs" />
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\EnemyAI.cs" />
     <Compile Include="Assets\EnemyNavController.cs" />
     <Compile Include="Assets\FieldOfView.cs" />
     <Compile Include="Assets\Grid.cs" />
     <Compile Include="Assets\MenuSelector.cs" />
+    <Compile Include="Assets\PatrolState.cs" />
     <Compile Include="Assets\PlayerMovController.cs" />
     <Compile Include="Assets\PlayerNavController.cs" />
+    <Compile Include="Assets\PursueState.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/berto/Documents/GitHubRepo/TestPC2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
