@@ -6,30 +6,33 @@ public class FieldOfView : MonoBehaviour
 {
     public float viewRadius;
     [Range(0, 360)]
-    public float viewAngle;
+    public List<float> viewAngle = new List<float>();
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public Transform visibleTarget;
 
     public float meshResolution;
     public int edgeResolveIteration;
     public float edgeDstThreshold;
 
-    public MeshFilter viewMeshFilter;
-    Mesh viewMesh;
+    public List<MeshFilter> viewMeshFilters = new List<MeshFilter>();
+    List<Mesh> viewMeshes = new List<Mesh>();
 
     public EnemyNavController navController;
 
     private void Start()
     {
-        viewMesh = new Mesh
+        for (int i = 0; i < viewMeshFilters.Count; i++)
         {
-            name = "View Mesh"
-        };
-        viewMeshFilter.mesh = viewMesh;
+            viewMeshes.Add(new Mesh());
+            {
+                name = "View Mesh_" + i;
+            };
+            viewMeshFilters[i].mesh = viewMeshes[i];
+        }
 
         StartCoroutine("FindTargetsWithDElay", .2f);
     }
@@ -39,44 +42,53 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
+            for (int i = 0; i < viewAngle.Count; i++)
+            {
+                FindVisibleTargets(i);
+            }            
         }
     }
 
     private void LateUpdate()
     {
-        DrawFieldOfView();
+        for (int i = 0; i < viewAngle.Count; i++)
+        {
+            DrawFieldOfView(i, i);
+        }
     }
-    void FindVisibleTargets()
+    void FindVisibleTargets(int _viewAngleIndex)
     {
-        visibleTargets.Clear();
+        visibleTarget = null;
+        int targetArea = -1;
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
         for(int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle[_viewAngleIndex] / 2)
             {
                 float distToTarget = Vector3.Distance(transform.position, target.position);
                 if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(target);
+                    visibleTarget = target;
+                    targetArea = _viewAngleIndex;
                 }
             }
         }
-        navController.visibleTargets = visibleTargets;
+        navController.visibleTarget = visibleTarget;
+        navController.visibleTargetArea = targetArea;
     }
 
-    void DrawFieldOfView()
+    void DrawFieldOfView(int _viewAngleIdex, int _meshIndex)
     {
-        int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
-        float stepAngleSize = viewAngle / stepCount;
+        int stepCount = Mathf.RoundToInt(viewAngle[_viewAngleIdex] * meshResolution);
+        float stepAngleSize = viewAngle[_viewAngleIdex] / stepCount;
         List<Vector3> viewPoints = new List<Vector3>();
         ViewCastInfo oldViewCast = new ViewCastInfo();
         for (int i = 0; i < stepCount; i++)
         {
-            float angle = transform.eulerAngles.y - viewAngle / 2 + stepAngleSize * i;
+            float angle = transform.eulerAngles.y - viewAngle[_viewAngleIdex] / 2 + stepAngleSize * i;
             ViewCastInfo newViewCast = ViewCast(angle);
 
             if(i > 0)
@@ -117,10 +129,10 @@ public class FieldOfView : MonoBehaviour
             }
         }
 
-        viewMesh.Clear();
-        viewMesh.vertices = vertices;
-        viewMesh.triangles = triangles;
-        viewMesh.RecalculateNormals();
+        viewMeshes[_meshIndex].Clear();
+        viewMeshes[_meshIndex].vertices = vertices;
+        viewMeshes[_meshIndex].triangles = triangles;
+        viewMeshes[_meshIndex].RecalculateNormals();
     }
 
     EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)

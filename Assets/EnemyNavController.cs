@@ -7,7 +7,9 @@ public class EnemyNavController : MonoBehaviour
 {
     public List<Transform> Targets = new List<Transform>();
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public Transform visibleTarget;
+    [HideInInspector]
+    public int visibleTargetArea;
     public NavMeshAgent agent;
     int destinationIndex = 0;
     public bool FermatiAGuardare;
@@ -27,6 +29,14 @@ public class EnemyNavController : MonoBehaviour
     int rotationStatesIndex = 0;
     float rotTimer;
 
+    [Range(0, 5)]
+    public List<float> ModCounters = new List<float>();
+
+    float counter_Alert;
+    public float Counter_Alert_MaxValue;
+
+    float counter_Pursue;
+    public float Counter_Pursue_MaxValue;
     private void Start()
     {
         SetRotationStatesList();
@@ -61,21 +71,10 @@ public class EnemyNavController : MonoBehaviour
 
     void LookTheNearestTarget()
     {
-        if (visibleTargets.Count > 0)
+        if (visibleTarget != null)
         {
-            float _dst = 0;
-            int _targetIndex = 0;
-            for (int i = 0; i < visibleTargets.Count; i++)
-            {
-                float _iDist = Vector3.Distance(transform.position, visibleTargets[i].position);
-                if (_iDist < _dst || i == 0)
-                {
-                    _dst = _iDist;
-                    _targetIndex = i;
-                }
-            }
-            transform.LookAt(visibleTargets[_targetIndex]);
-            lastPlayerPos = visibleTargets[_targetIndex].position;
+            transform.LookAt(visibleTarget);
+            lastPlayerPos = visibleTarget.position;
             myLastPos = transform.position;
 
             needCheckLastPlayerPos = true;
