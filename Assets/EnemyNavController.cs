@@ -28,6 +28,7 @@ public class EnemyNavController : MonoBehaviour
     List<RotationStates> rotationStates = new List<RotationStates>();
     int rotationStatesIndex = 0;
     float rotTimer;
+    public float GameOverDist;
 
     [Range(0, 5)]
     public List<float> ModCounters = new List<float>();
