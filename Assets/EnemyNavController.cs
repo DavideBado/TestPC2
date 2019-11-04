@@ -24,8 +24,8 @@ public class EnemyNavController : MonoBehaviour
     Vector3 myLastPos;
     bool onChange = true;
     public float AttesaTraLeRotazioni;
-    public float VelocitaTraLeRotazioni;
-    List<RotationStates> rotationStates = new List<RotationStates>();
+    public float TimeForLookAround;
+    //List<RotationStates> rotationStates = new List<RotationStates>();
     int rotationStatesIndex = 0;
     float rotTimer;
     public float GameOverDist;
@@ -41,7 +41,7 @@ public class EnemyNavController : MonoBehaviour
     public float Counter_Pursue_MaxValue;
     private void Start()
     {
-        SetRotationStatesList();
+        //SetRotationStatesList();
         rotTimer = AttesaTraLeRotazioni;
 
         fieldOfViewOriginalViewRadius = fieldOfView.viewRadius;
@@ -132,10 +132,10 @@ public class EnemyNavController : MonoBehaviour
     //    }
     //}
 
-    void WalkPause(bool _pause)
-    {
-        agent.isStopped = _pause;
-    }
+    //void WalkPause(bool _pause)
+    //{
+    //    agent.isStopped = _pause;
+    //}
 
     void GoToLastPlayerPos(Vector3 _lastPlayerPos)
     {
@@ -143,52 +143,52 @@ public class EnemyNavController : MonoBehaviour
         float dist = agent.remainingDistance;
         if (dist != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0)
         {
-            LookAround();
+           // LookAround();
         }
     }
 
-    void LookAround()
-    {
-        switch (rotationStates[rotationStatesIndex])
-        {
-            case RotationStates.Left:
-                RotateTowards(Vector3.left);
-                break;
-            case RotationStates.Right:
-                RotateTowards(Vector3.right);
-                break;
-            case RotationStates.Forward:
-                RotateTowards(Vector3.forward);
-                break;
-            case RotationStates.Back:
-                RotateTowards(Vector3.back);
-                break;
-            case RotationStates.Wait:
-                rotTimer -= Time.deltaTime;
-                if (rotTimer <= 0)
-                {
-                    rotTimer = AttesaTraLeRotazioni;
-                    rotationStatesIndex++;
-                }
-                break;
-            case RotationStates.End:
-                //ChangeFieldOfViewRadius(false);
-                break;
-            default:
-                break;
-        }
-    }
+    //void LookAround()
+    //{
+    //    switch (rotationStates[rotationStatesIndex])
+    //    {
+    //        case RotationStates.Left:
+    //            RotateTowards(Vector3.left);
+    //            break;
+    //        case RotationStates.Right:
+    //            RotateTowards(Vector3.right);
+    //            break;
+    //        case RotationStates.Forward:
+    //            RotateTowards(Vector3.forward);
+    //            break;
+    //        case RotationStates.Back:
+    //            RotateTowards(Vector3.back);
+    //            break;
+    //        case RotationStates.Wait:
+    //            rotTimer -= Time.deltaTime;
+    //            if (rotTimer <= 0)
+    //            {
+    //                rotTimer = AttesaTraLeRotazioni;
+    //                rotationStatesIndex++;
+    //            }
+    //            break;
+    //        case RotationStates.End:
+    //            //ChangeFieldOfViewRadius(false);
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 
-    private void RotateTowards(Vector3 target)
-    {
-        //Vector3 direction = (target - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(target);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * VelocitaTraLeRotazioni);
-        if (Quaternion.Angle(transform.rotation, lookRotation) < 1)
-        {
-            rotationStatesIndex++;
-        }
-    }
+    //private void RotateTowards(Vector3 target)
+    //{
+    //    //Vector3 direction = (target - transform.position).normalized;
+    //    Quaternion lookRotation = Quaternion.LookRotation(target);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * TimeForLookAround);
+    //    if (Quaternion.Angle(transform.rotation, lookRotation) < 1)
+    //    {
+    //        rotationStatesIndex++;
+    //    }
+    //}
 
     void ReturnToLastPathPosition()
     {
@@ -203,26 +203,26 @@ public class EnemyNavController : MonoBehaviour
         }
     }
 
-    void SetRotationStatesList()
-    {
-        rotationStates.Add(RotationStates.Left);
-        rotationStates.Add(RotationStates.Wait);
-        rotationStates.Add(RotationStates.Forward);
-        rotationStates.Add(RotationStates.Wait);
-        rotationStates.Add(RotationStates.Right);
-        rotationStates.Add(RotationStates.Wait);
-        rotationStates.Add(RotationStates.Back);
-        rotationStates.Add(RotationStates.Wait);
-        rotationStates.Add(RotationStates.End);
-    }
+    //void SetRotationStatesList()
+    //{
+    //    rotationStates.Add(RotationStates.Left);
+    //    rotationStates.Add(RotationStates.Wait);
+    //    rotationStates.Add(RotationStates.Forward);
+    //    rotationStates.Add(RotationStates.Wait);
+    //    rotationStates.Add(RotationStates.Right);
+    //    rotationStates.Add(RotationStates.Wait);
+    //    rotationStates.Add(RotationStates.Back);
+    //    rotationStates.Add(RotationStates.Wait);
+    //    rotationStates.Add(RotationStates.End);
+    //}
 
-    enum RotationStates
-    {
-        Left,
-        Right,
-        Forward,
-        Back,
-        Wait,
-        End
-    }
+    //enum RotationStates
+    //{
+    //    Left,
+    //    Right,
+    //    Forward,
+    //    Back,
+    //    Wait,
+    //    End
+    //}
 }

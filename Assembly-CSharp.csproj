@@ -70,6 +70,8 @@
     <Compile Include="Assets\EnemyNavController.cs" />
     <Compile Include="Assets\FieldOfView.cs" />
     <Compile Include="Assets\Grid.cs" />
+    <Compile Include="Assets\LookAround.cs" />
+    <Compile Include="Assets\LookAroundState.cs" />
     <Compile Include="Assets\MenuSelector.cs" />
     <Compile Include="Assets\PatrolState.cs" />
     <Compile Include="Assets\PlayerMovController.cs" />

@@ -22,16 +22,17 @@ public class PursueState : StateMachineBehaviour
     {
         if (enemyNavController.visibleTarget)
         {
-            agent.destination = enemyNavController.visibleTarget.position; 
-            if(Vector3.Distance(animator.transform.position, enemyNavController.visibleTarget.position) < enemyNavController.GameOverDist)
+            agent.destination = enemyNavController.visibleTarget.position;
+            if (Vector3.Distance(animator.transform.position, enemyNavController.visibleTarget.position) < enemyNavController.GameOverDist)
             {
                 // GAMEOVER
                 if (Camera.main)
                 {
-                    Camera.main.gameObject.SetActive(false); 
+                    Camera.main.gameObject.SetActive(false);
                 }
             }
         }
+        else enemyAI.PursueStateMissThePlayer?.Invoke();
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

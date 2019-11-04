@@ -309,12 +309,14 @@ MonoBehaviour:
   VelocitaIncrementoCono: 0.561
   LunghezzaMaxCono: 6
   AttesaTraLeRotazioni: 1
-  VelocitaTraLeRotazioni: 3
+  TimeForLookAround: 4
+  GameOverDist: 1.5
   ModCounters:
   - 0.5
   - 1
   - 1.5
-  Counter_Alert_MaxValue: 4
+  Counter_Patrol_MaxValue: 1
+  Counter_Alert_MaxValue: 50
   Counter_Pursue_MaxValue: 4
 --- !u!114 &803927139432897166
 MonoBehaviour:
@@ -360,7 +362,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -379,6 +381,7 @@ MonoBehaviour:
   PursueTrgger: ToPursue
   AlertTrigger: ToAlert
   PatrolTrigger: ToPatrol
+  LookAroundTrigger: ToLookAround
   AIState: {fileID: 1914245489120665552}
 --- !u!95 &1914245489120665552
 Animator:
