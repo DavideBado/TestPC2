@@ -33,6 +33,8 @@ public class EnemyNavController : MonoBehaviour
     [Range(0, 5)]
     public List<float> ModCounters = new List<float>();
 
+    public float Counter_Patrol_MaxValue;
+
     public float Counter_Alert_MaxValue;
 
     float counter_Pursue;
@@ -69,66 +71,66 @@ public class EnemyNavController : MonoBehaviour
         //LookTheNearestTarget();
     }
 
-    void LookTheNearestTarget()
-    {
-        if (visibleTarget != null)
-        {
-            transform.LookAt(visibleTarget);
-            lastPlayerPos = visibleTarget.position;
-            myLastPos = transform.position;
+    //void LookTheNearestTarget()
+    //{
+    //    if (visibleTarget != null)
+    //    {
+    //        transform.LookAt(visibleTarget);
+    //        lastPlayerPos = visibleTarget.position;
+    //        myLastPos = transform.position;
 
-            needCheckLastPlayerPos = true;
+    //        needCheckLastPlayerPos = true;
 
-            if (FermatiAGuardare)
-            {
-                WalkPause(true);
-            }
+    //        if (FermatiAGuardare)
+    //        {
+    //            WalkPause(true);
+    //        }
 
-            ChangeFieldOfViewRadius(true);
-        }
-        else
-        {
-            WalkPause(false);
-            if (needCheckLastPlayerPos)
-            {
-                GoToLastPlayerPos(lastPlayerPos);
-            }
-        }
-    }
+    //        ChangeFieldOfViewRadius(true);
+    //    }
+    //    else
+    //    {
+    //        WalkPause(false);
+    //        if (needCheckLastPlayerPos)
+    //        {
+    //            GoToLastPlayerPos(lastPlayerPos);
+    //        }
+    //    }
+    //}
 
-    void ChangeFieldOfViewRadius(bool _detect)
-    {
-        if (_detect)
-        {
-            if (fieldOfView.viewRadius < LunghezzaMaxCono)
-            {
-                fieldOfView.viewRadius += deltaLunghezzaCono * VelocitaIncrementoCono * Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (fieldOfView.viewRadius != fieldOfViewOriginalViewRadius)
-            {
-                onChange = true;
-                if (fieldOfView.viewRadius > fieldOfViewOriginalViewRadius)
-                {
-                    fieldOfView.viewRadius -= deltaLunghezzaCono * VelocitaIncrementoCono * Time.deltaTime;
-                }
-                if (fieldOfView.viewRadius <= fieldOfViewOriginalViewRadius)
-                {
-                    fieldOfView.viewRadius = fieldOfViewOriginalViewRadius;
-                    onChange = false;
-                }
-            }
-            else
-            {
-                if (!onChange)
-                {
-                    ReturnToLastPathPosition();
-                }
-            }
-        }
-    }
+    //void ChangeFieldOfViewRadius(bool _detect)
+    //{
+    //    if (_detect)
+    //    {
+    //        if (fieldOfView.viewRadius < LunghezzaMaxCono)
+    //        {
+    //            fieldOfView.viewRadius += deltaLunghezzaCono * VelocitaIncrementoCono * Time.deltaTime;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (fieldOfView.viewRadius != fieldOfViewOriginalViewRadius)
+    //        {
+    //            onChange = true;
+    //            if (fieldOfView.viewRadius > fieldOfViewOriginalViewRadius)
+    //            {
+    //                fieldOfView.viewRadius -= deltaLunghezzaCono * VelocitaIncrementoCono * Time.deltaTime;
+    //            }
+    //            if (fieldOfView.viewRadius <= fieldOfViewOriginalViewRadius)
+    //            {
+    //                fieldOfView.viewRadius = fieldOfViewOriginalViewRadius;
+    //                onChange = false;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            if (!onChange)
+    //            {
+    //                ReturnToLastPathPosition();
+    //            }
+    //        }
+    //    }
+    //}
 
     void WalkPause(bool _pause)
     {
@@ -170,7 +172,7 @@ public class EnemyNavController : MonoBehaviour
                 }
                 break;
             case RotationStates.End:
-                ChangeFieldOfViewRadius(false);
+                //ChangeFieldOfViewRadius(false);
                 break;
             default:
                 break;

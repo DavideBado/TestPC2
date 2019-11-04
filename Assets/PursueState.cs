@@ -26,7 +26,10 @@ public class PursueState : StateMachineBehaviour
             if(Vector3.Distance(animator.transform.position, enemyNavController.visibleTarget.position) < enemyNavController.GameOverDist)
             {
                 // GAMEOVER
-                Camera.main.gameObject.SetActive(false);
+                if (Camera.main)
+                {
+                    Camera.main.gameObject.SetActive(false); 
+                }
             }
         }
     }
