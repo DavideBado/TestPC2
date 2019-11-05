@@ -289,18 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7d1be46b1863745be913b3620b67a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  PathTargets: []
   visibleTarget: {fileID: 0}
   visibleTargetArea: 0
   agent: {fileID: 803927139432897173}
@@ -316,7 +305,7 @@ MonoBehaviour:
   - 1
   - 1.5
   Counter_Patrol_MaxValue: 1
-  Counter_Alert_MaxValue: 50
+  Counter_Alert_MaxValue: 4
   Counter_Pursue_MaxValue: 4
 --- !u!114 &803927139432897166
 MonoBehaviour:

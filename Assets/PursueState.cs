@@ -8,6 +8,8 @@ public class PursueState : StateMachineBehaviour
     EnemyNavController enemyNavController;
     EnemyAI enemyAI;
     NavMeshAgent agent;
+    Transform savedTarget;
+    float timer;
    
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -15,6 +17,8 @@ public class PursueState : StateMachineBehaviour
         enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
+        timer = enemyNavController.Counter_Pursue_MaxValue;
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PursueMat;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,6 +26,7 @@ public class PursueState : StateMachineBehaviour
     {
         if (enemyNavController.visibleTarget)
         {
+            savedTarget = enemyNavController.visibleTarget;
             agent.destination = enemyNavController.visibleTarget.position;
             if (Vector3.Distance(animator.transform.position, enemyNavController.visibleTarget.position) < enemyNavController.GameOverDist)
             {
@@ -32,24 +37,17 @@ public class PursueState : StateMachineBehaviour
                 }
             }
         }
-        else enemyAI.PursueStateMissThePlayer?.Invoke();
+        else
+        {
+            agent.destination = savedTarget.position;
+            timer -= Time.deltaTime;
+            if(timer <= 0) enemyAI.PursueStateMissThePlayer?.Invoke();
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
+    }
 }

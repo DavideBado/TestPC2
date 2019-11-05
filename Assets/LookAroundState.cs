@@ -7,7 +7,7 @@ public class LookAroundState : StateMachineBehaviour
 {
     EnemyNavController enemyNavController;
     EnemyAI enemyAI;
-    int rotationStatesIndex = 0;
+    int rotationStatesIndex;
     List<Vector3> rotDirections = new List<Vector3>();
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -15,7 +15,9 @@ public class LookAroundState : StateMachineBehaviour
     {
         enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
+        rotationStatesIndex = 0;
         SetupRotDirections();
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.LookAroundMat;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,13 +28,14 @@ public class LookAroundState : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
+    }
 
     private void SetupRotDirections()
     {
+        rotDirections.Clear();
         rotDirections.Add(Vector3.forward);
         rotDirections.Add(Vector3.right);
         rotDirections.Add(Vector3.back);

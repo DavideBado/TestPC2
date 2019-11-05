@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AlertState : StateMachineBehaviour
 {
     EnemyNavController enemyNavController;
-    float counter_Alert = 0;
+    float counter_Alert;
     EnemyAI enemyAI;
     NavMeshAgent agent;
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -15,6 +15,8 @@ public class AlertState : StateMachineBehaviour
         enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
+        counter_Alert = 0;
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.AlertMat;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -35,6 +37,6 @@ public class AlertState : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
     }
 }
