@@ -16,6 +16,10 @@ public class PlayerMovController : MonoBehaviour
 
     bool isCrouching = false;
     bool isRunning = false;
+    bool isHiding = false;
+
+    Vector3 lastPosition;
+    RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,7 @@ public class PlayerMovController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        rb.AddForce(new Vector3(moveHorizontal, 0.0f, moveVertical) * currentSpeed);
+        rb.velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * currentSpeed;
 
         Crouch();
         Run();
@@ -61,6 +65,21 @@ public class PlayerMovController : MonoBehaviour
         {
             currentSpeed = walkSpeed;
             isRunning = false;
+        }
+    }
+
+    public void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "HidingSpot" && Input.GetKeyDown(interact) && isHiding == false)
+        {
+            lastPosition = transform.position;
+            transform.position = GameObject.FindWithTag("HidingSpot").transform.position;
+            isHiding = true;
+        }
+        else if (Input.GetKeyDown(interact) && isHiding == true)
+        {
+            transform.position = lastPosition;
+            isHiding = false;
         }
     }
 }
