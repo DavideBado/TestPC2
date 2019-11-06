@@ -8,6 +8,8 @@ public class EnemyNavController : MonoBehaviour
     public List<Transform> PathTargets = new List<Transform>();
     [HideInInspector]
     public Transform visibleTarget;
+    //[HideInInspector]
+    public Transform SoundTarget;
     [HideInInspector]
     public int visibleTargetArea;
     public NavMeshAgent agent;

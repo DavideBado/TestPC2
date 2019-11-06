@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 803927139432897173}
   - component: {fileID: 803927139432897172}
   - component: {fileID: 803927139432897166}
+  - component: {fileID: 6223228630912582806}
   - component: {fileID: 803927139432897167}
   - component: {fileID: 8177613512493657892}
   - component: {fileID: 1914245489120665552}
@@ -187,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803927139432897175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.949585, y: -24.83541, z: 122.1529}
+  m_LocalPosition: {x: 3.949585, y: -28.74, z: 122.1529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 803927139135042283}
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PathTargets: []
   visibleTarget: {fileID: 0}
+  SoundTarget: {fileID: 0}
   visibleTargetArea: 0
   agent: {fileID: 803927139432897173}
   FermatiAGuardare: 1
@@ -307,6 +309,10 @@ MonoBehaviour:
   Counter_Patrol_MaxValue: 1
   Counter_Alert_MaxValue: 4
   Counter_Pursue_MaxValue: 4
+  PatrolMat: {fileID: 0}
+  AlertMat: {fileID: 0}
+  LookAroundMat: {fileID: 0}
+  PursueMat: {fileID: 0}
 --- !u!114 &803927139432897166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +344,23 @@ MonoBehaviour:
   - {fileID: 803927139135042281}
   - {fileID: 4579618261448843437}
   - {fileID: 807783768612796295}
+  navController: {fileID: 803927139432897172}
+--- !u!114 &6223228630912582806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803927139432897175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9531e565a5f647744b16285fd7f8b9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HearingRadius: 20
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 4096
   navController: {fileID: 803927139432897172}
 --- !u!54 &803927139432897167
 Rigidbody:
