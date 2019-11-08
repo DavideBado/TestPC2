@@ -38,6 +38,7 @@ public class PlayerMovController : MonoBehaviour
 
         Crouch();
         Run();
+        DetectHidingPoint();
     }
 
     void Crouch()
@@ -47,7 +48,7 @@ public class PlayerMovController : MonoBehaviour
             currentSpeed = crouchingSpeed;
             isCrouching = true;
         }
-        else if(Input.GetKeyDown(crouch) && isCrouching == true)
+        else if (Input.GetKeyDown(crouch) && isCrouching == true)
         {
             currentSpeed = walkSpeed;
             isCrouching = false;
@@ -61,28 +62,34 @@ public class PlayerMovController : MonoBehaviour
             currentSpeed = runningSpeed;
             isRunning = true;
         }
-        else if(Input.GetKeyDown(run) && isRunning == true)
+        else if (Input.GetKeyDown(run) && isRunning == true)
         {
             currentSpeed = walkSpeed;
             isRunning = false;
         }
     }
 
-    public void OnTriggerStay(Collider collider)
+    private void DetectHidingPoint()
     {
-        if (collider.tag == "HidingSpot" && isHiding == false)
+        if (Input.GetKeyDown(interact))
         {
-            if (Input.GetKeyDown(interact))
+            if (isHiding == false)
             {
-                lastPosition = transform.position;
-                transform.position = GameObject.FindWithTag("HidingSpot").transform.position;
-                isHiding = true;
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
+                {
+                    if (hit.collider.gameObject.tag == "HidingSpot")
+                    {
+                        lastPosition = transform.position;
+                        transform.position = hit.transform.position;
+                        isHiding = true;
+                    }
+                }
             }
-        }
-        else if (Input.GetKeyDown(interact) && isHiding == true)
-        {
-            transform.position = lastPosition;
-            isHiding = false;
+            else if (isHiding == true)
+            {
+                transform.position = lastPosition;
+                isHiding = false;
+            }
         }
     }
 }
