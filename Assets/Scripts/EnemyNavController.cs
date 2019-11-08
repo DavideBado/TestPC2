@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyNavController : MonoBehaviour
 {
+    public EnemyGraphicsController graphicsController;
     public List<Transform> PathTargets = new List<Transform>();
     [HideInInspector]
     public Transform visibleTarget;
@@ -13,7 +14,6 @@ public class EnemyNavController : MonoBehaviour
     [HideInInspector]
     public int visibleTargetArea;
     public NavMeshAgent agent;
-    int destinationIndex = 0;
     public bool FermatiAGuardare;
     public FieldOfView fieldOfView;
     float fieldOfViewOriginalViewRadius;
@@ -24,7 +24,6 @@ public class EnemyNavController : MonoBehaviour
     Vector3 myLastPos;
     public float AttesaTraLeRotazioni;
     public float TimeForLookAround;
-    int rotationStatesIndex = 0;
     float rotTimer;
     public float GameOverDist;
 
@@ -37,8 +36,6 @@ public class EnemyNavController : MonoBehaviour
 
     public float Counter_Pursue_MaxValue;
 
-    public Material PatrolMat;
-    public Material AlertMat;
-    public Material LookAroundMat;
-    public Material PursueMat;
+    public float WalkSpeed;
+    public float RunSpeed;
 }

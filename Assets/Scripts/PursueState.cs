@@ -18,7 +18,9 @@ public class PursueState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
         timer = enemyNavController.Counter_Pursue_MaxValue;
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PursueMat;
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PursueMat;
+        enemyNavController.graphicsController.PursueAnimGObj.SetActive(true);
+        agent.speed = enemyNavController.RunSpeed;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -48,6 +50,7 @@ public class PursueState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
+        enemyNavController.graphicsController.PursueAnimGObj.SetActive(false);
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PatrolMat;
     }
 }

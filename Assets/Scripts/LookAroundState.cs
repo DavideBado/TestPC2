@@ -17,7 +17,8 @@ public class LookAroundState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         rotationStatesIndex = 0;
         SetupRotDirections();
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.LookAroundMat;
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.LookAroundMat;
+        enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,7 +31,8 @@ public class LookAroundState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
+        enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(false);
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PatrolMat;
     }
 
     private void SetupRotDirections()
@@ -44,7 +46,7 @@ public class LookAroundState : StateMachineBehaviour
     private void RotateTowards(Vector3 target, EnemyNavController _this)
     {
         Quaternion lookRotation = Quaternion.LookRotation(target);
-        _this.transform.rotation = Quaternion.Slerp(_this.transform.rotation, lookRotation, Time.deltaTime * _this.TimeForLookAround / rotDirections.Count);
+        _this.transform.rotation = Quaternion.Slerp(_this.transform.rotation, lookRotation, Time.deltaTime * _this.TimeForLookAround/* / rotDirections.Count*/);
         if (Quaternion.Angle(_this.transform.rotation, lookRotation) < 1)
         {
             rotationStatesIndex++;

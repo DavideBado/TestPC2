@@ -60,18 +60,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Attributes\DraggablePoint.cs" />
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\Editors\HearingEditor.cs" />
+    <Compile Include="Assets\Editors\NavigationEditor.cs" />
     <Compile Include="Assets\Scripts\AlertState.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\DrawTest.cs" />
     <Compile Include="Assets\Scripts\DrawTestPad.cs" />
     <Compile Include="Assets\Scripts\DrawTestPin.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\EnemyGraphicsController.cs" />
     <Compile Include="Assets\Scripts\EnemyNavController.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
     <Compile Include="Assets\Scripts\HearingController.cs" />
+    <Compile Include="Assets\Scripts\LockRotation.cs" />
     <Compile Include="Assets\Scripts\LookAround.cs" />
     <Compile Include="Assets\Scripts\LookAroundState.cs" />
     <Compile Include="Assets\Scripts\MenuSelector.cs" />

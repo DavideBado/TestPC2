@@ -16,7 +16,9 @@ public class AlertState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
         counter_Alert = 0;
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.AlertMat;
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.AlertMat;
+        enemyNavController.graphicsController.AlertAnimGObj.SetActive(true);
+        agent.speed = enemyNavController.WalkSpeed;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -37,6 +39,7 @@ public class AlertState : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.PatrolMat;
+        enemyNavController.graphicsController.AlertAnimGObj.SetActive(false);
+        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PatrolMat;
     }
 }

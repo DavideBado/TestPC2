@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class PlayerNavController : MonoBehaviour
 {
     public NavMeshAgent agent;
-    int destinationIndex = 0;
-
 
     private void UpdateTargets(Vector3 targetPosition) // Aggiorna la destinazione dei cultisti
     {

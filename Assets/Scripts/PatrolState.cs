@@ -18,6 +18,7 @@ public class PatrolState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
         counter_Patrol = 0;
+        //agent.speed = enemyNavController.WalkSpeed;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

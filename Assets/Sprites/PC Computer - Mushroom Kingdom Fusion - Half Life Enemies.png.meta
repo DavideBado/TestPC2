@@ -1,0 +1,1024 @@
+fileFormatVersion: 2
+guid: 4e9f5e74910e30b4ca4b40f24775b25a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_0
+    21300002: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_1
+    21300004: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_2
+    21300006: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_3
+    21300008: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_4
+    21300010: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_5
+    21300012: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_6
+    21300014: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_7
+    21300016: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_8
+    21300018: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_9
+    21300020: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_10
+    21300022: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_11
+    21300024: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_12
+    21300026: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_13
+    21300028: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_14
+    21300030: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_15
+    21300032: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_16
+    21300034: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_17
+    21300036: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_18
+    21300038: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_19
+    21300040: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_20
+    21300042: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_21
+    21300044: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_22
+    21300046: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_23
+    21300048: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_24
+    21300050: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_25
+    21300052: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_26
+    21300054: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_27
+    21300056: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_28
+    21300058: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_29
+    21300060: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_30
+    21300062: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_31
+    21300064: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_32
+    21300066: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_33
+    21300068: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_34
+    21300070: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_35
+    21300072: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_36
+    21300074: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_37
+    21300076: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_38
+    21300078: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_39
+    21300080: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_40
+    21300082: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_41
+    21300084: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_42
+    21300086: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_43
+    21300088: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_44
+    21300090: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_45
+    21300092: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_46
+    21300094: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_47
+    21300096: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_48
+    21300098: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_49
+    21300100: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_50
+    21300102: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_51
+    21300104: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_52
+    21300106: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_53
+    21300108: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_54
+    21300110: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_55
+    21300112: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_56
+    21300114: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_57
+    21300116: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_58
+    21300118: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_59
+    21300120: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_60
+    21300122: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_61
+    21300124: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_62
+    21300126: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_63
+    21300128: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_64
+    21300130: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_65
+    21300132: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_66
+    21300134: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_67
+    21300136: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_68
+    21300138: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_69
+    21300140: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_70
+    21300142: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_71
+    21300144: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_72
+    21300146: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_73
+    21300148: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_74
+    21300150: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_75
+    21300152: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_76
+    21300154: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_77
+    21300156: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_78
+    21300158: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_79
+    21300160: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_80
+    21300162: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_81
+    21300164: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_82
+    21300166: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_83
+    21300168: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_84
+    21300170: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_85
+    21300172: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_86
+    21300174: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_87
+    21300176: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_88
+    21300178: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_89
+    21300180: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_90
+    21300182: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_91
+    21300184: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_92
+    21300186: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_93
+    21300188: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_94
+    21300190: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_95
+    21300192: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_96
+    21300194: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_97
+    21300196: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_98
+    21300198: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_99
+    21300200: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_100
+    21300202: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_101
+    21300204: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_102
+    21300206: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_103
+    21300208: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_104
+    21300210: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_105
+    21300212: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_106
+    21300214: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_107
+    21300216: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_108
+    21300218: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_109
+    21300220: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_110
+    21300222: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_111
+    21300224: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_112
+    21300226: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_113
+    21300228: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_114
+    21300230: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_115
+    21300232: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_116
+    21300234: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_117
+    21300236: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_118
+    21300238: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_119
+    21300240: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_120
+    21300242: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_121
+    21300244: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_122
+    21300246: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_123
+    21300248: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_124
+    21300250: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_125
+    21300252: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_126
+    21300254: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_127
+    21300256: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_128
+    21300258: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_129
+    21300260: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_130
+    21300262: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_131
+    21300264: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_132
+    21300266: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_133
+    21300268: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_134
+    21300270: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_135
+    21300272: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_136
+    21300274: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_137
+    21300276: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_138
+    21300278: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_139
+    21300280: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_140
+    21300282: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_141
+    21300284: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_142
+    21300286: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_143
+    21300288: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_144
+    21300290: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_145
+    21300292: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_146
+    21300294: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_147
+    21300296: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_148
+    21300298: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_149
+    21300300: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_150
+    21300302: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_151
+    21300304: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_152
+    21300306: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_153
+    21300308: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_154
+    21300310: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_155
+    21300312: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_156
+    21300314: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_157
+    21300316: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_158
+    21300318: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_159
+    21300320: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_160
+    21300322: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_161
+    21300324: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_162
+    21300326: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_163
+    21300328: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_164
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_43
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 374
+        width: 89
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b7a5fb1bafbfb4e9fda8f1695f77a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_44
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 374
+        width: 89
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75673ffd6fb5ee4894e0dfdc15e13f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_45
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 374
+        width: 87
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c92c310e67992429501bae87594a90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_46
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 374
+        width: 90
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a90a4ae45c9114599048f2d20b3a33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_47
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 374
+        width: 96
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8666f080c386d8c4cbfe2789f4be2f0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_48
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 374
+        width: 71
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfd8adc5706e2c418e3a280392d5236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_49
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 374
+        width: 65
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81942f2c3c5a274580ff8a1c7a60f64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_50
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 374
+        width: 64
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761c16f9ce8d38d4f8ae18e8068544b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_51
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 294
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e6573252ff25345b1b9a93435b1981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_52
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 294
+        width: 91
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da46cc3745edba4c80116badd2f8855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_53
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 294
+        width: 94
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb91bbc81c3aa2f4595d7ae05b61be4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_54
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 294
+        width: 93
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ced88ad200e48c4db3d20c364556230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_55
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 278
+        width: 85
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470b4eea4590efb4ab9328163400c4c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_56
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 278
+        width: 63
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2971a87ba9a694bb67270b5d12cd29
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_57
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 278
+        width: 65
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6f5b297a06b0649b996013a7326ec4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_58
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 278
+        width: 74
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12172f55885e964586306c3556e6c6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_66
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 214
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be7a4a816b272c4682a60458ec883c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_67
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 214
+        width: 89
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66956aa3da21fa4b98227f8a642bdd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_68
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 214
+        width: 89
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f96340cfc813034eb34d7e355bcbf9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_69
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 214
+        width: 89
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c19fbd449e95ec4bac4cae4a7cbaefb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_70
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 182
+        width: 65
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bd1b350f159604eb8653172d99bddf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_71
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 182
+        width: 70
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0f07c731ec1bd4d971db2a5c12c96c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_72
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 182
+        width: 88
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00250b323f78b1f4983a360ce7210c0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_73
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 182
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc5b8cf0db802f4cb2e10af97a7bca9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_75
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 181
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1af2f2da4582943b218d69beadf7f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_76
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 185
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cee927e73b64142bdc0ef386f87c98
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_77
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 181
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a631b47530399b54597105ad94b7a507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_78
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 181
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43961dcb913091a4a99897660d547266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_85
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 149
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90f3c0ab2fc54f499e32e632751fe89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_90
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 86
+        width: 65
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9a8c2c93cb8994596bed6b98a50554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_91
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 86
+        width: 65
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4365e5c91e021fe49a63b697bdb8f63d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_92
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 86
+        width: 71
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53243c630f1cdfa42b7f7a17051a137b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_99
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 149
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c280f542c708904a87db0166ab77bf3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_100
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 149
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc82c501bc646b74882ec34bb4144ca7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_108
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 117
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba6681a6f1097f4fb827dcb6dc62e5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_109
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 117
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40951056ee32c134885426d128e0830c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_110
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 117
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50aa312e804ba5439112578c8eb0496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Mushroom Kingdom Fusion - Half Life Enemies_143
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 47
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46bf142be1ab294aac8dbd57c3341ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4eac3bbbf2751a14185705b3f3ca0ff6
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
