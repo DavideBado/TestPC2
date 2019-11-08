@@ -70,11 +70,14 @@ public class PlayerMovController : MonoBehaviour
 
     public void OnTriggerStay(Collider collider)
     {
-        if (collider.tag == "HidingSpot" && Input.GetKeyDown(interact) && isHiding == false)
+        if (collider.tag == "HidingSpot" && isHiding == false)
         {
-            lastPosition = transform.position;
-            transform.position = GameObject.FindWithTag("HidingSpot").transform.position;
-            isHiding = true;
+            if (Input.GetKeyDown(interact))
+            {
+                lastPosition = transform.position;
+                transform.position = GameObject.FindWithTag("HidingSpot").transform.position;
+                isHiding = true;
+            }
         }
         else if (Input.GetKeyDown(interact) && isHiding == true)
         {
