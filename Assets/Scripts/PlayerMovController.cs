@@ -9,6 +9,7 @@ public class PlayerMovController : MonoBehaviour
     public float walkSpeed;
     public float crouchingSpeed;
     public float runningSpeed;
+    public float rotationSpeed;
 
     public KeyCode interact;
     public KeyCode crouch;
@@ -31,10 +32,16 @@ public class PlayerMovController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * currentSpeed;
+        float translation = Input.GetAxis("Vertical") * currentSpeed;
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
+
+        transform.Translate(0, 0, translation);
+
+        transform.Rotate(0, rotation, 0);
 
         Crouch();
         Run();
