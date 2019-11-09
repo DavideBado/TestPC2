@@ -16,10 +16,7 @@ public class EnemyNavController : MonoBehaviour
     public NavMeshAgent agent;
     public bool FermatiAGuardare;
     public FieldOfView fieldOfView;
-    float fieldOfViewOriginalViewRadius;
-    [Range(0, 1)]
-    public float VelocitaIncrementoCono;
-    public float LunghezzaMaxCono;
+    float fieldOfViewOriginalViewRadius;   
     Vector3 lastPlayerPos;
     Vector3 myLastPos;
     public float AttesaTraLeRotazioni;
