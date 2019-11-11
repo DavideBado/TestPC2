@@ -27,8 +27,8 @@ public class HearingController : MonoBehaviour
     void FindVisibleTargets()
     {
         Collider[] targetsInHearingRadius = Physics.OverlapSphere(transform.position, HearingRadius, targetMask);
-        if (targetsInHearingRadius.Length > 0) navController.SoundTarget = targetsInHearingRadius[0].transform;
-        else navController.SoundTarget = null;
+        if (targetsInHearingRadius.Length > 0) navController.NoiseTarget = targetsInHearingRadius[0].transform;
+        else navController.NoiseTarget = null;
     }
 }
 

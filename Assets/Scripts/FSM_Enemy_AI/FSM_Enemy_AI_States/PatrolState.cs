@@ -7,7 +7,6 @@ public class PatrolState : StateMachineBehaviour
 {
     EnemyNavController enemyNavController;
     EnemyAI enemyAI;
-    float counter_Patrol;
     NavMeshAgent agent;
     int destinationIndex;
 
@@ -17,7 +16,7 @@ public class PatrolState : StateMachineBehaviour
         enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
-        counter_Patrol = 0;
+        enemyNavController.Counter = 0;
         //agent.speed = enemyNavController.WalkSpeed;
     }
 
@@ -53,16 +52,7 @@ public class PatrolState : StateMachineBehaviour
 
     private void CheckThePlayer()
     {
-        if (enemyNavController.visibleTarget)
-        {
-            counter_Patrol += enemyNavController.ModCounters[enemyNavController.visibleTargetArea] * Time.deltaTime;
-        }
-        else
-        {
-            counter_Patrol = 0;
-        }
-
-        if (counter_Patrol >= enemyNavController.Counter_Patrol_MaxValue)
+        if (enemyNavController.VisibleTarget)
         {
             enemyAI.PatrolStateDetectAPlayer?.Invoke();
         }

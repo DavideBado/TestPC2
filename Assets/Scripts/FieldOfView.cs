@@ -76,7 +76,7 @@ public class FieldOfView : MonoBehaviour
                 }
             }
         }
-        navController.visibleTarget = visibleTarget;
+        navController.VisibleTarget = visibleTarget;
         if (visibleTarget)
         {
             float angle = Vector3.Angle(transform.forward, (visibleTarget.position - transform.position).normalized);

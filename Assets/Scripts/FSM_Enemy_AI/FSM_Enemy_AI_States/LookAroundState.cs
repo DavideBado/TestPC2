@@ -56,6 +56,6 @@ public class LookAroundState : StateMachineBehaviour
 
     private void CheckThePlayer()
     {
-        if(enemyNavController.visibleTarget) enemyAI.LookAroundDetectThePlayer?.Invoke();
+        if(enemyNavController.VisibleTarget) enemyAI.LookAroundDetectThePlayer?.Invoke();
     }
 }

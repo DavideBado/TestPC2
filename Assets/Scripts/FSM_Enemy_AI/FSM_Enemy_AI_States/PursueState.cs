@@ -26,11 +26,11 @@ public class PursueState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (enemyNavController.visibleTarget)
+        if (enemyNavController.VisibleTarget)
         {
-            savedTarget = enemyNavController.visibleTarget;
-            agent.destination = enemyNavController.visibleTarget.position;
-            if (Vector3.Distance(animator.transform.position, enemyNavController.visibleTarget.position) < enemyNavController.GameOverDist)
+            savedTarget = enemyNavController.VisibleTarget;
+            agent.destination = enemyNavController.VisibleTarget.position;
+            if (Vector3.Distance(animator.transform.position, enemyNavController.VisibleTarget.position) < enemyNavController.GameOverDist)
             {
                 // GAMEOVER
                 if (Camera.main)

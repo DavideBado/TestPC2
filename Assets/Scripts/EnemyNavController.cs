@@ -8,9 +8,9 @@ public class EnemyNavController : MonoBehaviour
     public EnemyGraphicsController graphicsController;
     public List<Transform> PathTargets = new List<Transform>();
     [HideInInspector]
-    public Transform visibleTarget;
+    public Transform VisibleTarget;
     //[HideInInspector]
-    public Transform SoundTarget;
+    public Transform NoiseTarget;
     [HideInInspector]
     public int visibleTargetArea;
     public NavMeshAgent agent;
@@ -35,4 +35,7 @@ public class EnemyNavController : MonoBehaviour
 
     public float WalkSpeed;
     public float RunSpeed;
+
+    [HideInInspector]
+    public float Counter;
 }
