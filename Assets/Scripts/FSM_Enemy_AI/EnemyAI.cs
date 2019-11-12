@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public string PursueTrgger, AlertTrigger, PatrolTrigger, LookAroundTrigger;
-    public Animator AIState;
+    public Animator AI_FSM;
 
     public Action PatrolStateDetectAPlayer;
     public Action AlertStateMaxCounter;
@@ -36,18 +36,18 @@ public class EnemyAI : MonoBehaviour
 
     private void SetPatrolTrigger()
     {
-        AIState.SetTrigger(PatrolTrigger);
+        AI_FSM.SetTrigger(PatrolTrigger);
     }
     private void SetAlertTrigger()
     {
-        AIState.SetTrigger(AlertTrigger);
+        AI_FSM.SetTrigger(AlertTrigger);
     }
     private void SetPursueTrigger()
     {
-        AIState.SetTrigger(PursueTrgger);
+        AI_FSM.SetTrigger(PursueTrgger);
     }
     private void SetLookAroundTrigger()
     {
-        AIState.SetTrigger(LookAroundTrigger);
+        AI_FSM.SetTrigger(LookAroundTrigger);
     }
 }
