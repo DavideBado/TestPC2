@@ -38,4 +38,8 @@ public class EnemyNavController : MonoBehaviour
 
     [HideInInspector]
     public float Counter;
+
+    public Vector3 IdlePosition;
+    public Vector3 IdleTriggerTrapPosition;
+    public Vector3 IdleTriggerTrapDim;
 }

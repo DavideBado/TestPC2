@@ -1854,10 +1854,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: AI_FSM
+      value: 
+      objectReference: {fileID: 632936219}
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: 7.07
       objectReference: {fileID: 0}
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
@@ -1867,7 +1872,7 @@ PrefabInstance:
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.36
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
@@ -1964,11 +1969,46 @@ PrefabInstance:
       propertyPath: PathTargets.Array.data[10]
       value: 
       objectReference: {fileID: 1452751568}
-    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
-      propertyPath: AI_FSM
-      value: 
-      objectReference: {fileID: 632936219}
+      propertyPath: IdlePosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdlePosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdlePosition.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdleTriggerTrapPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdleTriggerTrapPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdleTriggerTrapDim.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdleTriggerTrapDim.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: IdleTriggerTrapDim.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
 --- !u!1 &1624563031

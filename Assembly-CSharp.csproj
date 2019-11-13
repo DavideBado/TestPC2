@@ -64,8 +64,6 @@
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\Editors\HearingEditor.cs" />
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
-    <Compile Include="Assets\ExecutionPhaseState.cs" />
-    <Compile Include="Assets\PlanningPhaseState.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\DrawTest.cs" />
@@ -76,8 +74,11 @@
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\AlertState.cs" />
+    <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\EnemyIdleState.cs" />
+    <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\ExecutionPhaseState.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\LookAroundState.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\PatrolState.cs" />
+    <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\PlanningPhaseState.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\PursueState.cs" />
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\ResearchState.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\NoiseController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovController.cs" />
     <Compile Include="Assets\Scripts\PlayerNavController.cs" />
+    <Compile Include="Assets\Scripts\TriggerTrap.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
