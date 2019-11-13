@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public string PursueTrgger, AlertTrigger, PatrolTrigger, LookAroundTrigger;
+    public string PursueTrgger, AlertTrigger, PatrolTrigger, ResearchTrigger, LookAroundTrigger;
     public Animator AI_FSM;
 
     public Action PatrolStateDetectAPlayer;
     public Action AlertStateMaxCounter;
     public Action AlertStateMissThePlayer;
+    public Action ResearchStateMaxCounter;
     public Action LookAroundStateEndRot;
     public Action LookAroundDetectThePlayer;
     public Action PursueStateMissThePlayer;
@@ -17,21 +18,23 @@ public class EnemyAI : MonoBehaviour
     private void OnEnable()
     {
         PatrolStateDetectAPlayer += SetAlertTrigger;
-        AlertStateMaxCounter += SetPursueTrigger;
+        AlertStateMaxCounter += SetResearchTrigger;
         AlertStateMissThePlayer += SetLookAroundTrigger;
+        ResearchStateMaxCounter += SetPursueTrigger;
         LookAroundStateEndRot += SetPatrolTrigger;
-        LookAroundDetectThePlayer += SetAlertTrigger;
-        PursueStateMissThePlayer += SetLookAroundTrigger;
+        LookAroundDetectThePlayer += SetResearchTrigger;
+        PursueStateMissThePlayer += SetResearchTrigger;
     }
 
     private void OnDisable()
     {
         PatrolStateDetectAPlayer -= SetAlertTrigger;
-        AlertStateMaxCounter -= SetPursueTrigger;
+        AlertStateMaxCounter -= SetResearchTrigger;
         AlertStateMissThePlayer -= SetLookAroundTrigger;
+        ResearchStateMaxCounter += SetPursueTrigger;
         LookAroundStateEndRot -= SetPatrolTrigger;
-        LookAroundDetectThePlayer -= SetAlertTrigger;
-        PursueStateMissThePlayer -= SetLookAroundTrigger;
+        LookAroundDetectThePlayer -= SetResearchTrigger;
+        PursueStateMissThePlayer -= SetResearchTrigger;
     }
 
     private void SetPatrolTrigger()
@@ -45,6 +48,10 @@ public class EnemyAI : MonoBehaviour
     private void SetPursueTrigger()
     {
         AI_FSM.SetTrigger(PursueTrgger);
+    }
+    private void SetResearchTrigger()
+    {
+        AI_FSM.SetTrigger(ResearchTrigger);
     }
     private void SetLookAroundTrigger()
     {

@@ -18,8 +18,7 @@ public class EnemyNavController : MonoBehaviour
     public FieldOfView fieldOfView;
     float fieldOfViewOriginalViewRadius;   
     Vector3 lastPlayerPos;
-    Vector3 myLastPos;
-    public float AttesaTraLeRotazioni;
+    Vector3 myLastPos;   
     public float TimeForLookAround;
     float rotTimer;
     public float GameOverDist;
@@ -30,6 +29,8 @@ public class EnemyNavController : MonoBehaviour
     public float Counter_Patrol_MaxValue;
 
     public float Counter_Alert_MaxValue;
+
+    public float Counter_Research_MaxValue;
 
     public float Counter_Pursue_MaxValue;
 

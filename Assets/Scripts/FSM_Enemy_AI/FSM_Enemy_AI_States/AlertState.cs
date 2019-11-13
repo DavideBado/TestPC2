@@ -15,11 +15,10 @@ public class AlertState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
 
-        m_enemyNavController.GetComponent<MeshRenderer>().material = m_enemyNavController.graphicsController.AlertMat;
+        //m_enemyNavController.GetComponent<MeshRenderer>().material = m_enemyNavController.graphicsController.AlertMat;
         m_enemyNavController.graphicsController.AlertAnimGObj.SetActive(true);
 
-        agent.isStopped = true;
-        m_enemyNavController.transform.LookAt(m_enemyNavController.VisibleTarget);
+        agent.isStopped = true;       
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +27,7 @@ public class AlertState : StateMachineBehaviour
         if (m_enemyNavController.VisibleTarget)
         {           
             m_enemyNavController.Counter += m_enemyNavController.ModCounters[m_enemyNavController.visibleTargetArea] * Time.deltaTime;
-            //agent.destination = m_enemyNavController.VisibleTarget.position;
+            m_enemyNavController.transform.LookAt(m_enemyNavController.VisibleTarget.transform.position);
             if (m_enemyNavController.Counter >= m_enemyNavController.Counter_Alert_MaxValue) enemyAI.AlertStateMaxCounter?.Invoke();
         }
         //else
@@ -47,6 +46,6 @@ public class AlertState : StateMachineBehaviour
     {
         agent.isStopped = false;
         m_enemyNavController.graphicsController.AlertAnimGObj.SetActive(false);
-        m_enemyNavController.GetComponent<MeshRenderer>().material = m_enemyNavController.graphicsController.PatrolMat;
+        //m_enemyNavController.GetComponent<MeshRenderer>().material = m_enemyNavController.graphicsController.PatrolMat;
     }
 }

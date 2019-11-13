@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LockRotation : MonoBehaviour
 {
+    public Camera PlayerCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class LockRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Camera.main.transform.rotation;
+        transform.rotation = PlayerCamera.transform.rotation;
     }
 }
