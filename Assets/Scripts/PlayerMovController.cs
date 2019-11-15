@@ -15,12 +15,14 @@ public class PlayerMovController : MonoBehaviour
     public KeyCode crouch;
     public KeyCode run;
 
+    Collision Wall;
+    public LayerMask WallMask;
+
     bool isCrouching = false;
     bool isRunning = false;
     bool isHiding = false;
 
     Vector3 lastPosition;
-    RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +34,21 @@ public class PlayerMovController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float translation = Input.GetAxis("Vertical") * currentSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
 
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        transform.Translate(0, 0, translation);
+        if (translation > 0)
+        {
+            if (!Physics.Raycast(transform.position, transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
+        }
+        else if (translation < 0) if (!Physics.Raycast(transform.position, -transform.forward, 0.5f, WallMask))
+            {
+                transform.Translate(0, 0, translation);
+                Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+            }
 
         transform.Rotate(0, rotation, 0);
 
@@ -47,7 +56,6 @@ public class PlayerMovController : MonoBehaviour
         Run();
         DetectHidingPoint();
     }
-
     void Crouch()
     {
         if (Input.GetKeyDown(crouch) && isCrouching == false)
@@ -82,6 +90,7 @@ public class PlayerMovController : MonoBehaviour
         {
             if (isHiding == false)
             {
+                RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
                 {
                     if (hit.collider.gameObject.tag == "HidingSpot")
@@ -97,6 +106,22 @@ public class PlayerMovController : MonoBehaviour
                 transform.position = lastPosition;
                 isHiding = false;
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == WallMask)
+        {
+            Wall = collision;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (Wall == collision)
+        {
+            Wall = null;
         }
     }
 }
