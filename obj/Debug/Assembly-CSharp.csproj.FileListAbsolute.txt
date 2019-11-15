@@ -758,3 +758,4 @@ C:\Users\berto\OneDrive\Documenti\TestPC2\obj\Debug\Assembly-CSharp.csproj.CoreC
 C:\Users\berto\OneDrive\Documenti\TestPC2\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\berto\OneDrive\Documenti\TestPC2\obj\Debug\Assembly-CSharp.dll
 C:\Users\berto\OneDrive\Documenti\TestPC2\obj\Debug\Assembly-CSharp.pdb
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\UnityEngine.UNETModule.xml
