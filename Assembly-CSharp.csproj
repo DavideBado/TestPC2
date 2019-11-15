@@ -92,6 +92,8 @@
     <Compile Include="Assets\Scripts\PlayerMovController.cs" />
     <Compile Include="Assets\Scripts\PlayerNavController.cs" />
     <Compile Include="Assets\Scripts\TriggerTrap.cs" />
+    <Compile Include="Assets\Scripts\UiMapElements.cs" />
+    <Compile Include="Assets\testDrag.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
