@@ -105,6 +105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 2
   player: {fileID: 2971270840785343963}
+  originCameraPos: {x: 0, y: 0, z: 0}
+  originCameraRot: {x: 0, y: 0, z: 0, w: 0}
+  currentCameraPos: {x: 0, y: 0, z: 0}
+  currentCameraRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2971270840785343965
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +238,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   currentSpeed: 0
   walkSpeed: 6
-  crouchingSpeed: 5.3
+  crouchingSpeed: 4
   runningSpeed: 8
   rotationSpeed: 70
   interact: 101
@@ -243,6 +247,12 @@ MonoBehaviour:
   WallMask:
     serializedVersion: 2
     m_Bits: 8192
+  Noise: {fileID: 5037155644386369808}
+  walkDimensionMod: 2
+  runDimensionMod: 4
+  walkDuration: 2
+  runDuration: 2
+  m_camera: {fileID: 1133743100}
 --- !u!208 &208039226784939418
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -425,3 +435,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7921038667188828107}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5037155644386369808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2885326239926359771, guid: 04cd64c9f0e63de4bbb7cfc276cc7fe7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921038667188828107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6de9f97923a0140b42d378ad5d60b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

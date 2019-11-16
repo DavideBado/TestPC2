@@ -20,15 +20,31 @@ public class HearingController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
+            FindTargets();
         }
     }
 
-    void FindVisibleTargets()
+    void FindTargets()
     {
         Collider[] targetsInHearingRadius = Physics.OverlapSphere(transform.position, HearingRadius, targetMask);
-        if (targetsInHearingRadius.Length > 0) navController.NoiseTarget = targetsInHearingRadius[0].transform;
-        else navController.NoiseTarget = null;
+        if (targetsInHearingRadius.Length > 0) SaveNoise(targetsInHearingRadius[0].transform);
+        else SaveNoise(null);
+    }
+
+    void SaveNoise(Transform _Target)
+    {
+        navController.NoiseTarget = _Target;
+        navController.prevNoiseType = navController.currentNoiseType;
+        if (_Target)
+        {
+            navController.currentNoiseType = _Target.GetComponent<NoiseController>().Type;
+        }
+        else
+        {
+            navController.currentNoiseType = 0;
+        }
     }
 }
+
+
 

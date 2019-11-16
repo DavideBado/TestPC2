@@ -9,8 +9,14 @@ public class EnemyNavController : MonoBehaviour
     public List<Transform> PathTargets = new List<Transform>();
     [HideInInspector]
     public Transform VisibleTarget;
-    //[HideInInspector]
+
+    [HideInInspector]
     public Transform NoiseTarget;
+    [HideInInspector]
+    public NoiseController.NoiseType currentNoiseType;
+    [HideInInspector]
+    public NoiseController.NoiseType prevNoiseType;
+
     [HideInInspector]
     public int visibleTargetArea;
     public NavMeshAgent agent;

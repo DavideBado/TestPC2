@@ -10,7 +10,7 @@ public class NoiseController : MonoBehaviour
     [HideInInspector]
     public NoiseType Type;
     #region DelegatesDef
-    public delegate void NoiseDelegate(float dimensionMod, float duration/*, NoiseType _type*/);
+    public delegate void NoiseDelegate(float dimensionMod, float duration, NoiseType _type);
     #endregion
 
     #region Delegates
@@ -31,10 +31,10 @@ public class NoiseController : MonoBehaviour
         WalkingNoiseDelegate -= MakeNoise;
     }
 
-    private void MakeNoise(float dimensionMod, float duration/*, NoiseType _type*/)
+    private void MakeNoise(float dimensionMod, float duration, NoiseType _type)
     {
         StopCoroutine("NoiseLife");
-        //Type = _type;
+        Type = _type;
         NoiseArea.radius = noiseOriginalRadius;
         NoiseArea.enabled = true;
         NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
@@ -52,6 +52,7 @@ public class NoiseController : MonoBehaviour
 
     public enum NoiseType
     {
+        Undefined,
         Walk,
         Run,
         Object

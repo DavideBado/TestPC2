@@ -36,16 +36,16 @@ public class AlertState : StateMachineBehaviour
         {
             if (m_enemyNavController.NoiseTarget)
             {
-                if (enemyAI.currentNoiseType == NoiseController.NoiseType.Walk)
+                if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Walk)
                 {
                     timer = 2;
                     m_enemyNavController.transform.LookAt(m_enemyNavController.NoiseTarget.transform.position);
                 }
-                else if (enemyAI.currentNoiseType == NoiseController.NoiseType.Run)
+                else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Run)
                 {
                     enemyAI.EmenyHeardRun?.Invoke();
                 }
-                else if (enemyAI.currentNoiseType == NoiseController.NoiseType.Object)
+                else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Object)
                 {
                     enemyAI.EmenyAloneHeardObj?.Invoke();
                     } 

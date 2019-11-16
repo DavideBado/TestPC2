@@ -19,11 +19,6 @@ public class EnemyAI : MonoBehaviour
     public Action EmenyHeardRun;
     public Action EmenyAloneHeardObj;
 
-    [HideInInspector]
-    public NoiseController.NoiseType currentNoiseType;
-    [HideInInspector]
-    public NoiseController.NoiseType prevNoiseType;
-
     private void OnEnable()
     {
         PatrolStateDetectAPlayer += SetAlertTrigger;
