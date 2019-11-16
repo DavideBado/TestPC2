@@ -24,6 +24,14 @@ public class PlayerMovController : MonoBehaviour
 
     Vector3 lastPosition;
 
+    public NoiseController Noise;
+    public float walkDimensionMod;
+    public float runDimensionMod;
+    public float walkDuration;
+    public float runDuration;
+
+    public CameraMovement camera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +63,16 @@ public class PlayerMovController : MonoBehaviour
         Crouch();
         Run();
         DetectHidingPoint();
+
+        if (currentSpeed == walkSpeed && Input.GetAxis("Vertical") != 0)
+        {
+            Noise.WalkingNoiseDelegate(walkDimensionMod, walkDuration);
+        }
+        if (currentSpeed == runningSpeed && Input.GetAxis("Vertical") != 0)
+        {
+            Noise.WalkingNoiseDelegate(runDimensionMod, runDuration);
+        }
+
     }
     void Crouch()
     {

@@ -7,9 +7,12 @@ public class CameraMovement : MonoBehaviour
     public float turnSpeed;
     public Transform player;
 
+    Vector3 originCameraPos;
+    Vector3 currentCameraPos;
+
     void Start()
     {
-        
+        originCameraPos = transform.position;
     }
 
     void LateUpdate()

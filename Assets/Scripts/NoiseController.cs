@@ -31,10 +31,11 @@ public class NoiseController : MonoBehaviour
 
     private void MakeNoise(float dimensionMod, float duration)
     {
+        StopCoroutine("NoiseLife");
         NoiseArea.radius = noiseOriginalRadius;
         NoiseArea.enabled = true;
         NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
-        if (NoiseArea.radius == noiseOriginalRadius * dimensionMod)
+        if (NoiseArea.radius >= noiseOriginalRadius * dimensionMod)
         {
             StartCoroutine("NoiseLife", duration);
         }
