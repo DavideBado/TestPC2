@@ -30,7 +30,8 @@ public class PlayerMovController : MonoBehaviour
     public float walkDuration;
     public float runDuration;
 
-    public CameraMovement camera;
+    public CameraMovement m_camera;
+    //public GameObject forwardPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,14 @@ public class PlayerMovController : MonoBehaviour
 
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
+
+        if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
+        {
+            rb.velocity = m_camera.transform.forward * currentSpeed;
+            /*transform.LookAt(m_camera.transform.forward);
+            forwardPoint.transform.position = m_camera.transform.forward;*/
+
+        }
 
         if (translation > 0)
         {
