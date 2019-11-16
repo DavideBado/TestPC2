@@ -7,8 +7,10 @@ public class NoiseController : MonoBehaviour
     public SphereCollider NoiseArea;
     public float Speed;
     float noiseOriginalRadius;
+    [HideInInspector]
+    public NoiseType Type;
     #region DelegatesDef
-    public delegate void NoiseDelegate(float dimensionMod, float duration);
+    public delegate void NoiseDelegate(float dimensionMod, float duration/*, NoiseType _type*/);
     #endregion
 
     #region Delegates
@@ -29,9 +31,10 @@ public class NoiseController : MonoBehaviour
         WalkingNoiseDelegate -= MakeNoise;
     }
 
-    private void MakeNoise(float dimensionMod, float duration)
+    private void MakeNoise(float dimensionMod, float duration/*, NoiseType _type*/)
     {
         StopCoroutine("NoiseLife");
+        //Type = _type;
         NoiseArea.radius = noiseOriginalRadius;
         NoiseArea.enabled = true;
         NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
@@ -45,5 +48,12 @@ public class NoiseController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         NoiseArea.enabled = false;
+    }
+
+    public enum NoiseType
+    {
+        Walk,
+        Run,
+        Object
     }
 }

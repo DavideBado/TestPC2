@@ -11,30 +11,47 @@ public class EnemyAI : MonoBehaviour
     public Action AlertStateMaxCounter;
     public Action AlertStateMissThePlayer;
     public Action ResearchStateMaxCounter;
+    public Action ResearchStateMissPlayer;
     public Action LookAroundStateEndRot;
     public Action LookAroundDetectThePlayer;
     public Action PursueStateMissThePlayer;
+    public Action EmenyHeardWalk;
+    public Action EmenyHeardRun;
+    public Action EmenyAloneHeardObj;
+
+    [HideInInspector]
+    public NoiseController.NoiseType currentNoiseType;
+    [HideInInspector]
+    public NoiseController.NoiseType prevNoiseType;
 
     private void OnEnable()
     {
         PatrolStateDetectAPlayer += SetAlertTrigger;
         AlertStateMaxCounter += SetResearchTrigger;
-        AlertStateMissThePlayer += SetLookAroundTrigger;
+        AlertStateMissThePlayer += SetPatrolTrigger;
         ResearchStateMaxCounter += SetPursueTrigger;
+        ResearchStateMissPlayer += SetLookAroundTrigger;
         LookAroundStateEndRot += SetPatrolTrigger;
         LookAroundDetectThePlayer += SetResearchTrigger;
         PursueStateMissThePlayer += SetResearchTrigger;
+        EmenyHeardWalk += SetAlertTrigger;
+        EmenyHeardRun += SetResearchTrigger;
+        EmenyAloneHeardObj += SetResearchTrigger;
     }
 
     private void OnDisable()
     {
         PatrolStateDetectAPlayer -= SetAlertTrigger;
         AlertStateMaxCounter -= SetResearchTrigger;
-        AlertStateMissThePlayer -= SetLookAroundTrigger;
+        AlertStateMissThePlayer -= SetPatrolTrigger;
         ResearchStateMaxCounter += SetPursueTrigger;
+        ResearchStateMissPlayer -= SetLookAroundTrigger;
         LookAroundStateEndRot -= SetPatrolTrigger;
         LookAroundDetectThePlayer -= SetResearchTrigger;
         PursueStateMissThePlayer -= SetResearchTrigger;
+        EmenyHeardWalk -= SetAlertTrigger;
+        EmenyHeardRun -= SetResearchTrigger;
+        EmenyAloneHeardObj -= SetResearchTrigger;
     }
 
     private void SetPatrolTrigger()

@@ -548,6 +548,18 @@ Transform:
   m_Father: {fileID: 1953019034}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584497518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5037155644386369808, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1668506356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6de9f97923a0140b42d378ad5d60b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &632936219 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1914245489120665552, guid: 172a8967e32638341adaaa60f757f43f,
@@ -1860,16 +1872,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: AI_FSM
-      value: 
-      objectReference: {fileID: 632936219}
-    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: ResearchTrigger
-      value: ToResearch
-      objectReference: {fileID: 0}
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2050,6 +2052,16 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: AI_FSM
+      value: 
+      objectReference: {fileID: 632936219}
+    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: ResearchTrigger
+      value: ToResearch
+      objectReference: {fileID: 0}
     - target: {fileID: 522016461, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
       propertyPath: PlayerCamera
       value: 
@@ -2223,29 +2235,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 422612152593869108, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 1
+      propertyPath: Noise
+      value: 
+      objectReference: {fileID: 584497518}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: walkDimensionMod
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6227008038359253705, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
-      propertyPath: m_Name
-      value: Noise
+      propertyPath: runDimensionMod
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3532431847247181772, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: walkDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: runDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5037155644386369808, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
       propertyPath: Speed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 422612152593869108, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1696412505, guid: e9d6e25c4a52deb42b4d5fbd05996f08, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227008038359253705, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: m_Name
+      value: Noise
       objectReference: {fileID: 0}
     - target: {fileID: 2971270840785343967, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
@@ -2255,6 +2287,11 @@ PrefabInstance:
     - target: {fileID: 2971270840785343967, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532431847247181772, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

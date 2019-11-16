@@ -31,7 +31,7 @@ public class ResearchState : StateMachineBehaviour
             {
                 agent.destination = m_enemyNavController.NoiseTarget.position;                
             }
-            else if (agent.pathStatus == NavMeshPathStatus.PathComplete) enemyAI.AlertStateMissThePlayer?.Invoke();
+            else if (agent.pathStatus == NavMeshPathStatus.PathComplete) enemyAI.ResearchStateMissPlayer?.Invoke();
         }
     }
 

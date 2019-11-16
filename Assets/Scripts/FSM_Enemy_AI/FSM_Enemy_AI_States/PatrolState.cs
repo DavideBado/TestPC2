@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PatrolState : StateMachineBehaviour
 {
-    EnemyNavController enemyNavController;
+    EnemyNavController m_enemyNavController;
     EnemyAI enemyAI;
     NavMeshAgent agent;
     int destinationIndex;
@@ -13,10 +13,10 @@ public class PatrolState : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyNavController = animator.GetComponent<EnemyNavController>();
+        m_enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
-        enemyNavController.Counter = 0;
+        m_enemyNavController.Counter = 0;
         //agent.speed = enemyNavController.WalkSpeed;
     }
 
@@ -36,25 +36,40 @@ public class PatrolState : StateMachineBehaviour
 
     private void Move()
     {
-        agent.destination = enemyNavController.PathTargets[destinationIndex].position;
+        agent.destination = m_enemyNavController.PathTargets[destinationIndex].position;
         if (agent.remainingDistance != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0) UpdateDestination();
     }
 
     private void UpdateDestination()
     {
         destinationIndex++;
-        if (destinationIndex >= enemyNavController.PathTargets.Count)
+        if (destinationIndex >= m_enemyNavController.PathTargets.Count)
         {
             destinationIndex = 0;
         }
-        agent.SetDestination(agent.destination = enemyNavController.PathTargets[destinationIndex].position);
+        agent.SetDestination(agent.destination = m_enemyNavController.PathTargets[destinationIndex].position);
     }
 
     private void CheckThePlayer()
     {
-        if (enemyNavController.VisibleTarget)
+        if (m_enemyNavController.VisibleTarget)
         {
             enemyAI.PatrolStateDetectAPlayer?.Invoke();
+        }
+        if (m_enemyNavController.NoiseTarget)
+        {
+            if (enemyAI.currentNoiseType == NoiseController.NoiseType.Walk)
+            {
+                enemyAI.EmenyHeardWalk?.Invoke();
+            }
+            else if (enemyAI.currentNoiseType == NoiseController.NoiseType.Run)
+            {
+                enemyAI.EmenyHeardRun?.Invoke();
+            }
+            else if (enemyAI.currentNoiseType == NoiseController.NoiseType.Object)
+            {
+                enemyAI.EmenyAloneHeardObj?.Invoke();
+            }
         }
     }
 }
