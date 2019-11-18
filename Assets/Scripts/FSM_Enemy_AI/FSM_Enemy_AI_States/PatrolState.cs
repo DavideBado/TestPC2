@@ -52,19 +52,17 @@ public class PatrolState : StateMachineBehaviour
 
     private void CheckThePlayer()
     {
+        if (m_enemyNavController.NoiseTarget && m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Run) enemyAI.EmenyHeardRun?.Invoke();
+        else
         if (m_enemyNavController.VisibleTarget)
         {
             enemyAI.PatrolStateDetectAPlayer?.Invoke();
         }
-        if (m_enemyNavController.NoiseTarget)
+        else if (m_enemyNavController.NoiseTarget)
         {
             if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Walk)
             {
                 enemyAI.EmenyHeardWalk?.Invoke();
-            }
-            else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Run)
-            {
-                enemyAI.EmenyHeardRun?.Invoke();
             }
             else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Object)
             {

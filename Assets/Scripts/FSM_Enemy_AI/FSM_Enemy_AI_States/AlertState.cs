@@ -25,6 +25,8 @@ public class AlertState : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (m_enemyNavController.NoiseTarget && m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Run) enemyAI.EmenyHeardRun?.Invoke();
+        else
         if (m_enemyNavController.VisibleTarget)
         {
             timer = 2;
@@ -41,14 +43,10 @@ public class AlertState : StateMachineBehaviour
                     timer = 2;
                     m_enemyNavController.transform.LookAt(m_enemyNavController.NoiseTarget.transform.position);
                 }
-                else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Run)
-                {
-                    enemyAI.EmenyHeardRun?.Invoke();
-                }
                 else if (m_enemyNavController.currentNoiseType == NoiseController.NoiseType.Object)
                 {
                     enemyAI.EmenyAloneHeardObj?.Invoke();
-                    } 
+                }
             }
             else
             {

@@ -22,7 +22,7 @@ public class LookAroundState : StateMachineBehaviour
         rotationStatesIndex = 0;
 
         agent.isStopped = true; 
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.LookAroundMat;
+        //enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.LookAroundMat;
         enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(true);
 
     }
@@ -38,7 +38,7 @@ public class LookAroundState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(false);
-        enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PatrolMat;
+        //enemyNavController.GetComponent<MeshRenderer>().material = enemyNavController.graphicsController.PatrolMat;
         agent.isStopped = false; 
     }
 

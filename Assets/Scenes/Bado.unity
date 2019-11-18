@@ -548,12 +548,6 @@ Transform:
   m_Father: {fileID: 1953019034}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &632936219 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1914245489120665552, guid: 172a8967e32638341adaaa60f757f43f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1618505369}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &632936220 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
@@ -1860,16 +1854,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: AI_FSM
-      value: 
-      objectReference: {fileID: 632936219}
-    - target: {fileID: 8177613512493657892, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: ResearchTrigger
-      value: ToResearch
-      objectReference: {fileID: 0}
     - target: {fileID: 803927139432897161, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1980,88 +1964,6 @@ PrefabInstance:
       propertyPath: PathTargets.Array.data[10]
       value: 
       objectReference: {fileID: 1452751568}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdlePosition.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdlePosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdlePosition.z
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdleTriggerTrapPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdleTriggerTrapPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdleTriggerTrapDim.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdleTriggerTrapDim.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: IdleTriggerTrapDim.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: Counter_Alert_MaxValue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: TimeForLookAround
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: Counter_Research_MaxValue
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: Counter_Pursue_MaxValue
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897167, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 803927139432897167, guid: 172a8967e32638341adaaa60f757f43f,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 522016461, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
-      propertyPath: PlayerCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192369532, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
-      propertyPath: PlayerCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658284352, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
-      propertyPath: PlayerCamera
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172a8967e32638341adaaa60f757f43f, type: 3}
 --- !u!1 &1624563031
