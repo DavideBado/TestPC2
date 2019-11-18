@@ -49,13 +49,13 @@ public class PlayerMovController : MonoBehaviour
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
+        /*if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
         {
             rb.velocity = m_camera.transform.forward * currentSpeed;
-            /*transform.LookAt(m_camera.transform.forward);
-            forwardPoint.transform.position = m_camera.transform.forward;*/
+            transform.LookAt(m_camera.transform.forward);
+            forwardPoint.transform.position = m_camera.transform.forward;
 
-        }
+        }*/
 
         if (translation > 0)
         {
@@ -125,6 +125,7 @@ public class PlayerMovController : MonoBehaviour
                         lastPosition = transform.position;
                         transform.position = hit.transform.position;
                         isHiding = true;
+                        currentSpeed = 0;
                     }
                 }
             }
@@ -132,6 +133,7 @@ public class PlayerMovController : MonoBehaviour
             {
                 transform.position = lastPosition;
                 isHiding = false;
+                currentSpeed = walkSpeed;
             }
         }
     }
