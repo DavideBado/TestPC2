@@ -20,7 +20,8 @@ public class PlayerMovController : MonoBehaviour
 
     bool isCrouching = false;
     bool isRunning = false;
-    bool isHiding = false;
+    [HideInInspector]
+    public bool isHiding = false;
 
     Vector3 lastPosition;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public string PursueTrgger, AlertTrigger, PatrolTrigger, ResearchTrigger, LookAroundTrigger;
+    public string PursueTrgger, AlertTrigger, PatrolTrigger, ResearchTrigger, LookAroundTrigger, CatchHiddenPlayer;
     public Animator AI_FSM;
 
     public Action PatrolStateDetectAPlayer;
@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Action EmenyHeardWalk;
     public Action EmenyHeardRun;
     public Action EmenyAloneHeardObj;
+    public Action EmenySeePlayerInHidingSpot;
 
     private void OnEnable()
     {
@@ -32,6 +33,7 @@ public class EnemyAI : MonoBehaviour
         EmenyHeardWalk += SetAlertTrigger;
         EmenyHeardRun += SetResearchTrigger;
         EmenyAloneHeardObj += SetResearchTrigger;
+        EmenySeePlayerInHidingSpot += SetCatchHiddenPlayerTrigger;
     }
 
     private void OnDisable()
@@ -39,7 +41,7 @@ public class EnemyAI : MonoBehaviour
         PatrolStateDetectAPlayer -= SetAlertTrigger;
         AlertStateMaxCounter -= SetResearchTrigger;
         AlertStateMissThePlayer -= SetPatrolTrigger;
-        ResearchStateMaxCounter += SetPursueTrigger;
+        ResearchStateMaxCounter -= SetPursueTrigger;
         ResearchStateMissPlayer -= SetLookAroundTrigger;
         LookAroundStateEndRot -= SetPatrolTrigger;
         LookAroundDetectThePlayer -= SetResearchTrigger;
@@ -47,6 +49,7 @@ public class EnemyAI : MonoBehaviour
         EmenyHeardWalk -= SetAlertTrigger;
         EmenyHeardRun -= SetResearchTrigger;
         EmenyAloneHeardObj -= SetResearchTrigger;
+        EmenySeePlayerInHidingSpot -= SetCatchHiddenPlayerTrigger;
     }
 
     private void SetPatrolTrigger()
@@ -68,5 +71,9 @@ public class EnemyAI : MonoBehaviour
     private void SetLookAroundTrigger()
     {
         AI_FSM.SetTrigger(LookAroundTrigger);
+    }
+    private void SetCatchHiddenPlayerTrigger()
+    {
+        AI_FSM.SetTrigger(CatchHiddenPlayer);
     }
 }

@@ -7,4 +7,5 @@ public class UIManager : MonoBehaviour
 {
     public Canvas MaiCanvas;
     public TMP_Text PhaseTxt;
+    public GameObject GameOverPanel;
 }

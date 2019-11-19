@@ -647,6 +647,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   VisibleTarget: {fileID: 0}
+  TargetPrevHidingState: 0
+  TargetCurrentHidingState: 0
   NoiseTarget: {fileID: 0}
   currentNoiseType: 0
   prevNoiseType: 0
@@ -752,6 +754,7 @@ MonoBehaviour:
   PatrolTrigger: ToPatrol
   ResearchTrigger: ToResearch
   LookAroundTrigger: ToLookAround
+  CatchHiddenPlayer: ToCatchHiddenPlayer
   AI_FSM: {fileID: 1914245489120665552}
 --- !u!95 &1914245489120665552
 Animator:
