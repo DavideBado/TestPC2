@@ -8,6 +8,7 @@ public class DrawTest : MonoBehaviour
     public GameObject LinerendPrefab;
     LineRenderer lineRenderer;
     Vector3 prevMousePos = new Vector3();
+    
     // Start is called before the first frame update
     void Start()
     {
