@@ -9,6 +9,15 @@ public class EnemyNavController : MonoBehaviour
     public List<Transform> PathTargets = new List<Transform>();
     [HideInInspector]
     public Transform VisibleTarget;
+    [HideInInspector]
+    public Transform OldVisibleTarget;
+
+    [HideInInspector]
+    public bool TargetPrevHidingState = false;
+    [HideInInspector]
+    public bool TargetCurrentHidingState = false;
+    [HideInInspector]
+    public Transform HiddenTarget;
 
     [HideInInspector]
     public Transform NoiseTarget;

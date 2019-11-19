@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     public UIManager UI_Manager;
     public LevelManager Level_Manager;
     public Animator FlowFSM;
-    public string ChangePhaseTrigger;
+    public string ChangePhaseTrigger, GameOverTrigger;
+
+    public Action PlayerCaught;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -20,6 +23,11 @@ public class GameManager : MonoBehaviour
     public void ChangePhase()
     {
         FlowFSM.SetTrigger(ChangePhaseTrigger);
+    }
+
+    private void GameOver()
+    {
+        FlowFSM.SetTrigger(GameOverTrigger);
     }
 }
 

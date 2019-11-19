@@ -5,4 +5,5 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public List<EnemyAI> EnemiesAI = new List<EnemyAI>();
+    public GameObject Level;
 }

@@ -22,12 +22,15 @@ public class ResearchState : StateMachineBehaviour
     {
         if (m_enemyNavController.VisibleTarget)
         {
+            m_enemyNavController.OldVisibleTarget = m_enemyNavController.VisibleTarget;
+
             m_enemyNavController.Counter += m_enemyNavController.ModCounters[m_enemyNavController.visibleTargetArea] * Time.deltaTime;
             agent.destination = m_enemyNavController.VisibleTarget.position;
             if (m_enemyNavController.Counter >= m_enemyNavController.Counter_Research_MaxValue) enemyAI.ResearchStateMaxCounter?.Invoke();
         }
         else
         {
+            CheckHiddenPlayer();
             if (m_enemyNavController.NoiseTarget)
             {
                 agent.destination = m_enemyNavController.NoiseTarget.position;                
@@ -40,6 +43,21 @@ public class ResearchState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         m_enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(false);
+    }
+
+    private void CheckHiddenPlayer()
+    {
+        if (m_enemyNavController.OldVisibleTarget)
+        {
+            m_enemyNavController.TargetPrevHidingState = m_enemyNavController.TargetCurrentHidingState;
+            m_enemyNavController.TargetCurrentHidingState = m_enemyNavController.OldVisibleTarget.GetComponent<PlayerMovController>().isHiding;
+            if (!m_enemyNavController.TargetPrevHidingState && m_enemyNavController.TargetCurrentHidingState)
+            {
+                m_enemyNavController.HiddenTarget = m_enemyNavController.OldVisibleTarget;
+                enemyAI.EmenySeePlayerInHidingSpot?.Invoke();
+            }
+            m_enemyNavController.OldVisibleTarget = m_enemyNavController.VisibleTarget;
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
