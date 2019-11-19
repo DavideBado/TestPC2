@@ -647,8 +647,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   VisibleTarget: {fileID: 0}
+  OldVisibleTarget: {fileID: 0}
   TargetPrevHidingState: 0
   TargetCurrentHidingState: 0
+  HiddenTarget: {fileID: 0}
   NoiseTarget: {fileID: 0}
   currentNoiseType: 0
   prevNoiseType: 0
@@ -686,9 +688,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 3
   viewAngle:
-  - 45
-  - 120
-  - 180
+  - 50
+  - 100
+  - 150
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -716,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531e565a5f647744b16285fd7f8b9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HearingRadius: 20
+  HearingRadius: 10
   targetMask:
     serializedVersion: 2
     m_Bits: 4096
