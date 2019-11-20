@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\TriggerTrap.cs" />
     <Compile Include="Assets\Scripts\UiMapElements.cs" />
     <Compile Include="Assets\testDrag.cs" />
+    <Compile Include="Assets\testFollowMousePos.cs" />
     <None Include="Assets\Shader\RimCelShading.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
