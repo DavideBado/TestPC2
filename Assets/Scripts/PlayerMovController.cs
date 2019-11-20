@@ -60,9 +60,9 @@ public class PlayerMovController : MonoBehaviour
 
         if (translation > 0)
         {
-            if (!Physics.Raycast(transform.position, transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
+            if (!Physics.Raycast(new Vector3(transform.position.x,0.2f, transform.position.z), transform.forward, 1, WallMask)) transform.Translate(0, 0, translation);
         }
-        else if (translation < 0) if (!Physics.Raycast(transform.position, -transform.forward, 0.5f, WallMask))
+        else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 1, WallMask))
             {
                 transform.Translate(0, 0, translation);
                 Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
