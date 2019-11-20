@@ -8,7 +8,8 @@ public class GameOverState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameManager.instance.UI_Manager.GameOverPanel.SetActive(true);
-        GameManager.instance.Level_Manager.Level.SetActive(false);
+        //GameManager.instance.Level_Manager.Level.SetActive(false);
+        Time.timeScale = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,7 +21,8 @@ public class GameOverState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameManager.instance.Level_Manager.Level.SetActive(true);
+        //GameManager.instance.Level_Manager.Level.SetActive(true);
+        Time.timeScale = 1;
         GameManager.instance.UI_Manager.GameOverPanel.SetActive(false);
     }
 

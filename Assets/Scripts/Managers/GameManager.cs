@@ -12,6 +12,16 @@ public class GameManager : MonoBehaviour
 
     public Action PlayerCaught;
 
+    private void OnEnable()
+    {
+        PlayerCaught += GameOver;   
+    }
+
+    private void OnDisable()
+    {
+        PlayerCaught -= GameOver;
+    }
+
     void Awake()
     {
         if (instance == null) instance = this;
