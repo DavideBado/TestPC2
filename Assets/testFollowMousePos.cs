@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Linq;
 
 public class testFollowMousePos : MonoBehaviour
@@ -8,6 +10,11 @@ public class testFollowMousePos : MonoBehaviour
     public Camera MapCamera;
     public Transform MapCanvas;
     public bool pezza = false;
+
+    public GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    public EventSystem m_EventSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +28,15 @@ public class testFollowMousePos : MonoBehaviour
         mousePos.z = 10;
         Vector3 point = MapCamera.ScreenToWorldPoint(mousePos);
         transform.position = point;
-        List<Transform> Images = GetComponentsInChildren<Transform>().ToList();
+        List<Image> Images = GetComponentsInChildren<Image>().ToList();
        
+        if(Images.Count > 0)
+        {
+            foreach (Image _image in Images)
+            {
+                _image.transform.position = transform.position;
+            }
+        }
             if (Input.GetMouseButton(0) && pezza)
             {
                 pezza = false;
@@ -30,12 +44,27 @@ public class testFollowMousePos : MonoBehaviour
        
         if (Input.GetMouseButtonUp(0) && !pezza)
         {
-            if (Images.Count > 0)
-                foreach (Transform _image in Images)
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            m_PointerEventData.position = Input.mousePosition;
+
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            m_Raycaster.Raycast(m_PointerEventData, results);
+
+            m_Raycaster.Raycast(m_PointerEventData, results);
+
+            foreach (RaycastResult result in results)
             {
-                _image.parent = MapCanvas;
+                if (result.gameObject.tag == "Map")
+                {
+                    if (Images.Count > 0)
+                        foreach (Image _image in Images)
+                        {
+                            _image.transform.parent = MapCanvas;
+                        }
+                    pezza = true;
+                } 
             }
-            pezza = true;
         }
     }
 }

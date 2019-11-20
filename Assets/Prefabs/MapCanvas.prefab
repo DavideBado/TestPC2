@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 92371675}
   - component: {fileID: 92371674}
   - component: {fileID: 92371673}
+  - component: {fileID: 92371672}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -127,8 +128,127 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 92371672}
+        m_MethodName: NewIconInstance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &92371672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92371670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e81099532d14f4f9909b9c3d81c93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageToDrag: {fileID: 2489315386760542873, guid: 2a310eaca4aad33469ba7b8cfb8b396e,
+    type: 3}
+  canvas: {fileID: 3539702500109776994}
+  Tomas: {fileID: 467351432}
+--- !u!1 &467351431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467351432}
+  - component: {fileID: 467351435}
+  - component: {fileID: 467351434}
+  - component: {fileID: 467351433}
+  m_Layer: 5
+  m_Name: TestFollow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &467351432
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467351431}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 3539702500109776999}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &467351435
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467351431}
+  m_CullTransparentMesh: 0
+--- !u!114 &467351434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467351431}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &467351433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467351431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a97ea3a702f89b4a8eff42297aa46f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MapCamera: {fileID: 0}
+  MapCanvas: {fileID: 3539702500109776999}
+  pezza: 0
+  m_Raycaster: {fileID: 3539702500109776992}
+  m_EventSystem: {fileID: 0}
 --- !u!1 &663201814
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +463,7 @@ GameObject:
   - component: {fileID: 3539702498494794529}
   - component: {fileID: 3539702498494794528}
   - component: {fileID: 3539702498494794535}
+  - component: {fileID: 934153362}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -458,8 +579,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 934153362}
+        m_MethodName: NewIconInstance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &934153362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539702498494794533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e81099532d14f4f9909b9c3d81c93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageToDrag: {fileID: 5299204686024935755, guid: ca778e6910b0e6a4e8f38c173be82afe,
+    type: 3}
+  canvas: {fileID: 3539702500109776994}
+  Tomas: {fileID: 467351432}
 --- !u!1 &3539702498915016095
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +620,7 @@ GameObject:
   - component: {fileID: 3539702498915016091}
   - component: {fileID: 3539702498915016090}
   - component: {fileID: 3539702498915016089}
+  - component: {fileID: 2123823594}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -587,8 +736,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2123823594}
+        m_MethodName: NewIconInstance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2123823594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539702498915016095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e81099532d14f4f9909b9c3d81c93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageToDrag: {fileID: 6424066751682110648, guid: f4f02679efa3dd3459c1607e8aad51cc,
+    type: 3}
+  canvas: {fileID: 3539702500109776994}
+  Tomas: {fileID: 467351432}
 --- !u!1 &3539702498941075962
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +992,7 @@ GameObject:
   - component: {fileID: 3539702499503753213}
   m_Layer: 5
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -912,6 +1088,7 @@ RectTransform:
   - {fileID: 3539702498915016088}
   - {fileID: 92371671}
   - {fileID: 3539702498941075963}
+  - {fileID: 467351432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

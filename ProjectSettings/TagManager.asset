@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HidingSpot
   - Wall
+  - Map
   layers:
   - Default
   - TransparentFX

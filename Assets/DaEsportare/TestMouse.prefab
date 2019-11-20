@@ -46,3 +46,5 @@ MonoBehaviour:
   MapCamera: {fileID: 0}
   LinerendPrefab: {fileID: 1748252133961359324, guid: 26296b36ef8827f4d8f25c6e82dcd65a,
     type: 3}
+  m_Raycaster: {fileID: 0}
+  m_EventSystem: {fileID: 0}
