@@ -763,3 +763,7 @@ C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\UnityEngine.UNETModule.
 =======
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\UnityEngine.UNETModule.xml
 >>>>>>> 4703215ff6fbc6ccabde2001b2be6b677985b709
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb

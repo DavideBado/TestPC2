@@ -17,8 +17,8 @@ public class PlayerMovController : MonoBehaviour
 
     Collision Wall;
     public LayerMask WallMask;
-
-    bool isCrouching = false;
+    [HideInInspector]
+    public bool isCrouching = false;
     bool isRunning = false;
     [HideInInspector]
     public bool isHiding = false;
@@ -31,6 +31,8 @@ public class PlayerMovController : MonoBehaviour
     public float walkDuration;
     public float runDuration;
 
+    [HideInInspector]
+    public float GraphSpeed;
     public CameraMovement m_camera;
     //public GameObject forwardPoint;
 
@@ -47,6 +49,8 @@ public class PlayerMovController : MonoBehaviour
         float translation = Input.GetAxis("Vertical") * currentSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
 
+        GraphSpeed = translation;
+
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
@@ -60,9 +64,9 @@ public class PlayerMovController : MonoBehaviour
 
         if (translation > 0)
         {
-            if (!Physics.Raycast(new Vector3(transform.position.x,0.2f, transform.position.z), transform.forward, 1, WallMask)) transform.Translate(0, 0, translation);
+            if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
         }
-        else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 1, WallMask))
+        else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
             {
                 transform.Translate(0, 0, translation);
                 Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
@@ -103,11 +107,13 @@ public class PlayerMovController : MonoBehaviour
         if (Input.GetKeyDown(run) && isRunning == false)
         {
             currentSpeed = runningSpeed;
+            isCrouching = false;
             isRunning = true;
         }
         else if (Input.GetKeyDown(run) && isRunning == true)
         {
             currentSpeed = walkSpeed;
+            isCrouching = false;
             isRunning = false;
         }
     }
