@@ -24,7 +24,11 @@ public class PatrolState : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        CheckThePlayer();
+        if (GameManager.instance.OnExePhase)
+        {
+
+            CheckThePlayer(); 
+        }
         Move();
     }
 
@@ -37,8 +41,16 @@ public class PatrolState : StateMachineBehaviour
 
     private void Move()
     {
-        agent.destination = m_enemyNavController.PathTargets[destinationIndex].position;
-        if (agent.remainingDistance != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0) UpdateDestination();
+        if (destinationIndex < m_enemyNavController.PathTargets.Count && destinationIndex >= 0)
+        {
+            if (m_enemyNavController.PathTargets[destinationIndex])
+            {
+
+                agent.destination = m_enemyNavController.PathTargets[destinationIndex].position;
+                if (agent.remainingDistance != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0) UpdateDestination();
+
+            } 
+        }
     }
 
     private void UpdateDestination()

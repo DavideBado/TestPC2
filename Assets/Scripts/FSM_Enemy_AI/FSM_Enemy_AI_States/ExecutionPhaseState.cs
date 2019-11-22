@@ -13,8 +13,19 @@ public class ExecutionPhaseState : StateMachineBehaviour
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
         GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = true;
+        GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
+        GameManager.instance.Player.Noise.GetComponent<NoiseController>().Reset?.Invoke();
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
+            EnemyNavController enemyController = _enemyAI.GetComponent<EnemyNavController>();
+            enemyController.VisibleTarget = null;
+            enemyController.OldVisibleTarget = null;
+            enemyController.TargetPrevHidingState = false;
+            enemyController.TargetCurrentHidingState = false;
+            enemyController.HiddenTarget = null;
+            enemyController.NoiseTarget = null;
+            enemyController.currentNoiseType = 0;
+            enemyController.prevNoiseType = 0;
             _enemyAI.AI_FSM.SetTrigger("ChangePhase");
             _enemyAI.AI_FSM.SetTrigger("ToExePhase");
             _enemyAI.GetComponent<CapsuleCollider>().enabled = true;

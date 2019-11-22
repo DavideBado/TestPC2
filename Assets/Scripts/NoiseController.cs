@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class NoiseController : MonoBehaviour
@@ -17,6 +17,10 @@ public class NoiseController : MonoBehaviour
     public NoiseDelegate WalkingNoiseDelegate;
     #endregion
 
+    #region Actions
+    public Action Reset;
+    #endregion
+
     private void Start()
     {
         noiseOriginalRadius = NoiseArea.radius;
@@ -24,11 +28,13 @@ public class NoiseController : MonoBehaviour
     private void OnEnable()
     {
         WalkingNoiseDelegate += MakeNoise;
+        Reset += ResetNoise;
     }
 
     private void OnDisable()
     {
         WalkingNoiseDelegate -= MakeNoise;
+        Reset -= ResetNoise;
     }
 
     private void MakeNoise(float dimensionMod, float duration, NoiseType _type)
@@ -42,6 +48,13 @@ public class NoiseController : MonoBehaviour
         {
             StartCoroutine("NoiseLife", duration);
         }
+    }
+
+    void ResetNoise()
+    {
+        StopCoroutine("NoiseLife");
+        NoiseArea.radius = noiseOriginalRadius;
+        Type = 0;
     }
 
     IEnumerator NoiseLife(float duration)
