@@ -23,6 +23,10 @@ public class MenuSelector : MonoBehaviour
             //Mouse.SetActive(!Mouse.activeSelf);
             MainCamera.gameObject.SetActive(!MainCamera.gameObject.activeSelf);
             MapCamera.gameObject.SetActive(!MapCamera.gameObject.activeSelf);
+            foreach (EnemyAI _enemy in GameManager.instance.Level_Manager.EnemiesAI)
+            {
+                _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);
+            }
             Level.SetActive(!Level.activeSelf);
         }
         if (Input.GetKeyDown(OpenPin))

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public string PursueTrgger, AlertTrigger, PatrolTrigger, ResearchTrigger, LookAroundTrigger, CatchHiddenPlayer;
+    public string PursueTrgger, AlertTrigger, PatrolTrigger, ResearchTrigger, LookAroundTrigger, CatchHiddenPlayerTrigger;
+    public string PauseTrigger;
+    string BackTrigger = "";
+    [HideInInspector]
+    public string CurrentTrigger = "";
     public Animator AI_FSM;
 
+    #region Actions
     public Action PatrolStateDetectAPlayer;
     public Action AlertStateMaxCounter;
     public Action AlertStateMissThePlayer;
@@ -19,9 +24,19 @@ public class EnemyAI : MonoBehaviour
     public Action EmenyHeardRun;
     public Action EmenyAloneHeardObj;
     public Action EmenySeePlayerInHidingSpot;
+    #endregion
+
+    #region DelegatesDef
+    public delegate void PauseDelegateDef(bool _inPause);
+    #endregion
+
+    #region Delegates
+    public PauseDelegateDef PauseDelegate;
+    #endregion
 
     private void OnEnable()
     {
+        PauseDelegate += SetPauseTrigger;
         PatrolStateDetectAPlayer += SetAlertTrigger;
         AlertStateMaxCounter += SetResearchTrigger;
         AlertStateMissThePlayer += SetPatrolTrigger;
@@ -38,6 +53,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDisable()
     {
+        PauseDelegate -= SetPauseTrigger;
         PatrolStateDetectAPlayer -= SetAlertTrigger;
         AlertStateMaxCounter -= SetResearchTrigger;
         AlertStateMissThePlayer -= SetPatrolTrigger;
@@ -54,26 +70,62 @@ public class EnemyAI : MonoBehaviour
 
     private void SetPatrolTrigger()
     {
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = PatrolTrigger;
+
         AI_FSM.SetTrigger(PatrolTrigger);
     }
     private void SetAlertTrigger()
     {
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = AlertTrigger;
+
         AI_FSM.SetTrigger(AlertTrigger);
     }
     private void SetPursueTrigger()
     {
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = PursueTrgger;
+
         AI_FSM.SetTrigger(PursueTrgger);
     }
     private void SetResearchTrigger()
     {
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = ResearchTrigger;
+
         AI_FSM.SetTrigger(ResearchTrigger);
     }
     private void SetLookAroundTrigger()
     {
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = LookAroundTrigger;
+
         AI_FSM.SetTrigger(LookAroundTrigger);
     }
     private void SetCatchHiddenPlayerTrigger()
     {
-        AI_FSM.SetTrigger(CatchHiddenPlayer);
+        BackTrigger = CurrentTrigger;
+        CurrentTrigger = CatchHiddenPlayerTrigger;
+
+        AI_FSM.SetTrigger(CatchHiddenPlayerTrigger);
+    }
+
+    string pezzaBackTrigger = "";
+    private void SetPauseTrigger(bool _inPause)
+    {
+        if (_inPause)
+        {
+            pezzaBackTrigger = BackTrigger;
+            BackTrigger = CurrentTrigger;
+            CurrentTrigger = PauseTrigger;
+        }
+        else
+        {
+            CurrentTrigger = BackTrigger;
+            BackTrigger = pezzaBackTrigger;
+        }
+
+        AI_FSM.SetTrigger(CurrentTrigger);
     }
 }

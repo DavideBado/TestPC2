@@ -65,6 +65,7 @@
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\Editors\HearingEditor.cs" />
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
+    <Compile Include="Assets\EnemyPauseState.cs" />
     <Compile Include="Assets\GameOverState.cs" />
     <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />

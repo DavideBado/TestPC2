@@ -18,6 +18,8 @@ public class PatrolState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = m_enemyNavController.WalkSpeed;
         m_enemyNavController.Counter = 0;
+
+        enemyAI.CurrentTrigger = enemyAI.PatrolTrigger;
         //agent.speed = enemyNavController.WalkSpeed;
     }
 
