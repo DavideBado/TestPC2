@@ -6,6 +6,6 @@ public class Goal : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.GetComponent<PlayerMovController>()) GameManager.instance.PlayerGoal?.Invoke();
+        if(GameManager.instance.OnExePhase) if(collision.transform.GetComponent<PlayerMovController>()) GameManager.instance.PlayerGoal?.Invoke();
     }
 }

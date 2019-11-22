@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Action PlayerCaught;
     public Action PlayerGoal;
 
+    [HideInInspector]
+    public bool OnExePhase = false;
+
     private void OnEnable()
     {
         PlayerCaught += GameOver;

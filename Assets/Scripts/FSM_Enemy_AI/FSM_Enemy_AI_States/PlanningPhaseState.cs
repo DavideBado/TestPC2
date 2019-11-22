@@ -7,6 +7,7 @@ public class PlanningPhaseState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.instance.OnExePhase = false;
         GameManager.instance.UI_Manager.PhaseTxt.text = "PlanningPhase";
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
