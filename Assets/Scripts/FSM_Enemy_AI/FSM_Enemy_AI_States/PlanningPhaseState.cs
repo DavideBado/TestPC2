@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlanningPhaseState : StateMachineBehaviour
 {
@@ -11,10 +12,12 @@ public class PlanningPhaseState : StateMachineBehaviour
         GameManager.instance.UI_Manager.PhaseTxt.text = "PlanningPhase";
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
+        GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = false;
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
             _enemyAI.AI_FSM.SetTrigger("ChangePhase");
             _enemyAI.AI_FSM.SetTrigger("ToPlanPhase");
+            _enemyAI.GetComponent<CapsuleCollider>().enabled = false;
         }
     }
 
