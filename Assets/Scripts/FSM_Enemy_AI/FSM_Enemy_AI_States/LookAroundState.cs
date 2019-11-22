@@ -18,6 +18,8 @@ public class LookAroundState : StateMachineBehaviour
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
 
+        agent.speed = m_enemyNavController.WalkSpeed;
+
         SetupRotDirections();
         rotationStatesIndex = 0;
 

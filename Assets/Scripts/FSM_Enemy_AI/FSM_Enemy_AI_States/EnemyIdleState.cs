@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyIdleState : StateMachineBehaviour
 {
-    EnemyNavController enemyNavController;
+    EnemyNavController m_enemyNavController;
     EnemyAI enemyAI;
     NavMeshAgent agent;
     GameObject TriggerTrap;
@@ -13,14 +13,15 @@ public class EnemyIdleState : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemyNavController = animator.GetComponent<EnemyNavController>();
+        m_enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
 
+        agent.speed = m_enemyNavController.WalkSpeed;
         agent.isStopped = true;
-        enemyNavController.transform.position = enemyNavController.IdlePosition;
+        m_enemyNavController.transform.position = m_enemyNavController.IdlePosition;
 
-        if(!_FieldOfView)_FieldOfView = enemyNavController.GetComponent<FieldOfView>();
+        if(!_FieldOfView)_FieldOfView = m_enemyNavController.GetComponent<FieldOfView>();
         SetupMeshFilters(_FieldOfView, false);
         _FieldOfView.enabled = false;
 
@@ -55,10 +56,10 @@ public class EnemyIdleState : StateMachineBehaviour
     {
         TriggerTrap = new GameObject();
 
-        TriggerTrap.transform.position = enemyNavController.IdleTriggerTrapPosition;
+        TriggerTrap.transform.position = m_enemyNavController.IdleTriggerTrapPosition;
         BoxCollider _TriggerTrapCollider = TriggerTrap.AddComponent<BoxCollider>() as BoxCollider;
         _TriggerTrapCollider.isTrigger = true;
-        _TriggerTrapCollider.size = enemyNavController.IdleTriggerTrapDim;
+        _TriggerTrapCollider.size = m_enemyNavController.IdleTriggerTrapDim;
         TriggerTrap _TriggerTrapScript = TriggerTrap.AddComponent<TriggerTrap>() as TriggerTrap;
         _TriggerTrapScript.enabled = true;
         _TriggerTrapScript.m_EnemyAI = enemyAI;

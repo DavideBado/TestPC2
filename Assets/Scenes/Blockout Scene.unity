@@ -36216,6 +36216,11 @@ PrefabInstance:
       propertyPath: IdlePosition.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: WalkSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5692220613252118501, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_RootOrder
@@ -49757,6 +49762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ResetPosition.z
       value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9d6e25c4a52deb42b4d5fbd05996f08, type: 3}
