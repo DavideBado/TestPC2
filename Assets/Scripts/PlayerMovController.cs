@@ -121,6 +121,7 @@ public class PlayerMovController : MonoBehaviour
         }
     }
 
+    float pezzahidingSpeed = 0;
     private void DetectHidingPoint()
     {
         if (Input.GetKeyDown(interact))
@@ -136,17 +137,17 @@ public class PlayerMovController : MonoBehaviour
                         lastPosition = transform.position;
                         transform.position = hit.transform.position;
                         isHiding = true;
+                        pezzahidingSpeed = currentSpeed;
                         currentSpeed = 0;
                     }
                 }
             }
             else if (isHiding == true)
             {
-
                 transform.position = lastPosition;
                 PezzaLampoHidingPoint(true);
                 isHiding = false;
-                currentSpeed = walkSpeed;
+                currentSpeed = pezzahidingSpeed;
             }
         }
     }

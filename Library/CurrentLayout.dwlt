@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 12
+  controlID: 57
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 13
+  controlID: 58
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 14
+  controlID: 59
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -401,19 +401,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GameDev\GitKraken\TestPC2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 111}
-    m_SelectedIDs: 880d0000
-    m_LastClickedID: 3464
+    m_SelectedIDs: bc100000
+    m_LastClickedID: 4284
     m_ExpandedIDs: 00000000060b0000ba0f0000e80f000054100000a4100000bc10000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -560,10 +560,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 456}
-      m_SelectedIDs: 10edffff
-      m_LastClickedID: -4848
-      m_ExpandedIDs: f2e8ffff3eedffffa0f2ffffd6fbffffa0140000c61b0000
+      scrollPos: {x: 0, y: 56}
+      m_SelectedIDs: a0eeffff
+      m_LastClickedID: -4448
+      m_ExpandedIDs: a0eeffffd6fbffffa0140000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
