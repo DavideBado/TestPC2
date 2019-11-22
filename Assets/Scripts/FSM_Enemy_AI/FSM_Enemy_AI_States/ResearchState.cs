@@ -14,7 +14,7 @@ public class ResearchState : StateMachineBehaviour
         m_enemyNavController = animator.GetComponent<EnemyNavController>();
         enemyAI = animator.GetComponent<EnemyAI>();
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.speed = m_enemyNavController.WalkSpeed;
+        agent.speed = m_enemyNavController.ResearchSpeed;
         m_enemyNavController.graphicsController.LookAroundAnimGObj.SetActive(true);
     }
 

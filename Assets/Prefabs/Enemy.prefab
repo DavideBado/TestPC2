@@ -754,6 +754,7 @@ MonoBehaviour:
   Counter_Research_MaxValue: 3
   Counter_Pursue_MaxValue: 1.5
   WalkSpeed: 1.8
+  ResearchSpeed: 1.8
   RunSpeed: 7
   Counter: 0
   IdlePosition: {x: 8, y: 1, z: 9}

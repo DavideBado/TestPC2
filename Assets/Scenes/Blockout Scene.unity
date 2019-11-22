@@ -36354,6 +36354,11 @@ PrefabInstance:
       propertyPath: WalkSpeed
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 803927139432897172, guid: 172a8967e32638341adaaa60f757f43f,
+        type: 3}
+      propertyPath: ResearchSpeed
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5692220613252118501, guid: 172a8967e32638341adaaa60f757f43f,
         type: 3}
       propertyPath: m_RootOrder
@@ -49922,6 +49927,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: ResetPosition.x
+      value: 6.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: ResetPosition.y
+      value: 0.731
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: ResetPosition.z
+      value: 0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: WallMask.m_Bits
+      value: 8704
+      objectReference: {fileID: 0}
     - target: {fileID: 2971270840785343963, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49976,31 +50006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-        type: 3}
-      propertyPath: ResetPosition.x
-      value: 6.118
-      objectReference: {fileID: 0}
-    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-        type: 3}
-      propertyPath: ResetPosition.y
-      value: 0.731
-      objectReference: {fileID: 0}
-    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-        type: 3}
-      propertyPath: ResetPosition.z
-      value: 0.041
-      objectReference: {fileID: 0}
-    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-        type: 3}
-      propertyPath: walkSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-        type: 3}
-      propertyPath: WallMask.m_Bits
-      value: 8704
       objectReference: {fileID: 0}
     - target: {fileID: 2971270840785343967, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}

@@ -50,6 +50,7 @@ public class EnemyNavController : MonoBehaviour
     public float Counter_Pursue_MaxValue;
 
     public float WalkSpeed;
+    public float ResearchSpeed;
     public float RunSpeed;
 
     [HideInInspector]
