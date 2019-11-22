@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovController : MonoBehaviour
 {
@@ -129,6 +130,7 @@ public class PlayerMovController : MonoBehaviour
                 {
                     if (hit.collider.gameObject.tag == "HidingSpot")
                     {
+                        PezzaLampoHidingPoint(false);
                         lastPosition = transform.position;
                         transform.position = hit.transform.position;
                         isHiding = true;
@@ -138,7 +140,9 @@ public class PlayerMovController : MonoBehaviour
             }
             else if (isHiding == true)
             {
+
                 transform.position = lastPosition;
+                PezzaLampoHidingPoint(true);
                 isHiding = false;
                 currentSpeed = walkSpeed;
             }
@@ -159,5 +163,18 @@ public class PlayerMovController : MonoBehaviour
         {
             Wall = null;
         }
+    }
+
+    public GameObject Graphics;
+    public CapsuleCollider Collider;
+    public NavMeshObstacle ObstacleNav;
+
+
+    private void PezzaLampoHidingPoint(bool x)
+    {
+        rb.useGravity = x;
+        Graphics.SetActive(x);
+        Collider.enabled = x;
+        ObstacleNav.enabled = x;
     }
 }
