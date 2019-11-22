@@ -393,6 +393,7 @@ MonoBehaviour:
   runDuration: 2
   GraphSpeed: 0
   m_camera: {fileID: 1133743100}
+  ResetPosition: {x: 0, y: 0, z: 0}
   Graphics: {fileID: 636017491}
   Collider: {fileID: 2971270840785343960}
   ObstacleNav: {fileID: 208039226784939418}
@@ -419,14 +420,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2971270840785343963}
     m_Modifications:
-    - target: {fileID: 9500000, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e8cc324825144104292b04f10ea48a97, type: 2}
     - target: {fileID: 100084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_Name
       value: SK_Player_Walking_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e8cc324825144104292b04f10ea48a97, type: 2}
     - target: {fileID: 400084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -646,7 +647,7 @@ PrefabInstance:
     - target: {fileID: 2885326239926359771, guid: 04cd64c9f0e63de4bbb7cfc276cc7fe7,
         type: 3}
       propertyPath: Speed
-      value: 100
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 4289652681222108418, guid: 04cd64c9f0e63de4bbb7cfc276cc7fe7,
         type: 3}

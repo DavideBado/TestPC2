@@ -753,8 +753,8 @@ MonoBehaviour:
   Counter_Alert_MaxValue: 1
   Counter_Research_MaxValue: 3
   Counter_Pursue_MaxValue: 1.5
-  WalkSpeed: 3.5
-  RunSpeed: 8
+  WalkSpeed: 1.8
+  RunSpeed: 7
   Counter: 0
   IdlePosition: {x: 8, y: 1, z: 9}
   IdleTriggerTrapPosition: {x: 7, y: 1, z: 0}
@@ -773,9 +773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 3
   viewAngle:
-  - 50
-  - 100
-  - 150
+  - 40
+  - 80
+  - 110
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -1045,7 +1045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7225571646243218806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5692220613252118501}
