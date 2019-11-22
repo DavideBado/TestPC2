@@ -14,7 +14,8 @@ public class ExecutionPhaseState : StateMachineBehaviour
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
         GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = true;
         GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
-        GameManager.instance.Player.Noise.GetComponent<NoiseController>().Reset?.Invoke();
+        GameManager.instance.Player.isCrouching = false;
+       GameManager.instance.Player.Noise.GetComponent<NoiseController>().Reset?.Invoke();
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
             EnemyNavController enemyController = _enemyAI.GetComponent<EnemyNavController>();
@@ -30,6 +31,7 @@ public class ExecutionPhaseState : StateMachineBehaviour
             _enemyAI.AI_FSM.SetTrigger("ToExePhase");
             _enemyAI.GetComponent<CapsuleCollider>().enabled = true;
         }
+        GameManager.instance.UI_Manager.ChangePhaseButton.SetActive(false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

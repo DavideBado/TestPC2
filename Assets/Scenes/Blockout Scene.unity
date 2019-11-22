@@ -68963,18 +68963,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 984243779}
-    - target: {fileID: 1073670344, guid: e848591130d559e45969f1b9d7e97391, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1073670344, guid: e848591130d559e45969f1b9d7e97391, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1073670344, guid: e848591130d559e45969f1b9d7e97391, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e848591130d559e45969f1b9d7e97391, type: 3}
 --- !u!1001 &1919389864

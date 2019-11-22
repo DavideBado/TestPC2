@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -285,6 +285,7 @@ MonoBehaviour:
   ChangePhaseTrigger: ChangePhase
   GameOverTrigger: GameOver
   WinTrigger: Win
+  OnExePhase: 0
 --- !u!95 &863109629215031911
 Animator:
   serializedVersion: 3
@@ -737,6 +738,7 @@ MonoBehaviour:
   PhaseTxt: {fileID: 863109631104347147}
   GameOverPanel: {fileID: 863109629782252755}
   Win: {fileID: 1639189594}
+  ChangePhaseButton: {fileID: 863109629368664276}
 --- !u!1 &863109629990081741
 GameObject:
   m_ObjectHideFlags: 0

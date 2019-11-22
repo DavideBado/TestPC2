@@ -13,6 +13,8 @@ public class PlanningPhaseState : StateMachineBehaviour
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
         GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = false;
+        GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
+        GameManager.instance.Player.isCrouching = false;
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
             _enemyAI.AI_FSM.SetTrigger("ChangePhase");
