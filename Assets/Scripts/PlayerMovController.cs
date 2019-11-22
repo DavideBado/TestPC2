@@ -39,6 +39,7 @@ public class PlayerMovController : MonoBehaviour
 
     public Vector3 ResetPosition;
 
+    bool InputActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,45 +50,48 @@ public class PlayerMovController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float translation = Input.GetAxis("Vertical") * currentSpeed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-
-        GraphSpeed = translation;
-
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
-
-        /*if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
+        if (InputActive)
         {
-            rb.velocity = m_camera.transform.forward * currentSpeed;
-            transform.LookAt(m_camera.transform.forward);
-            forwardPoint.transform.position = m_camera.transform.forward;
+            float translation = Input.GetAxis("Vertical") * currentSpeed;
+            float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
 
-        }*/
+            GraphSpeed = translation;
 
-        if (translation > 0)
-        {
-            if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
-        }
-        else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
+            translation *= Time.deltaTime;
+            rotation *= Time.deltaTime;
+
+            /*if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
             {
-                transform.Translate(0, 0, translation);
-                Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+                rb.velocity = m_camera.transform.forward * currentSpeed;
+                transform.LookAt(m_camera.transform.forward);
+                forwardPoint.transform.position = m_camera.transform.forward;
+
+            }*/
+
+            if (translation > 0)
+            {
+                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
             }
+            else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
+                {
+                    transform.Translate(0, 0, translation);
+                    Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+                }
 
-        transform.Rotate(0, rotation, 0);
+            transform.Rotate(0, rotation, 0);
 
-        Crouch();
-        Run();
-        DetectHidingPoint();
+            Crouch();
+            Run();
+            DetectHidingPoint();
 
-        if (currentSpeed == walkSpeed && Input.GetAxis("Vertical") != 0)
-        {
-            Noise.WalkingNoiseDelegate(walkDimensionMod, walkDuration, NoiseController.NoiseType.Walk);
-        }
-        if (currentSpeed == runningSpeed && Input.GetAxis("Vertical") != 0)
-        {
-            Noise.WalkingNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
+            if (currentSpeed == walkSpeed && Input.GetAxis("Vertical") != 0)
+            {
+                Noise.WalkingNoiseDelegate(walkDimensionMod, walkDuration, NoiseController.NoiseType.Walk);
+            }
+            if (currentSpeed == runningSpeed && Input.GetAxis("Vertical") != 0)
+            {
+                Noise.WalkingNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
+            } 
         }
 
     }
@@ -175,9 +179,15 @@ public class PlayerMovController : MonoBehaviour
 
     private void PezzaLampoHidingPoint(bool x)
     {
-        rb.useGravity = x;
+    //    rb.useGravity = x;
         Graphics.SetActive(x);
         Collider.enabled = x;
-        ObstacleNav.enabled = x;
+        if(GameManager.instance.OnExePhase) ObstacleNav.enabled = x;
+    }
+
+    public void TurnOnOffThePlayer(bool x)
+    {
+        Graphics.SetActive(x);
+        InputActive = x;
     }
 }

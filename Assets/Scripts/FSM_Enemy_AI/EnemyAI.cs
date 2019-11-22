@@ -111,19 +111,17 @@ public class EnemyAI : MonoBehaviour
         AI_FSM.SetTrigger(CatchHiddenPlayerTrigger);
     }
 
-    string pezzaBackTrigger = "";
     private void SetPauseTrigger(bool _inPause)
     {
         if (_inPause)
         {
-            pezzaBackTrigger = BackTrigger;
             BackTrigger = CurrentTrigger;
             CurrentTrigger = PauseTrigger;
         }
         else
         {
             CurrentTrigger = BackTrigger;
-            BackTrigger = pezzaBackTrigger;
+            BackTrigger = PauseTrigger;
         }
 
         AI_FSM.SetTrigger(CurrentTrigger);

@@ -1806,12 +1806,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a97967f306ac0c9439bec0ed90d20e46, type: 3}
---- !u!4 &49961875 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2971270840785343963, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
-    type: 3}
-  m_PrefabInstance: {fileID: 1425783082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &54316621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8357,7 +8351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9042, z: 1}
   m_Children: []
   m_Father: {fileID: 371363750}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &251756298
 MonoBehaviour:
@@ -12247,11 +12241,10 @@ Transform:
   - {fileID: 260716579}
   - {fileID: 1556774324}
   - {fileID: 1665978004}
-  - {fileID: 49961875}
   - {fileID: 468998222}
   - {fileID: 251756297}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &372882793 stripped
 Transform:
@@ -15507,7 +15500,7 @@ Transform:
   - {fileID: 1529170930}
   - {fileID: 1118034369}
   m_Father: {fileID: 371363750}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470678729 stripped
 GameObject:
@@ -49922,7 +49915,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 371363750}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2971270840785343965, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
@@ -49967,7 +49960,7 @@ PrefabInstance:
     - target: {fileID: 2971270840785343963, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2971270840785343963, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
@@ -50008,6 +50001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: WallMask.m_Bits
       value: 8704
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343967, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9d6e25c4a52deb42b4d5fbd05996f08, type: 3}

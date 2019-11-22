@@ -27,6 +27,7 @@ public class MenuSelector : MonoBehaviour
             {
                 _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);
             }
+            GameManager.instance.Player.TurnOnOffThePlayer(!GameManager.instance.Player.Graphics.activeSelf);
             Level.SetActive(!Level.activeSelf);
         }
         if (Input.GetKeyDown(OpenPin))
