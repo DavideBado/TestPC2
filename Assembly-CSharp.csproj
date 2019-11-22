@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\FSM_Enemy_AI\FSM_Enemy_AI_States\ResearchState.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
     <Compile Include="Assets\Scripts\HearingController.cs" />
+    <Compile Include="Assets\Scripts\LoaderTemporaneo.cs" />
     <Compile Include="Assets\Scripts\LockRotation.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
