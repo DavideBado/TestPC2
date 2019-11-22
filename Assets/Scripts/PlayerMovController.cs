@@ -37,6 +37,8 @@ public class PlayerMovController : MonoBehaviour
     public CameraMovement m_camera;
     //public GameObject forwardPoint;
 
+    public Vector3 ResetPosition;
+
     // Start is called before the first frame update
     void Start()
     {

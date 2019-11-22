@@ -66,6 +66,7 @@
     <Compile Include="Assets\Editors\HearingEditor.cs" />
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
     <Compile Include="Assets\GameOverState.cs" />
+    <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\DrawTest.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scripts\UiMapElements.cs" />
     <Compile Include="Assets\testDrag.cs" />
     <Compile Include="Assets\testFollowMousePos.cs" />
+    <Compile Include="Assets\WinState.cs" />
     <None Include="Assets\Shader\RimCelShading.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

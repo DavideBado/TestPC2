@@ -8,18 +8,22 @@ public class GameManager : MonoBehaviour
     public UIManager UI_Manager;
     public LevelManager Level_Manager;
     public Animator FlowFSM;
-    public string ChangePhaseTrigger, GameOverTrigger;
+    public PlayerMovController Player;
+    public string ChangePhaseTrigger, GameOverTrigger, WinTrigger;
 
     public Action PlayerCaught;
+    public Action PlayerGoal;
 
     private void OnEnable()
     {
-        PlayerCaught += GameOver;   
+        PlayerCaught += GameOver;
+        PlayerGoal += Win;   
     }
 
     private void OnDisable()
     {
         PlayerCaught -= GameOver;
+        PlayerGoal -= Win;   
     }
 
     void Awake()
@@ -38,6 +42,11 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         FlowFSM.SetTrigger(GameOverTrigger);
+    }
+
+    private void Win()
+    {
+        FlowFSM.SetTrigger(WinTrigger);
     }
 }
 
