@@ -17,6 +17,9 @@ public class ExecutionPhaseState : StateMachineBehaviour
         GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
         GameManager.instance.Player.isCrouching = false;
        GameManager.instance.Player.Noise.GetComponent<NoiseController>().Reset?.Invoke();
+        GameManager.instance.Player.Graphics.SetActive(true);
+              GameManager.instance.Player.Collider.enabled = true;
+              GameManager.instance.Player.ObstacleNav.enabled = true;
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
             EnemyNavController enemyController = _enemyAI.GetComponent<EnemyNavController>();

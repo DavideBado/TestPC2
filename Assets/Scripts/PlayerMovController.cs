@@ -177,7 +177,7 @@ public class PlayerMovController : MonoBehaviour
     public NavMeshObstacle ObstacleNav;
 
 
-    private void PezzaLampoHidingPoint(bool x)
+    public void PezzaLampoHidingPoint(bool x)
     {
     //    rb.useGravity = x;
         Graphics.SetActive(x);
