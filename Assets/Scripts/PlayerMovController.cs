@@ -97,12 +97,12 @@ public class PlayerMovController : MonoBehaviour
     }
     void Crouch()
     {
-        if (Input.GetKeyDown(crouch) && isCrouching == false)
+        if (Input.GetKeyDown(crouch) && isCrouching == false && isHiding == false)
         {
             currentSpeed = crouchingSpeed;
             isCrouching = true;
         }
-        else if (Input.GetKeyDown(crouch) && isCrouching == true)
+        else if (Input.GetKeyDown(crouch) && isCrouching == true && isHiding == false)
         {
             currentSpeed = walkSpeed;
             isCrouching = false;
@@ -111,13 +111,13 @@ public class PlayerMovController : MonoBehaviour
 
     void Run()
     {
-        if (Input.GetKeyDown(run) && isRunning == false)
+        if (Input.GetKeyDown(run) && isRunning == false && isHiding == false)
         {
             currentSpeed = runningSpeed;
             isCrouching = false;
             isRunning = true;
         }
-        else if (Input.GetKeyDown(run) && isRunning == true)
+        else if (Input.GetKeyDown(run) && isRunning == true && isHiding == false)
         {
             currentSpeed = walkSpeed;
             isCrouching = false;
