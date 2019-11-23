@@ -22893,6 +22893,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91ff3a7ddc771348884fe7770cb1a9a, type: 3}
+--- !u!114 &692146916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3463831563222617670, guid: d91ff3a7ddc771348884fe7770cb1a9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 692146915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebc85a12af05204a88e812ce773be97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &693009635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49869,6 +49881,11 @@ PrefabInstance:
       propertyPath: WallMask.m_Bits
       value: 8704
       objectReference: {fileID: 0}
+    - target: {fileID: 2971270840785343966, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
+        type: 3}
+      propertyPath: MenuSelector
+      value: 
+      objectReference: {fileID: 692146916}
     - target: {fileID: 2971270840785343963, guid: e9d6e25c4a52deb42b4d5fbd05996f08,
         type: 3}
       propertyPath: m_LocalPosition.x

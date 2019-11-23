@@ -126,9 +126,10 @@ public class PlayerMovController : MonoBehaviour
     }
 
     float pezzahidingSpeed = 0;
+    public MenuSelector MenuSelector;
     private void DetectHidingPoint()
     {
-        if (Input.GetKeyDown(interact))
+        if (Input.GetKeyDown(interact) && !MenuSelector.InMapView)
         {
             if (isHiding == false)
             {
