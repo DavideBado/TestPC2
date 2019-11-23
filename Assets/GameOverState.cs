@@ -8,8 +8,14 @@ public class GameOverState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameManager.instance.UI_Manager.GameOverPanel.SetActive(true);
+        GameManager.instance.UI_Manager.StartGameOverFade?.Invoke();
         //GameManager.instance.Level_Manager.Level.SetActive(false);
-        Time.timeScale = 0;
+        foreach (EnemyAI _enemy in GameManager.instance.Level_Manager.EnemiesAI)
+        {
+            _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);
+        }
+        GameManager.instance.Player.TurnOnOffThePlayer(!GameManager.instance.Player.Graphics.activeSelf);
+        GameManager.instance.Level_Manager.Level.SetActive(!GameManager.instance.Level_Manager.Level.activeSelf);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,8 +27,12 @@ public class GameOverState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //GameManager.instance.Level_Manager.Level.SetActive(true);
-        Time.timeScale = 1;
+        foreach (EnemyAI _enemy in GameManager.instance.Level_Manager.EnemiesAI)
+        {
+            _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);
+        }
+        if(GameManager.instance.Player)GameManager.instance.Player.TurnOnOffThePlayer(!GameManager.instance.Player.Graphics.activeSelf);
+        if (GameManager.instance.Level_Manager.Level) GameManager.instance.Level_Manager.Level.SetActive(!GameManager.instance.Level_Manager.Level.activeSelf);
         GameManager.instance.UI_Manager.GameOverPanel.SetActive(false);
     }
 

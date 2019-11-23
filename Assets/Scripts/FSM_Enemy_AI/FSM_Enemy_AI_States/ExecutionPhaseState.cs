@@ -27,7 +27,7 @@ public class ExecutionPhaseState : StateMachineBehaviour
             enemyController.NoiseTarget = null;
             enemyController.currentNoiseType = 0;
             enemyController.prevNoiseType = 0;
-            _enemyAI.AI_FSM.SetTrigger("ChangePhase");
+            //_enemyAI.AI_FSM.SetTrigger("ChangePhase");
             _enemyAI.AI_FSM.SetTrigger("ToExePhase");
             _enemyAI.GetComponent<CapsuleCollider>().enabled = true;
         }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MenuSelector : MonoBehaviour
 {
-    public GameObject Level;
     public Camera MapCamera, MainCamera;
     public GameObject Mouse, Pad, Pin;
     public KeyCode OpenMouse, OpenPin;
@@ -28,14 +27,14 @@ public class MenuSelector : MonoBehaviour
                 _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);
             }
             GameManager.instance.Player.TurnOnOffThePlayer(!GameManager.instance.Player.Graphics.activeSelf);
-            Level.SetActive(!Level.activeSelf);
+            GameManager.instance.Level_Manager.Level.SetActive(!GameManager.instance.Level_Manager.Level.activeSelf);
         }
         if (Input.GetKeyDown(OpenPin))
         {
             Pin.SetActive(!Pin.activeSelf);
             MainCamera.gameObject.SetActive(!MainCamera.gameObject.activeSelf);
             MapCamera.gameObject.SetActive(!MapCamera.gameObject.activeSelf);
-            Level.SetActive(!Level.activeSelf);
+            GameManager.instance.Level_Manager.Level.SetActive(!GameManager.instance.Level_Manager.Level.activeSelf);
         }
         else if(Input.GetAxis(OpenPad) != 0)
         {

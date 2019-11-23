@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class GameManager : MonoBehaviour
     public LevelManager Level_Manager;
     public Animator FlowFSM;
     public PlayerMovController Player;
-    public string ChangePhaseTrigger, GameOverTrigger, WinTrigger;
+    public string ChangePhaseTrigger, GameOverTrigger, WinTrigger, MainMenuTrigger;
 
     public Action PlayerCaught;
     public Action PlayerGoal;
@@ -50,6 +52,16 @@ public class GameManager : MonoBehaviour
     private void Win()
     {
         FlowFSM.SetTrigger(WinTrigger);
+    }
+
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if (!Player) Player = FindObjectOfType<PlayerMovController>();
+            if (!Level_Manager.EnemiesAI[0]) Level_Manager.EnemiesAI = FindObjectsOfType<EnemyAI>().ToList();
+            if (!Level_Manager.Level) Level_Manager.Level = FindObjectOfType<PezzaMissingLevel>().gameObject;
+        }
     }
 }
 

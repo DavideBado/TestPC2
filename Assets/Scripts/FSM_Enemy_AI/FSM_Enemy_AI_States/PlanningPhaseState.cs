@@ -17,7 +17,7 @@ public class PlanningPhaseState : StateMachineBehaviour
         GameManager.instance.Player.isCrouching = false;
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
-            _enemyAI.AI_FSM.SetTrigger("ChangePhase");
+            //_enemyAI.AI_FSM.SetTrigger("ChangePhase");
             _enemyAI.AI_FSM.SetTrigger("ToPlanPhase");
             _enemyAI.GetComponent<CapsuleCollider>().enabled = false;
         }
