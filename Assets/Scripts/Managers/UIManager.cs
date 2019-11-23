@@ -11,8 +11,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text PhaseTxt;
     public GameObject GameOverPanel;
     public GameObject Win;
-    public GameObject ChangePhaseButton;
-
+    
     public GameObject ReloadButtonGameOver;
     public GameObject MainMenuButtonGameOver;
     public TMP_Text GameOverTxt;
@@ -102,7 +101,6 @@ public class UIManager : MonoBehaviour
             WinTxt.color = new Color(WinTxt.color.r, WinTxt.color.b, WinTxt.color.g, 1f);
             ReloadButtonWin.SetActive(false);
             MainMenuButtonWin.SetActive(false);
-            GameManager.instance.UI_Manager.ChangePhaseButton.SetActive(true);
         }
     }
 }

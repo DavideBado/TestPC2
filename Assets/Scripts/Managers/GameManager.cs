@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public PlayerMovController Player;
     public string ChangePhaseTrigger, GameOverTrigger, WinTrigger, MainMenuTrigger;
 
+    public KeyCode ChangePhaseKey;
+
     public Action PlayerCaught;
     public Action PlayerGoal;
 
@@ -56,10 +58,10 @@ public class GameManager : MonoBehaviour
         FlowFSM.SetTrigger(WinTrigger);
     }
 
-    //private void Update()
-    //{
-    //    Setup();
-    //}
+    private void Update()
+    {
+        if (Input.GetKeyDown(ChangePhaseKey) && OnPlanPhase) ChangePhase();
+    }
 
     public void Setup()
     {

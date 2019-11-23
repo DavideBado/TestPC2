@@ -28,6 +28,7 @@ public class MenuSelector : MonoBehaviour
             }
             GameManager.instance.Player.TurnOnOffThePlayer(!GameManager.instance.Player.Graphics.activeSelf);
             GameManager.instance.Level_Manager.Level.SetActive(!GameManager.instance.Level_Manager.Level.activeSelf);
+            GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(!GameManager.instance.UI_Manager.PhaseTxt.gameObject.activeSelf);
         }
         if (Input.GetKeyDown(OpenPin))
         {
