@@ -35,7 +35,7 @@ public class PursueState : StateMachineBehaviour
            
             if (Vector3.Distance(animator.transform.position, m_enemyNavController.VisibleTarget.position) < m_enemyNavController.GameOverDist)
             {
-                GameManager.instance.PlayerCaught?.Invoke();
+                m_enemyNavController.graphicsController.StartAttackAnimation?.Invoke();
             }
         }
         else

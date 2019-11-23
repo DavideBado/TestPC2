@@ -23,7 +23,8 @@ public class CatchHiddenPlayerState : StateMachineBehaviour
         agent.destination = m_enemyNavController.HiddenTarget.position;
         if(agent.pathStatus == NavMeshPathStatus.PathComplete || agent.remainingDistance < 2)
         {
-            GameManager.instance.PlayerCaught?.Invoke();
+            m_enemyNavController.graphicsController.StartAttackAnimation?.Invoke();
+            //GameManager.instance.PlayerCaught?.Invoke();
         }
     }
 
