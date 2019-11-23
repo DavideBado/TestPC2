@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     public string CurrentTrigger = "";
     public Animator AI_FSM;
 
+    public EnemyNavController EnemyController;
+
     #region Actions
     public Action PatrolStateDetectAPlayer;
     public Action AlertStateMaxCounter;
@@ -47,7 +49,8 @@ public class EnemyAI : MonoBehaviour
         PursueStateMissThePlayer += SetResearchTrigger;
         EmenyHeardWalk += SetAlertTrigger;
         EmenyHeardRun += SetResearchTrigger;
-        EmenyAloneHeardObj += SetResearchTrigger;
+        EmenyHeardRun += SetResearchCounterMinValue;
+        EmenyAloneHeardObj += SetResearchTrigger;        
         EmenySeePlayerInHidingSpot += SetCatchHiddenPlayerTrigger;
     }
 
@@ -64,6 +67,7 @@ public class EnemyAI : MonoBehaviour
         PursueStateMissThePlayer -= SetResearchTrigger;
         EmenyHeardWalk -= SetAlertTrigger;
         EmenyHeardRun -= SetResearchTrigger;
+        EmenyHeardRun -= SetResearchCounterMinValue;
         EmenyAloneHeardObj -= SetResearchTrigger;
         EmenySeePlayerInHidingSpot -= SetCatchHiddenPlayerTrigger;
     }
@@ -125,5 +129,13 @@ public class EnemyAI : MonoBehaviour
         }
 
         AI_FSM.SetTrigger(CurrentTrigger);
+    }
+
+    private void SetResearchCounterMinValue()
+    {
+        if (EnemyController.Counter < EnemyController.Counter_Alert_MaxValue)
+        {
+            EnemyController.Counter = EnemyController.Counter_Alert_MaxValue; 
+        }
     }
 }

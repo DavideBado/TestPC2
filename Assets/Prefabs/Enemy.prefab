@@ -848,6 +848,7 @@ MonoBehaviour:
   PauseTrigger: ToPause
   CurrentTrigger: 
   AI_FSM: {fileID: 1914245489120665552}
+  EnemyController: {fileID: 803927139432897172}
 --- !u!95 &1914245489120665552
 Animator:
   serializedVersion: 3
