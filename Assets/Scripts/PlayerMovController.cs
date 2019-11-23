@@ -133,7 +133,7 @@ public class PlayerMovController : MonoBehaviour
             if (isHiding == false)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 1.5f))
                 {
                     if (hit.collider.gameObject.tag == "HidingSpot")
                     {
