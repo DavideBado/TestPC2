@@ -749,12 +749,12 @@ MonoBehaviour:
   - 0.5
   - 1
   - 1.5
-  Counter_Patrol_MaxValue: 1
-  Counter_Alert_MaxValue: 1
-  Counter_Research_MaxValue: 3
+  Counter_Patrol_MaxValue: 0.5
+  Counter_Alert_MaxValue: 0.75
+  Counter_Research_MaxValue: 1.6
   Counter_Pursue_MaxValue: 1.5
   WalkSpeed: 1.8
-  ResearchSpeed: 1.8
+  ResearchSpeed: 2.75
   RunSpeed: 7
   Counter: 0
   IdlePosition: {x: 8, y: 1, z: 9}
