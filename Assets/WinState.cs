@@ -7,6 +7,8 @@ public class WinState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.instance.OnExePhase = false;
+        GameManager.instance.OnPlanPhase = false;
         GameManager.instance.UI_Manager.Win.SetActive(true);
         GameManager.instance.UI_Manager.StartWinFade?.Invoke();
         //GameManager.instance.Level_Manager.Level.SetActive(false);
@@ -27,6 +29,7 @@ public class WinState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.instance.OnExePhase = false;
         //GameManager.instance.Level_Manager.Level.SetActive(true);
         foreach (EnemyAI _enemy in GameManager.instance.Level_Manager.EnemiesAI)
         {

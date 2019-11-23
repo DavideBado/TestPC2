@@ -68,6 +68,7 @@
     <Compile Include="Assets\EnemyPauseState.cs" />
     <Compile Include="Assets\GameOverState.cs" />
     <Compile Include="Assets\Goal.cs" />
+    <Compile Include="Assets\MainMenuState.cs" />
     <Compile Include="Assets\PezzaMissingLevel.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />

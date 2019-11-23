@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public bool OnExePhase = false;
+    [HideInInspector]
+    public bool OnPlanPhase = false;
 
     private void OnEnable()
     {
@@ -54,12 +56,18 @@ public class GameManager : MonoBehaviour
         FlowFSM.SetTrigger(WinTrigger);
     }
 
-    private void Update()
+    //private void Update()
+    //{
+    //    Setup();
+    //}
+
+    public void Setup()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            Level_Manager.EnemiesAI.Clear();
             if (!Player) Player = FindObjectOfType<PlayerMovController>();
-            if (!Level_Manager.EnemiesAI[0]) Level_Manager.EnemiesAI = FindObjectsOfType<EnemyAI>().ToList();
+       /*     if (Level_Manager.EnemiesAI.Count == 0) */Level_Manager.EnemiesAI = FindObjectsOfType<EnemyAI>().ToList();
             if (!Level_Manager.Level) Level_Manager.Level = FindObjectOfType<PezzaMissingLevel>().gameObject;
         }
     }

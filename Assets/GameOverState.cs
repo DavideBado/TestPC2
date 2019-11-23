@@ -7,6 +7,8 @@ public class GameOverState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.instance.OnExePhase = false;
+        GameManager.instance.OnPlanPhase = false;
         GameManager.instance.UI_Manager.GameOverPanel.SetActive(true);
         GameManager.instance.UI_Manager.StartGameOverFade?.Invoke();
         //GameManager.instance.Level_Manager.Level.SetActive(false);
@@ -27,6 +29,7 @@ public class GameOverState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.instance.OnExePhase = false;
         foreach (EnemyAI _enemy in GameManager.instance.Level_Manager.EnemiesAI)
         {
             _enemy.PauseDelegate(_enemy.GetComponent<EnemyNavController>().graphicsController.gameObject.activeSelf);

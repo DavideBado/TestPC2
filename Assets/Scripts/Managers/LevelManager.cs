@@ -14,6 +14,23 @@ public class LevelManager : MonoBehaviour
         EnemiesAI = FindObjectsOfType<EnemyAI>().ToList();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += SetUpLevel;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= SetUpLevel;        
+    }
+
+    void SetUpLevel(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if(scene.buildIndex == 1 && !GameManager.instance.OnPlanPhase && !GameManager.instance.OnExePhase && !GameManager.instance.FlowFSM.GetCurrentAnimatorStateInfo(0).IsName("PlanningPhase"))
+        {
+            GameManager.instance.ChangePhase();
+        }
+    }
     public void ReloadLevel(int thisSceneIndex)
     {
         SceneManager.LoadScene(thisSceneIndex);

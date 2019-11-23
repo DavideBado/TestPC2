@@ -28,7 +28,6 @@ public class PatrolState : StateMachineBehaviour
     {
         if (GameManager.instance.OnExePhase)
         {
-
             CheckThePlayer(); 
         }
         Move();
