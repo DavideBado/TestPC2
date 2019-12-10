@@ -767,3 +767,7 @@ D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Cinemachine.dll
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Cinemachine.pdb
+D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.pdb

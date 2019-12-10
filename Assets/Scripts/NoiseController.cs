@@ -14,7 +14,7 @@ public class NoiseController : MonoBehaviour
     #endregion
 
     #region Delegates
-    public NoiseDelegate WalkingNoiseDelegate;
+    public NoiseDelegate MakeNoiseDelegate;
     #endregion
 
     #region Actions
@@ -27,13 +27,13 @@ public class NoiseController : MonoBehaviour
     }
     private void OnEnable()
     {
-        WalkingNoiseDelegate += MakeNoise;
+        MakeNoiseDelegate += MakeNoise;
         Reset += ResetNoise;
     }
 
     private void OnDisable()
     {
-        WalkingNoiseDelegate -= MakeNoise;
+        MakeNoiseDelegate -= MakeNoise;
         Reset -= ResetNoise;
     }
 
@@ -43,18 +43,45 @@ public class NoiseController : MonoBehaviour
         Type = _type;
         NoiseArea.radius = noiseOriginalRadius;
         NoiseArea.enabled = true;
-        NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
-        if (NoiseArea.radius >= noiseOriginalRadius * dimensionMod)
+        //NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
+        //StartCoroutine(NoiseUp(dimensionMod, duration));
+        m_dimensionMod = dimensionMod;
+        m_duration = duration;
+        test = true;
+        //if (NoiseArea.radius >= noiseOriginalRadius * dimensionMod)
+        //{
+        //    StartCoroutine("NoiseLife", duration);
+        //}
+    }
+    bool test = false;
+    float m_dimensionMod, m_duration;
+    private void Update()
+    {
+        if(test)
         {
-            StartCoroutine("NoiseLife", duration);
+            NoiseArea.radius += m_dimensionMod * Speed * Time.deltaTime;
+            if (NoiseArea.radius >= noiseOriginalRadius * m_dimensionMod)
+            {
+                StartCoroutine("NoiseLife", m_duration);
+                test = false;
+            }
         }
     }
-
     void ResetNoise()
     {
         StopCoroutine("NoiseLife");
         NoiseArea.radius = noiseOriginalRadius;
         Type = 0;
+    }
+
+    IEnumerator NoiseUp(float dimensionMod, float duration)
+    {
+        while (NoiseArea.radius < noiseOriginalRadius * dimensionMod)
+        {
+            NoiseArea.radius += dimensionMod * Speed * Time.deltaTime;
+        }
+        StartCoroutine("NoiseLife", duration);
+        yield return 0;
     }
 
     IEnumerator NoiseLife(float duration)

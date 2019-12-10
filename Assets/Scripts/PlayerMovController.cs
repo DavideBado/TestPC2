@@ -86,11 +86,11 @@ public class PlayerMovController : MonoBehaviour
 
             if (currentSpeed == walkSpeed && Input.GetAxis("Vertical") != 0)
             {
-                Noise.WalkingNoiseDelegate(walkDimensionMod, walkDuration, NoiseController.NoiseType.Walk);
+                Noise.MakeNoiseDelegate(walkDimensionMod, walkDuration, NoiseController.NoiseType.Walk);
             }
             if (currentSpeed == runningSpeed && Input.GetAxis("Vertical") != 0)
             {
-                Noise.WalkingNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
+                Noise.MakeNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
             } 
         }
 
