@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GridData
 {
-    [CreateAssetMenu(fileName = "NewGameplayGrid", menuName = "GridData", order = 1)]
+    [CreateAssetMenu(fileName = "NewGameplayGrid", menuName = "GridData/GamePlayGrid", order = 1)]
     public class GameplayGrid_ConfigData : ScriptableObject
     {
-        
+        public GameObject[][] Cells;
     }
 }
