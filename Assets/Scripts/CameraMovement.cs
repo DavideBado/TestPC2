@@ -4,31 +4,13 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float turnSpeed;
+    public Camera m_camera;
     public Transform player;
+    public Vector3 point;
 
-    public Vector3 originCameraPos;
-    public Quaternion originCameraRot;
-    public Vector3 currentCameraPos;
-    public Quaternion currentCameraRot;
-
-    void Start()
+    private void Update()
     {
-        originCameraPos = this.transform.position;
-        originCameraRot = this.transform.rotation;
-
-        currentCameraPos = originCameraPos;
-        currentCameraRot = originCameraRot;
+        float distance = Vector3.Distance(m_camera.transform.position, player.transform.position);
+        point = m_camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 10));
     }
-
-    void LateUpdate()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            currentCameraPos = this.transform.position;
-            currentCameraRot = this.transform.rotation;
-            transform.RotateAround(player.transform.position, Vector3.up, Input.GetAxis("Mouse X") * turnSpeed); 
-        }
-    }
-
 }

@@ -35,7 +35,6 @@ public class PlayerMovController : MonoBehaviour
     [HideInInspector]
     public float GraphSpeed;
     public CameraMovement m_camera;
-    //public GameObject forwardPoint;
 
     public Vector3 ResetPosition;
 
@@ -60,13 +59,7 @@ public class PlayerMovController : MonoBehaviour
             translation *= Time.deltaTime;
             rotation *= Time.deltaTime;
 
-            /*if (Input.GetAxis("Vertical") != 0 && m_camera.currentCameraPos != m_camera.originCameraPos && m_camera.currentCameraRot != m_camera.originCameraRot)
-            {
-                rb.velocity = m_camera.transform.forward * currentSpeed;
-                transform.LookAt(m_camera.transform.forward);
-                forwardPoint.transform.position = m_camera.transform.forward;
-
-            }*/
+            MoveToCameraForward();
 
             if (translation > 0)
             {
@@ -190,5 +183,18 @@ public class PlayerMovController : MonoBehaviour
     {
         Graphics.SetActive(x);
         InputActive = x;
+    }
+
+    public GameObject debugSphere;
+    public void MoveToCameraForward()
+    {
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            transform.LookAt(m_camera.point);
+            var rot = transform.rotation;
+            rot.x -= rot.x;
+            rot.z -= rot.z;
+            transform.rotation = rot;
+        }
     }
 }

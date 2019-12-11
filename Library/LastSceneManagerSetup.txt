@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Testing/Bado/GridMap.unity
+- path: Assets/Scenes/Testing/Anna/CinemachineTest.unity
   isLoaded: 1
   isActive: 1

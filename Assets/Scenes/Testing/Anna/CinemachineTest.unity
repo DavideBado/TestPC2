@@ -222,7 +222,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 100
+    m_MaxSpeed: 90
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -238,8 +238,8 @@ MonoBehaviour:
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
   m_Heading:
-    m_Definition: 2
-    m_VelocityFilterStrength: 4
+    m_Definition: 1
+    m_VelocityFilterStrength: 8
     m_Bias: 0
   m_RecenterToTargetHeading:
     m_enabled: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1033409222348309562}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -437,7 +437,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235267000}
-  m_LocalRotation: {x: 0.03824402, y: 0.0000000021492241, z: -8.225413e-11, w: 0.9992685}
+  m_LocalRotation: {x: 0.03824402, y: 0.0000000021358282, z: 2.6777452e-10, w: 0.9992685}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 295243284}
   - component: {fileID: 295243283}
   - component: {fileID: 295243286}
+  - component: {fileID: 295243287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -565,6 +566,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &295243287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295243282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f61a3411c6ae94c931d87b4627e2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_camera: {fileID: 295243284}
+  player: {fileID: 1033409222348309562}
+  point: {x: 0, y: 0, z: 0}
 --- !u!1 &343062024
 GameObject:
   m_ObjectHideFlags: 3
@@ -606,7 +622,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1033409222348309562}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -632,7 +648,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343062024}
-  m_LocalRotation: {x: 0.1712133, y: -0.000000015079825, z: 0.0000000026205804, w: 0.985234}
+  m_LocalRotation: {x: 0.17121328, y: 0.000000020969832, z: -0.000000003218742, w: 0.985234}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -723,8 +739,8 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
-    m_VelocityFilterStrength: 4
+    m_Definition: 1
+    m_VelocityFilterStrength: 8
     m_Bias: 0
   m_RecenterToTargetHeading:
     m_enabled: 0
@@ -734,7 +750,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 100
+    m_MaxSpeed: 90
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -866,8 +882,8 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
-    m_VelocityFilterStrength: 4
+    m_Definition: 1
+    m_VelocityFilterStrength: 8
     m_Bias: 0
   m_RecenterToTargetHeading:
     m_enabled: 0
@@ -877,7 +893,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 100
+    m_MaxSpeed: 90
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -949,7 +965,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1033409222348309562}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -975,7 +991,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531987935}
-  m_LocalRotation: {x: 0.04787765, y: 0.0000000036755647, z: 7.699263e-10, w: 0.9988532}
+  m_LocalRotation: {x: 0.04787765, y: 0.0000000032350518, z: 0.000000009960179, w: 0.9988532}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1244,8 +1260,8 @@ MonoBehaviour:
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
-    m_Definition: 2
-    m_VelocityFilterStrength: 4
+    m_Definition: 1
+    m_VelocityFilterStrength: 8
     m_Bias: 0
   m_RecenterToTargetHeading:
     m_enabled: 0
@@ -1255,7 +1271,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 100
+    m_MaxSpeed: 90
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -1432,12 +1448,13 @@ MonoBehaviour:
   walkDuration: 2
   runDuration: 2
   GraphSpeed: 0
-  m_camera: {fileID: 0}
+  m_camera: {fileID: 295243287}
   ResetPosition: {x: 0, y: 0, z: 0}
   MenuSelector: {fileID: 0}
   Graphics: {fileID: 897957037}
   Collider: {fileID: 1033409222348309561}
   ObstacleNav: {fileID: 2704518998234459259}
+  debugSphere: {fileID: 0}
 --- !u!208 &2704518998234459259
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1461,14 +1478,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033409222348309562}
     m_Modifications:
-    - target: {fileID: 9500000, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e8cc324825144104292b04f10ea48a97, type: 2}
     - target: {fileID: 100084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_Name
       value: SK_Player_Walking_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e8cc324825144104292b04f10ea48a97, type: 2}
     - target: {fileID: 400084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1499,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400084, guid: 127832f84c068de41a88aecb1828d0d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

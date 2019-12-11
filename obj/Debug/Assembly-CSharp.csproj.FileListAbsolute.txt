@@ -771,3 +771,11 @@ D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Cinemachine.dll
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.dll
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\Cinemachine.pdb
 D:\GameDev\GitKraken\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.pdb
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Cinemachine.dll
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Cinemachine.pdb
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
+C:\Users\berto\OneDrive\Documenti\TestPC2\Temp\bin\Debug\com.unity.cinemachine.editor.pdb
