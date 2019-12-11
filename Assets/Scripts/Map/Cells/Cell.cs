@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    public Vector3 Position = new Vector3();
+    public Vector3 AnchoredPosition = new Vector3();
+    public int X, Y;
     // Start is called before the first frame update
     void Start()
     {
