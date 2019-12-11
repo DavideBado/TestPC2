@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Testing/Anna/CinemachineTest.unity
+=======
+- path: Assets/Scenes/Definitive/MainMenu.unity
+>>>>>>> ca89527d2811d96e32d05adc35f33eb00fe0abfc
   isLoaded: 1
   isActive: 1

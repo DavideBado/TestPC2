@@ -50,7 +50,7 @@ public class DrawTestPad : MonoBehaviour
             }
           
             Cell currentCell = grid.ReturnCell((int)currentX, (int)currentY);
-            Vector3 CellPos = currentCell.Position;
+            Vector3 CellPos = currentCell.AnchoredPosition;
             if (prevCellPos != CellPos)
             {
                 lineRenderer.positionCount++;

@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
             {
                GameObject _cell = Instantiate(CellPref, Camera.main.ScreenToWorldPoint(new Vector3(i * Snap_X, j * Snap_Y, 10)), Quaternion.identity);
                 Cells[i,j] = _cell.GetComponent<Cell>();
-                Cells[i, j].Position = _cell.transform.position;
+                Cells[i, j].AnchoredPosition = _cell.transform.position;
             }
         }
     }
