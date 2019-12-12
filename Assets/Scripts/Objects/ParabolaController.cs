@@ -30,7 +30,7 @@ public class ParabolaController : MonoBehaviour
     protected float animationTime = float.MaxValue;
 
     //gizmo
-    protected ParabolaFly gizmo;
+    /*protected*/ public ParabolaFly gizmo;
 
     //draw
     protected ParabolaFly parabolaFly;
