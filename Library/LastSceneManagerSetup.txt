@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Definitive/MainMenu.unity
-=======
-- path: Assets/Scenes/Testing/Bado/Bado.unity
->>>>>>> bb552cc742f5852a104909e172dfed671c0ccd11
+- path: Assets/Scenes/Definitive/Blockout Scene.unity
   isLoaded: 1
   isActive: 1
