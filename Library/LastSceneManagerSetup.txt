@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Definitive/Blockout Scene.unity
+- path: Assets/Scenes/Testing/Bado/Bado.unity
   isLoaded: 1
   isActive: 1

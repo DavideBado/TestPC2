@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cell : MonoBehaviour
+public class Cell2D : MonoBehaviour
 {
-    public Vector3 AnchoredPosition = new Vector3();
-    public int X, Y;
+    public CellData data;
     // Start is called before the first frame update
     void Start()
     {

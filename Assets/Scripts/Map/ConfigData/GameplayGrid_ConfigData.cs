@@ -7,6 +7,7 @@ namespace GridData
     [CreateAssetMenu(fileName = "NewGameplayGrid", menuName = "GridData/GamePlayGrid", order = 1)]
     public class GameplayGrid_ConfigData : ScriptableObject
     {
-        public Cell[][] Cells;
+        public CellData[][] Cells;
+        public int X;
     }
 }
