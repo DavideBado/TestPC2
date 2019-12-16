@@ -7,7 +7,7 @@ using GridData;
 public class GridController3D : MonoBehaviour
 {
     public static GridController3D gridController3D;
-    public  GridController gridController2D;
+    public GridController gridController2D;
 
     public List<CellTypeBase> AllTypes = new List<CellTypeBase>();
 
@@ -46,7 +46,7 @@ public class GridController3D : MonoBehaviour
         ChangeCellColorDelegate -= Update3DCellColor;
         SelectCellDelegate -= AddCell;
     }
-    
+
     private void Awake()
     {
         if (gridController3D != null) Destroy(gridController3D.gameObject);
@@ -106,7 +106,7 @@ public class GridController3D : MonoBehaviour
                 {
                     Destroy(Cells[i, j].gameObject);
                 }
-            } 
+            }
         }
         Cells = new EditorCell3D[EditorGridData.HorizontalDim, EditorGridData.VerticalDim];
     }
@@ -144,7 +144,7 @@ public class GridController3D : MonoBehaviour
         if (Cells[x, y])
         {
 
-            Cells[x, y].gameObject.GetComponent<MeshRenderer>().material.color = _color; 
+            Cells[x, y].gameObject.GetComponent<MeshRenderer>().material.color = _color;
         }
     }
 
@@ -224,23 +224,18 @@ public class GridController3D : MonoBehaviour
             }
         }
     }
-
-    public void LoadGrid()
+    
+    public void LoadGrid(CellData _cell, float XposMod, float ZPosMod)
     {
-        if (GridController3D.gridController3D.GameplayGridData.Cells != null)
-            for (int i = 0; i < GridController3D.gridController3D.GameplayGridData.Cells.Length; i++)
-            {
-                for (int j = 0; j < GridController3D.gridController3D.GameplayGridData.Cells[i].Length; j++)
-                {
-                    GameObject tempCell = Instantiate(Cell3DPrefab, transform);
-                    Transform tempCellTransform = tempCell.GetComponent<Transform>();
-                    tempCell.SetActive(true);
-                    tempCellTransform.localScale = new Vector3((tempCellTransform.lossyScale.x / tempCellTransform.localScale.x) * XMod, 0.1f, (tempCellTransform.lossyScale.z / tempCellTransform.localScale.z) * ZMod);
-                    tempCellTransform.position = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Position;
-                    Cell3D cellvalue = tempCell.AddComponent<Cell3D>();
-                    cellvalue.data = GridController3D.gridController3D.GameplayGridData.Cells[i][j];
-                    cellvalue.data.graphics3D = tempCell;
-                }
-            }
+        GameObject tempCell = Instantiate(Cell3DPrefab, transform);
+        Transform tempCellTransform = tempCell.GetComponent<Transform>();
+        tempCell.SetActive(true);
+        tempCellTransform.localScale = new Vector3((tempCellTransform.lossyScale.x / tempCellTransform.localScale.x) * XMod, 0.1f, (tempCellTransform.lossyScale.z / tempCellTransform.localScale.z) * ZMod);
+        //tempCellTransform.position = _cell.Position;
+        tempCellTransform.position = new Vector3((gridOrigin.x + XMod / 2) + XMod * XposMod, 0, (gridOrigin.z + ZMod / 2) + +ZMod * ZPosMod);
+        Cell3D cellvalue = tempCell.AddComponent<Cell3D>();
+        cellvalue.data = _cell;
+        cellvalue.data.graphics3D = tempCell;
+
     }
 }

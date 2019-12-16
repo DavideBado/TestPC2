@@ -162,8 +162,8 @@ public class GridController : MonoBehaviour
                     cellvalue.data = GridController3D.gridController3D.GameplayGridData.Cells[i][j];
                     TypeSelectorCell2D typeSelector = tempCell.AddComponent<TypeSelectorCell2D>();
                     typeSelector.gridController = this;
+                    GridController3D.gridController3D.LoadGrid(GridController3D.gridController3D.GameplayGridData.Cells[i][j], tempCellTransform.anchoredPosition.x / XMod, tempCellTransform.anchoredPosition.y / YMod);
                 }
             }
-        GridController3D.gridController3D.LoadGrid();
     }
 }
