@@ -53,12 +53,14 @@ public class SaveMap : MonoBehaviour
         {
             for (int j = 0; j < saveClass.Items[i].GetLength(0); j++)
             {
+                int[] tempTypeID = CellTypeIDCheck(GridController3D.gridController3D.GameplayGridData.Cells[i][j]);
                 saveClass.Items[i][j] = new CellForSaveData
                 {
                     AnchoredPosition = GridController3D.gridController3D.GameplayGridData.Cells[i][j].AnchoredPosition,
                     Position = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Position,
                     X = GridController3D.gridController3D.GameplayGridData.Cells[i][j].X,
-                    Y = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Y
+                    Y = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Y,
+                    TypeID = tempTypeID
                 };
             }
         }
@@ -112,10 +114,17 @@ public class SaveMap : MonoBehaviour
                     AnchoredPosition = level.Items[i][j].AnchoredPosition,
                     Position = level.Items[i][j].Position,
                     X = i,
-                    Y = j
+                    Y = j,
+                    TypeID = level.Items[i][j].TypeID
                 };
             }
         }
+    }
+
+    int[] CellTypeIDCheck(CellData _cell)
+    {
+        if (_cell.TypeID != null) return _cell.TypeID;
+        else return new int[1] { 0 };
     }
 }
 
@@ -134,6 +143,7 @@ public class CellForSaveData
     public Vector3 Position = new Vector3();
     public Vector3 AnchoredPosition = new Vector3();
     public int X, Y;
+    public int[] TypeID = new int[1] { 0 };
 }
 
 public class LevelSaves

@@ -9,6 +9,8 @@ public class GridController3D : MonoBehaviour
     public static GridController3D gridController3D;
     public  GridController gridController2D;
 
+    public List<CellTypeBase> AllTypes = new List<CellTypeBase>();
+
     public EditorGrid_ConfigData EditorGridData;
     public GameplayGrid_ConfigData GameplayGridData;
     public GameObject Cell3DPrefab;

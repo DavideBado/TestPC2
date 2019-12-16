@@ -7,14 +7,18 @@ using UnityEngine.UI;
 public class TypeSelectorCell2D : Button
 {
     public GridController gridController;
-   public Cell2D thisCell;
-   public Image m_image;
-    bool selected = false;
+    public Cell2D thisCell;
+    public Image m_image;
+    public bool selected = false;
 
     protected override void Start()
     {
         thisCell = gameObject.GetComponent<Cell2D>();
-
+        thisCell.data.TypeID = new int[GridController3D.gridController3D.AllTypes.Count];
+        for (int i = 0; i < thisCell.data.TypeID.Length; i++)
+        {
+            thisCell.data.TypeID[i] = 0;
+        }
         m_image = GetComponent<Image>();
     }
 

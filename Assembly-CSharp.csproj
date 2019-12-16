@@ -90,7 +90,7 @@
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CamCell.cs" />
-    <Compile Include="Assets\Scripts\Map\Cells\Cell.cs" />
+    <Compile Include="Assets\Scripts\Map\Cells\Cell2D.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\Cell3D.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\CellTypeBase.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\DrawCell.cs" />

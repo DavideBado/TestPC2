@@ -67,7 +67,7 @@ public class GridController : MonoBehaviour
                     }
                     index++;
                 }
-            } 
+            }
         }
 
         SelectedCells = new LinkedList<Cell2D>[GridController3D.gridController3D.EditorGridData.HorizontalDim];
@@ -104,7 +104,7 @@ public class GridController : MonoBehaviour
     {
         int index = 0;
         for (int i = 0; i < SelectedCells.Length; i++)
-        {           
+        {
             if (SelectedCells[i].Count != 0)
             {
                 GridController3D.gridController3D.GameplayGridData.Cells[index] = new CellData[SelectedCells[i].Count];
@@ -141,7 +141,7 @@ public class GridController : MonoBehaviour
         {
             for (int j = 0; j < GridController3D.gridController3D.GameplayGridData.Cells[i].Length; j++)
             {
-                Debug.LogFormat("La matrice a [{0}][{1}] e': Cella {2},{3}", i,j, GridController3D.gridController3D.GameplayGridData.Cells[i][j].X, GridController3D.gridController3D.GameplayGridData.Cells[i][j].Y);
+                Debug.LogFormat("La matrice a [{0}][{1}] e': Cella {2},{3}", i, j, GridController3D.gridController3D.GameplayGridData.Cells[i][j].X, GridController3D.gridController3D.GameplayGridData.Cells[i][j].Y);
             }
         }
     }
@@ -149,8 +149,8 @@ public class GridController : MonoBehaviour
     public void LoadGrid()
     {
         if (GridController3D.gridController3D.GameplayGridData.Cells != null)
-        for (int i = 0; i < GridController3D.gridController3D.GameplayGridData.Cells.Length; i++)
-        {
+            for (int i = 0; i < GridController3D.gridController3D.GameplayGridData.Cells.Length; i++)
+            {
                 for (int j = 0; j < GridController3D.gridController3D.GameplayGridData.Cells[i].Length; j++)
                 {
                     GameObject tempCell = Instantiate(Cell2DPrefab, MapSpace);
@@ -163,7 +163,7 @@ public class GridController : MonoBehaviour
                     TypeSelectorCell2D typeSelector = tempCell.AddComponent<TypeSelectorCell2D>();
                     typeSelector.gridController = this;
                 }
-                GridController3D.gridController3D.LoadGrid();
-        }
+            }
+        GridController3D.gridController3D.LoadGrid();
     }
 }

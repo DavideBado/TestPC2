@@ -8,4 +8,5 @@ public class CellData : ScriptableObject
     public Vector3 AnchoredPosition = new Vector3();
     public int X, Y;
     public GameObject graphics3D;
+    public int[] TypeID;
 }
