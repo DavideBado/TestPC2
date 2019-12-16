@@ -237,6 +237,7 @@ public class GridController3D : MonoBehaviour
                     tempCellTransform.position = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Position;
                     Cell3D cellvalue = tempCell.AddComponent<Cell3D>();
                     cellvalue.data = GridController3D.gridController3D.GameplayGridData.Cells[i][j];
+                    cellvalue.data.graphics3D = tempCell;
                 }
             }
     }

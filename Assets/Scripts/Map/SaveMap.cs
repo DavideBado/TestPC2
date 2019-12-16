@@ -111,8 +111,8 @@ public class SaveMap : MonoBehaviour
                 {
                     AnchoredPosition = level.Items[i][j].AnchoredPosition,
                     Position = level.Items[i][j].Position,
-                    X = level.Items[i][j].X,
-                    Y = level.Items[i][j].Y
+                    X = i,
+                    Y = j
                 };
             }
         }

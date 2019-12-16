@@ -7,6 +7,7 @@ using GridData;
 public class GridController : MonoBehaviour
 {
     public GameObject Cell2DPrefab;
+    public GameObject CellSelector2DPrefab;
     public RectTransform MapSpace;
     public KeyCode UpdateGridData, Reset, Load;
     public LinkedList<Cell2D>[] SelectedCells;
@@ -150,16 +151,18 @@ public class GridController : MonoBehaviour
         if (GridController3D.gridController3D.GameplayGridData.Cells != null)
         for (int i = 0; i < GridController3D.gridController3D.GameplayGridData.Cells.Length; i++)
         {
-            for (int j = 0; j < GridController3D.gridController3D.GameplayGridData.Cells[i].Length; j++)
-            {
-                GameObject tempCell = Instantiate(Cell2DPrefab, MapSpace);
-                RectTransform tempCellTransform = tempCell.GetComponent<RectTransform>();
-                tempCell.SetActive(true);
-                tempCellTransform.sizeDelta = new Vector2(XMod, YMod);
-                tempCellTransform.anchoredPosition = GridController3D.gridController3D.GameplayGridData.Cells[i][j].AnchoredPosition;
-                Cell2D cellvalue = tempCell.AddComponent<Cell2D>();
-                cellvalue.data = GridController3D.gridController3D.GameplayGridData.Cells[i][j];
-            }
+                for (int j = 0; j < GridController3D.gridController3D.GameplayGridData.Cells[i].Length; j++)
+                {
+                    GameObject tempCell = Instantiate(Cell2DPrefab, MapSpace);
+                    RectTransform tempCellTransform = tempCell.GetComponent<RectTransform>();
+                    tempCell.SetActive(true);
+                    tempCellTransform.sizeDelta = new Vector2(XMod, YMod);
+                    tempCellTransform.anchoredPosition = GridController3D.gridController3D.GameplayGridData.Cells[i][j].AnchoredPosition;
+                    Cell2D cellvalue = tempCell.AddComponent<Cell2D>();
+                    cellvalue.data = GridController3D.gridController3D.GameplayGridData.Cells[i][j];
+                    TypeSelectorCell2D typeSelector = tempCell.AddComponent<TypeSelectorCell2D>();
+                    typeSelector.gridController = this;
+                }
                 GridController3D.gridController3D.LoadGrid();
         }
     }
