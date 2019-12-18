@@ -17,7 +17,8 @@ public class GridController3D : MonoBehaviour
     public Transform Z_MinBorder, Z_MaxBorder, X_MinBorder, X_MaxBorder;
     Vector3 gridOrigin, gridSize;
     public Camera SetupCamera;
-    public KeyCode UpdateGridData, Reset, Load;
+    public KeyCode Reset, Load;
+    public bool JustLoaded = false;
     public EditorCell3D[,] Cells;
     public LinkedList<Cell3D>[] SelectedCells;
     public SaveMap saveMap;
@@ -68,7 +69,7 @@ public class GridController3D : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(Reset)) CreateNewGrid(XMod, ZMod);
-        if (Input.GetKeyDown(Load))
+        if (Input.GetKeyDown(Load) && !JustLoaded)
         {
             saveMap.LoadLevel(LevelID);
             gridController2D.LoadGrid();
@@ -165,6 +166,10 @@ public class GridController3D : MonoBehaviour
         DebugGameplayGrid();
         saveMap.SaveLevel(LevelID);
     }
+    public void SetupGameplayGridTypeSelected()
+    {
+        saveMap.SaveLevel(LevelID);
+    }
 
     void SetupXLengthGamePlayGridCells()
     {
@@ -233,9 +238,9 @@ public class GridController3D : MonoBehaviour
         tempCellTransform.localScale = new Vector3((tempCellTransform.lossyScale.x / tempCellTransform.localScale.x) * XMod, 0.1f, (tempCellTransform.lossyScale.z / tempCellTransform.localScale.z) * ZMod);
         //tempCellTransform.position = _cell.Position;
         tempCellTransform.position = new Vector3((gridOrigin.x + XMod / 2) + XMod * XposMod, 0, (gridOrigin.z + ZMod / 2) + +ZMod * ZPosMod);
-        Cell3D cellvalue = tempCell.AddComponent<Cell3D>();
+        Cell3D cellvalue = tempCell.GetComponent<Cell3D>();
         cellvalue.data = _cell;
         cellvalue.data.graphics3D = tempCell;
-
+        cellvalue.UpdateTypes();
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7882941871094653982}
   - component: {fileID: 7882941871094653983}
   - component: {fileID: 7882941871094653980}
+  - component: {fileID: 3465991698157488604}
   m_Layer: 9
   m_Name: HidingSpot
   m_TagString: HidingSpot
@@ -91,3 +92,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1636138, y: 1, z: 1.1821791}
   m_Center: {x: 0.012567057, y: 0, z: -0.012904433}
+--- !u!114 &3465991698157488604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882941871094653978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5121e287dcd4e41a2f16edd62ae168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

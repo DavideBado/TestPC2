@@ -61,9 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Attributes\DraggablePoint.cs" />
+    <Compile Include="Assets\CamSpot.cs" />
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\Editors\HearingEditor.cs" />
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
+    <Compile Include="Assets\HidingSpot.cs" />
+    <Compile Include="Assets\KeySpot.cs" />
+    <Compile Include="Assets\ObjSpot.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyGraphicsController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyNavController.cs" />
@@ -89,9 +93,10 @@
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Scripts\Map\Cells\CamCell.cs" />
+    <Compile Include="Assets\Scripts\Map\AddTypeButton.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\Cell2D.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\Cell3D.cs" />
+    <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\CamCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\CellTypeBase.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\DrawCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\HidingCell.cs" />
@@ -101,6 +106,7 @@
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\WalkingCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\EditorCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\EditorCell3D.cs" />
+    <Compile Include="Assets\Scripts\Map\Cells\ISpotType.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\TypeSelectorCell2D.cs" />
     <Compile Include="Assets\Scripts\Map\ConfigData\CellData.cs" />
     <Compile Include="Assets\Scripts\Map\ConfigData\EditorGrid_ConfigData.cs" />

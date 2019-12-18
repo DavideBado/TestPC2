@@ -1,19 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Cell3D : MonoBehaviour
 {
     public CellData data;
-    // Start is called before the first frame update
-    void Start()
+    public List<CellTypeBase> CellPsTypes = new List<CellTypeBase>();
+
+    public void UpdateTypes()
     {
-        if (data.TypeID != null) for (int i = 0; i < data.TypeID.Length; i++) if (data.TypeID[i] == 1) data.graphics3D.AddComponent(GridController3D.gridController3D.AllTypes[i].GetType());
+        if (data != null && data.TypeID != null)
+        {
+            for (int i = 0; i < data.TypeID.Length; i++)
+            {
+                if (data.TypeID[i] == 1)
+                {
+                    CellPsTypes[i].enabled = true;
+                }
+                else CellPsTypes[i].enabled = false;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdateDataSpotTypes()
     {
-        
+        List<ISpotType> tempSpotTypes = GetComponents<ISpotType>().ToList();
+        for (int i = 0; i < tempSpotTypes.Count; i++)
+        {
+            if(data.CellSpotTypes.Find(x => x == tempSpotTypes[i]) == null)
+            {
+                data.CellSpotTypes = tempSpotTypes;
+                break;
+            }
+        }
+        for (int i = 0; i < data.CellSpotTypes.Count; i++)
+        {
+            data.CellSpotTypes[i].SpotTransformDataIndex = i;
+        }
     }
 }

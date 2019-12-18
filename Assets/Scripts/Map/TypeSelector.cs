@@ -15,16 +15,16 @@ public class TypeSelector : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void AddType(CellTypeBase _cellType)
-    {
-        Debug.Log(_cellType.GetType());
-        SelectedCell2D.thisCell.data.graphics3D.AddComponent(_cellType.GetType());
-        for (int i = 0; i < GridController3D.gridController3D.AllTypes.Count; i++)
-        {
-            if(_cellType.GetType() == GridController3D.gridController3D.AllTypes[i].GetType())
-            {
-                SelectedCell2D.thisCell.data.TypeID[i] = 1;
-            }
-        }
-    }
+    //public void AddType(CellTypeBase _cellType)
+    //{
+    //    Debug.Log(_cellType.GetType());
+    //    SelectedCell2D.thisCell.data.graphics3D.AddComponent(_cellType.GetType());
+    //    for (int i = 0; i < GridController3D.gridController3D.AllTypes.Count; i++)
+    //    {
+    //        if(_cellType.GetType() == GridController3D.gridController3D.AllTypes[i].GetType())
+    //        {
+    //            SelectedCell2D.thisCell.data.TypeID[i] = 1;
+    //        }
+    //    }
+    //}
 }

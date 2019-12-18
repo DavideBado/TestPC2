@@ -14,7 +14,7 @@ public class TypeSelectorCell2D : Button
     protected override void Start()
     {
         thisCell = gameObject.GetComponent<Cell2D>();
-        thisCell.data.TypeID = new int[GridController3D.gridController3D.AllTypes.Count];
+        thisCell.data.TypeID = new int[GridController3D.gridController3D.Cell3DPrefab.GetComponent<Cell3D>().CellPsTypes.Count];
         for (int i = 0; i < thisCell.data.TypeID.Length; i++)
         {
             thisCell.data.TypeID[i] = 0;

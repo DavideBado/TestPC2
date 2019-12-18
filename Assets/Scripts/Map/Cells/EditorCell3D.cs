@@ -8,7 +8,7 @@ public class EditorCell3D : MonoBehaviour
 
     void Start()
     {
-        thisCell = gameObject.AddComponent<Cell3D>();
+        thisCell = gameObject.GetComponent<Cell3D>();
         thisCell.data = new CellData
         {
             Position = gameObject.GetComponent<Transform>().position,

@@ -22,9 +22,10 @@ public class GridController : MonoBehaviour
     }
 
     private void Update()
-    {
+    {        
         if (Input.GetKeyDown(Reset)) CreateNewGrid();
-        if (Input.GetKeyDown(UpdateGridData)) SetupGameplayGrid();
+        if (Input.GetKeyDown(UpdateGridData) && !GridController3D.gridController3D.JustLoaded) SetupGameplayGrid();
+        else if (Input.GetKeyDown(UpdateGridData) && GridController3D.gridController3D.JustLoaded) GridController3D.gridController3D.SetupGameplayGridTypeSelected();
         //if (Input.GetKeyDown(Load)) LoadGrid();
     }
 
@@ -165,5 +166,6 @@ public class GridController : MonoBehaviour
                     GridController3D.gridController3D.LoadGrid(GridController3D.gridController3D.GameplayGridData.Cells[i][j], tempCellTransform.anchoredPosition.x / XMod, tempCellTransform.anchoredPosition.y / YMod);
                 }
             }
+        GridController3D.gridController3D.JustLoaded = true;
     }
 }

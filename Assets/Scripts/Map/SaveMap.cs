@@ -60,7 +60,11 @@ public class SaveMap : MonoBehaviour
                     Position = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Position,
                     X = GridController3D.gridController3D.GameplayGridData.Cells[i][j].X,
                     Y = GridController3D.gridController3D.GameplayGridData.Cells[i][j].Y,
-                    TypeID = tempTypeID
+                    TypeID = tempTypeID,
+                    SpotTransformsPosition = GridController3D.gridController3D.GameplayGridData.Cells[i][j].SpotTransformsPosition,
+                    SpotTransformsRotation = GridController3D.gridController3D.GameplayGridData.Cells[i][j].SpotTransformsRotation,
+                    SpotTransformsScale = GridController3D.gridController3D.GameplayGridData.Cells[i][j].SpotTransformsScale,
+                    CellSpotTypes = GridController3D.gridController3D.GameplayGridData.Cells[i][j].CellSpotTypes
                 };
             }
         }
@@ -115,7 +119,11 @@ public class SaveMap : MonoBehaviour
                     Position = level.Items[i][j].Position,
                     X = i,
                     Y = j,
-                    TypeID = level.Items[i][j].TypeID
+                    TypeID = level.Items[i][j].TypeID,
+                    SpotTransformsPosition = level.Items[i][j].SpotTransformsPosition,
+                    SpotTransformsRotation = level.Items[i][j].SpotTransformsRotation,
+                    SpotTransformsScale = level.Items[i][j].SpotTransformsScale,
+                    CellSpotTypes = level.Items[i][j].CellSpotTypes
                 };
             }
         }
@@ -144,6 +152,10 @@ public class CellForSaveData
     public Vector3 AnchoredPosition = new Vector3();
     public int X, Y;
     public int[] TypeID = new int[1] { 0 };
+    public List<Vector3> SpotTransformsPosition = new List<Vector3>();
+    public List<Quaternion> SpotTransformsRotation = new List<Quaternion>();
+    public List<Vector3> SpotTransformsScale = new List<Vector3>();
+    public List<ISpotType> CellSpotTypes = new List<ISpotType>();
 }
 
 public class LevelSaves
