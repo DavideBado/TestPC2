@@ -26,7 +26,6 @@ public class GridController : MonoBehaviour
         if (Input.GetKeyDown(Reset)) CreateNewGrid();
         if (Input.GetKeyDown(UpdateGridData) && !GridController3D.gridController3D.JustLoaded) SetupGameplayGrid();
         else if (Input.GetKeyDown(UpdateGridData) && GridController3D.gridController3D.JustLoaded) GridController3D.gridController3D.SetupGameplayGridTypeSelected();
-        //if (Input.GetKeyDown(Load)) LoadGrid();
     }
 
     private void CreateNewGrid()

@@ -67,6 +67,7 @@
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
     <Compile Include="Assets\HidingSpot.cs" />
     <Compile Include="Assets\KeySpot.cs" />
+    <Compile Include="Assets\LevelDataLoader.cs" />
     <Compile Include="Assets\ObjSpot.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyGraphicsController.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\ObjectCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\ObstacleCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\CellsTypes\WalkingCell.cs" />
+    <Compile Include="Assets\Scripts\Map\Cells\DroneMoveController.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\EditorCell.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\EditorCell3D.cs" />
     <Compile Include="Assets\Scripts\Map\Cells\ISpotType.cs" />

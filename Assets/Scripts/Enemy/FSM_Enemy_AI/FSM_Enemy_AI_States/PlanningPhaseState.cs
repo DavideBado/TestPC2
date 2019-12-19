@@ -19,10 +19,16 @@ public class PlanningPhaseState : StateMachineBehaviour
         GameManager.instance.OnPlanPhase = true;
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
         GameManager.instance.UI_Manager.PhaseTxt.text = "PlanningPhase";
-        GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
-        GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = false;
-        GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
-        GameManager.instance.Player.isCrouching = false;
+        //GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
+        //GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = false;
+        //GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
+        //GameManager.instance.Player.isCrouching = false;
+        GameManager.instance.Player.freeLookCamera.Priority = 0;
+        GameManager.instance.Drone.DroneCamera.Priority = 50;
+
+     GameManager.instance.Player.gameObject.SetActive(false);
+
+        GameManager.instance.Drone.gameObject.SetActive(true);
         foreach (EnemyAI _enemyAI in GameManager.instance.Level_Manager.EnemiesAI)
         {
             //_enemyAI.AI_FSM.SetTrigger("ChangePhase");

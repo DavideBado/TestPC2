@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Cinemachine;
 
 public class PlayerMovController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerMovController : MonoBehaviour
     public float crouchingSpeed;
     public float runningSpeed;
     public float rotationSpeed;
+
+    public CinemachineFreeLook freeLookCamera;
 
     public KeyCode interact;
     public KeyCode crouch;
@@ -51,27 +54,38 @@ public class PlayerMovController : MonoBehaviour
     {
         if (InputActive)
         {
-            float translation = Input.GetAxis("Vertical") * currentSpeed;
-            float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+            float translationVertical = Input.GetAxis("Vertical") * currentSpeed;
+            float HorizontalTranslation = Input.GetAxis("Horizontal") * currentSpeed;
 
-            GraphSpeed = translation;
+            GraphSpeed = translationVertical;
 
-            translation *= Time.deltaTime;
-            rotation *= Time.deltaTime;
+            translationVertical *= Time.deltaTime;
+            HorizontalTranslation *= Time.deltaTime;
 
             MoveToCameraForward();
 
-            if (translation > 0)
+            if (translationVertical > 0)
             {
-                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translation);
+                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translationVertical);
             }
-            else if (translation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
+            else if (translationVertical < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
                 {
-                    transform.Translate(0, 0, translation);
+                    transform.Translate(0, 0, translationVertical);
                     Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
                 }
 
-            transform.Rotate(0, rotation, 0);
+            if (HorizontalTranslation > 0)
+            {
+                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.right, 0.5f, WallMask)) transform.Translate(HorizontalTranslation, 0, 0);
+            }
+            else if (HorizontalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.right, 0.5f, WallMask))
+                {
+                    transform.Translate(HorizontalTranslation, 0, 0);
+                    Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+                }
+            
+            
+            //transform.Rotate(0, rotation, 0);
 
             Crouch();
             Run();

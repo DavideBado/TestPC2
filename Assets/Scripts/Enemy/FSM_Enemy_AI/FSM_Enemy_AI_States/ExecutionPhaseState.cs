@@ -12,6 +12,13 @@ public class ExecutionPhaseState : StateMachineBehaviour
         GameManager.instance.OnExePhase = true;
         GameManager.instance.UI_Manager.PhaseTxt.text = "ExecutionPhase";
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
+
+        GameManager.instance.Player.gameObject.SetActive(true);
+
+        GameManager.instance.Drone.gameObject.SetActive(false);
+        GameManager.instance.Player.freeLookCamera.Priority = 50;
+        GameManager.instance.Drone.DroneCamera.Priority = 0;
+
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;
         GameManager.instance.Player.GetComponent<NavMeshObstacle>().enabled = true;
         GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;

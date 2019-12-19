@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public LevelManager Level_Manager;
     public Animator FlowFSM;
     public PlayerMovController Player;
+    public DroneMoveController Drone;
     public string ChangePhaseTrigger, GameOverTrigger, WinTrigger, MainMenuTrigger;
 
     public KeyCode ChangePhaseKey;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             Level_Manager.EnemiesAI.Clear();
             if (!Player) Player = FindObjectOfType<PlayerMovController>();
+            if (!Drone) Drone = FindObjectOfType<DroneMoveController>();
        /*     if (Level_Manager.EnemiesAI.Count == 0) */Level_Manager.EnemiesAI = FindObjectsOfType<EnemyAI>().ToList();
             if (!Level_Manager.Level) Level_Manager.Level = FindObjectOfType<PezzaMissingLevel>().gameObject;
         }
