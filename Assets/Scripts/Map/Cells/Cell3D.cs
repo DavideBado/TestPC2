@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Cell3D : MonoBehaviour
 {
+    public bool NotInEditor = false;
     public CellData data;
     public List<CellTypeBase> CellPsTypes = new List<CellTypeBase>();
 
@@ -16,7 +17,11 @@ public class Cell3D : MonoBehaviour
             {
                 if (data.TypeID[i] == 1)
                 {
-                    CellPsTypes[i].enabled = true;
+                    if (!NotInEditor)
+                    {
+                        CellPsTypes[i].enabled = true;
+                    }
+                        GetComponent<MeshRenderer>().enabled = true; 
                 }
                 else CellPsTypes[i].enabled = false;
             }

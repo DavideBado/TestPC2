@@ -89,6 +89,8 @@ public class LevelDataLoader : MonoBehaviour
         Cell3D cellvalue = tempCell.GetComponent<Cell3D>();
         cellvalue.data = _cell;
         cellvalue.data.graphics3D = tempCell;
+        cellvalue.GetComponent<MeshRenderer>().enabled = false;
+        cellvalue.NotInEditor = true;
         cellvalue.UpdateTypes();
     }
 

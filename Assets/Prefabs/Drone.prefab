@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084488407853665048}
-  m_LocalRotation: {x: -0.44314012, y: -0.0000000024352984, z: 0.000000004926497,
+  m_LocalRotation: {x: -0.44314012, y: -0.0000000024353046, z: 0.0000000049265103,
     w: -0.8964524}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -225,6 +225,8 @@ GameObject:
   - component: {fileID: 1084488408203636279}
   - component: {fileID: 1084488408203636282}
   - component: {fileID: 1084488408203636277}
+  - component: {fileID: 1932167374042941173}
+  - component: {fileID: 748843934407380931}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -260,11 +262,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010e22b1a8ce9ec4489f6a6342924eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirstAllSpotPosTypes: 49
+  SecondAllSpotPosTypes: 50
   speed: 5
   WallMask:
     serializedVersion: 2
     m_Bits: 8192
+  Pointer: {fileID: 1084488409832421752}
   DroneCamera: {fileID: 1084488408190854421}
+  AllSpotPosTypes:
+  - {fileID: 1932167374042941173}
+  - {fileID: 748843934407380931}
+  CurrentIspotType: {fileID: 0}
 --- !u!54 &1084488408203636279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -296,7 +305,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084488408203636273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -326,6 +335,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1932167374042941173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084488408203636273}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f203d51e828947973eef88fa2bb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cell: {fileID: 0}
+  CameraSpotPref: {fileID: 0}
+  m_CameraSpot: {fileID: 0}
+  m_SpotTransformDataIndex: 0
+--- !u!114 &748843934407380931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084488408203636273}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6251db8d79204c3479cc77f61c37379e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cell: {fileID: 0}
+  HidingSpotPref: {fileID: 0}
+  m_HidingSpot: {fileID: 0}
+  m_SpotTransformDataIndex: 0
 --- !u!1 &1084488408545328850
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +516,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084488409071929280}
-  m_LocalRotation: {x: -0.45937282, y: -0.000000029527044, z: 0.000000035444355, w: -0.8882436}
+  m_LocalRotation: {x: -0.45937282, y: 0.0000000010407124, z: 0.000000019635634, w: -0.8882436}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -676,7 +717,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084488409683746492}
-  m_LocalRotation: {x: -0.42680427, y: 0.0000000143719125, z: -0.00000003045226, w: -0.904344}
+  m_LocalRotation: {x: -0.42680424, y: 0.0000000143719205, z: -0.000000030452274,
+    w: -0.9043441}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
