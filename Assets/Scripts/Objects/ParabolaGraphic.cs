@@ -10,8 +10,9 @@ public class ParabolaGraphic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.H))
+        if(Input.GetMouseButton(1))
         DrawParabola(parabolaController.gizmo, parabolaController.ParabolaRoot);
+        if(Input.GetMouseButtonUp(1)) lineRenderer.enabled = false;
     }
 
     void DrawParabola(ParabolaController.ParabolaFly gizmo, GameObject ParabolaRoot)
@@ -27,6 +28,7 @@ public class ParabolaGraphic : MonoBehaviour
 
         int accur = 50;
         Vector3 prevPos = gizmo.Points[0].position;
+        lineRenderer.enabled = true;
         lineRenderer.positionCount = 0;
         for (int c = 1; c <= accur; c++)
         {

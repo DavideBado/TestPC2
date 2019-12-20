@@ -13,7 +13,7 @@ public class TObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetMouseButtonDown(0))
         {
             parabolaController.FollowParabola();
             NoiseController.Reset();

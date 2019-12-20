@@ -56,7 +56,7 @@ public class PlayerMovController : MonoBehaviour
         {
             float translationVertical = Input.GetAxis("Vertical") * currentSpeed;
             float HorizontalTranslation = Input.GetAxis("Horizontal") * currentSpeed;
-
+      
             GraphSpeed = translationVertical;
 
             translationVertical *= Time.deltaTime;
