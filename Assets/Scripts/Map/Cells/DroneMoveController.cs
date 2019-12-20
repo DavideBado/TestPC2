@@ -14,6 +14,7 @@ public class DroneMoveController : MonoBehaviour
     public List<CellTypeBase> AllSpotPosTypes = new List<CellTypeBase>();
     [HideInInspector]
     public CellTypeBase CurrentIspotType;
+    public Transform ZminBorder, ZmaxBorder, XminBorder, XmaxBorder;
 
     private void Update()
     {
@@ -28,28 +29,33 @@ public class DroneMoveController : MonoBehaviour
         Vector3 HorizontalTranslation = Input.GetAxis("Horizontal") * speed * Time.deltaTime * transform.right;
 
         transform.position += VerticalTranslation + HorizontalTranslation;
+
+        if (transform.position.x < XminBorder.position.x) transform.position = new Vector3(XminBorder.position.x, transform.position.y, transform.position.z);
+        if (transform.position.x > XmaxBorder.position.x) transform.position = new Vector3(XmaxBorder.position.x, transform.position.y, transform.position.z);
+        if (transform.position.z < ZminBorder.position.z) transform.position = new Vector3(transform.position.x, transform.position.y, ZminBorder.position.z);
+        if (transform.position.z > ZmaxBorder.position.z) transform.position = new Vector3(transform.position.x, transform.position.y, ZmaxBorder.position.z);
         //VerticalTranslation *= Time.deltaTime;
         //HorizontalTranslation *= Time.deltaTime;
 
-        //if (VerticalTranslation > 0)
-        //{
-        //    if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, VerticalTranslation);
-        //}
-        //else if (VerticalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
-        //    {
-        //        transform.Translate(0, 0, VerticalTranslation);
-        //        Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
-        //    }
+            //if (VerticalTranslation > 0)
+            //{
+            //    if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, VerticalTranslation);
+            //}
+            //else if (VerticalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
+            //    {
+            //        transform.Translate(0, 0, VerticalTranslation);
+            //        Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+            //    }
 
-        //if (HorizontalTranslation > 0)
-        //{
-        //    if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.right, 0.5f, WallMask)) transform.Translate(HorizontalTranslation, 0, 0);
-        //}
-        //else if (HorizontalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.right, 0.5f, WallMask))
-        //    {
-        //        transform.Translate(HorizontalTranslation, 0, 0);
-        //        Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
-        //    }
+            //if (HorizontalTranslation > 0)
+            //{
+            //    if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.right, 0.5f, WallMask)) transform.Translate(HorizontalTranslation, 0, 0);
+            //}
+            //else if (HorizontalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.right, 0.5f, WallMask))
+            //    {
+            //        transform.Translate(HorizontalTranslation, 0, 0);
+            //        Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
+            //    }
     }
     RaycastHit Currenthit;
         RaycastHit Oldhit;
@@ -65,7 +71,7 @@ public class DroneMoveController : MonoBehaviour
                 Currenthit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
                 Oldhit = Currenthit;
             }
-            else Oldhit.transform.GetComponent<MeshRenderer>().material.color = Color.white;
+            else if (Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Color.white;
         }
         else if(Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Color.white;
     }
