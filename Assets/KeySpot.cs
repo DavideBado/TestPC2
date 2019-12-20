@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class KeySpot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.transform.GetComponent<PlayerMovController>() != null) other.transform.GetComponent<PlayerMovController>().haveTheKey = true;
     }
 }

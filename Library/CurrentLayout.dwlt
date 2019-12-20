@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 252
+  controlID: 4713
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 152
+  controlID: 4714
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 153
+  controlID: 4695
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes/Definitive
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes/Definitive
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GameDev\GitKraken\TestPC2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a0d0000
-    m_LastClickedID: 3338
-    m_ExpandedIDs: 000000000a0d0000360e0000240f00007a100000ec100000461100006e110000001200003a12000064120000da120000061300002c1300004413000000ca9a3b
+    scrollPos: {x: 0, y: 83}
+    m_SelectedIDs: 76100000
+    m_LastClickedID: 4214
+    m_ExpandedIDs: 000000000a0d0000360e0000240f0000121000007a100000ec100000461100006e110000001200003a12000064120000da120000061300002c1300004413000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a0d0000360e0000240f00007a100000ec100000461100006e110000001200003a12000064120000da120000061300002c1300004413000000ca9a3b
+    m_ExpandedIDs: 000000000a0d0000360e0000240f0000121000007a100000ec100000461100006e110000001200003a12000064120000da120000061300002c1300004413000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 38130000
       m_LastClickedID: 0
       m_ExpandedIDs: 
       m_RenameOverlay:
@@ -521,7 +521,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 907b6ac648dcab64eb4c3ea615c4b090
+  m_WindowGUID: 928282e16f74a9b458d31f6e04ff7f56
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -548,7 +548,7 @@ MonoBehaviour:
     width: 1148
     height: 553
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_WindowGUID: f2b3acfa7ac974e46b132fb3d370f0f0
+  m_WindowGUID: 0ba38c3a92fb715428394e2574944afe
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0

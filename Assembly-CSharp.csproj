@@ -65,6 +65,7 @@
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
     <Compile Include="Assets\Editors\HearingEditor.cs" />
     <Compile Include="Assets\Editors\NavigationEditor.cs" />
+    <Compile Include="Assets\Gate.cs" />
     <Compile Include="Assets\HidingSpot.cs" />
     <Compile Include="Assets\KeySpot.cs" />
     <Compile Include="Assets\LevelDataLoader.cs" />

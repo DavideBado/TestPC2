@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using Cinemachine;
+using System.Linq;
 
 public class PlayerMovController : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public class PlayerMovController : MonoBehaviour
     [HideInInspector]
     public bool isHiding = false;
 
+    public bool haveTheKey = false;
+
+    List<Gate> gates = new List<Gate>();
+    public string OpenTheGateTrigger;
+
     Vector3 lastPosition;
 
     public NoiseController Noise;
@@ -56,6 +62,7 @@ public class PlayerMovController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentSpeed = walkSpeed;
         ChangeCamSpot(0);
+        gates = FindObjectsOfType<Gate>().ToList();
     }
 
     // Update is called once per frame
@@ -108,6 +115,21 @@ public class PlayerMovController : MonoBehaviour
             {
                 Noise.MakeNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
             } 
+
+            if(Input.GetKeyDown(interact) && haveTheKey)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 1.5f))
+                {
+                    if (hit.transform.GetComponent<Gate>() != null)
+                    {
+                        for (int i = 0; i < gates.Count; i++)
+                        {
+                            gates[i].GetComponent<Animator>().SetTrigger(OpenTheGateTrigger);
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -212,9 +234,9 @@ public class PlayerMovController : MonoBehaviour
 
     public void PezzaLampoHidingPoint(bool x)
     {
-    //    rb.useGravity = x;
         Graphics.SetActive(x);
         Collider.enabled = x;
+        rb.useGravity = x;
         if(GameManager.instance.OnExePhase) ObstacleNav.enabled = x;
     }
 
