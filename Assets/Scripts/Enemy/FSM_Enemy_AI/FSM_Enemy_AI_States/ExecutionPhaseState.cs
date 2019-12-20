@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,7 @@ public class ExecutionPhaseState : StateMachineBehaviour
         GameManager.instance.UI_Manager.PhaseTxt.text = "ExecutionPhase";
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(true);
 
+        GameManager.instance.Player.camSpots = FindObjectsOfType<CamSpot>().ToList();
         GameManager.instance.Player.gameObject.SetActive(true);
 
         GameManager.instance.Drone.gameObject.SetActive(false);
