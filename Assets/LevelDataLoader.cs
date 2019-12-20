@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GridData;
+using System.IO;
 
 public class LevelDataLoader : MonoBehaviour
 {
@@ -39,7 +40,16 @@ public class LevelDataLoader : MonoBehaviour
 
     public void LoadLevelData(string _levelID)
     {
-        string jsonLevelStringData = PlayerPrefs.GetString(_levelID);
+        string path = null;
+#if UNITY_EDITOR
+        path = "Assets/Resources/GameJSONData/" + _levelID + ".json";
+#endif
+        //#if UNITY_STANDALONE
+        //        // You cannot add a subfolder, at least it does not work for me
+        //        path = "MyGame_Data/Resources/" + _levelID + ".json";
+        //#endif
+        
+        string jsonLevelStringData = File.ReadAllText(path);
 
         LevelData level = JsonUtility.FromJson<LevelData>(jsonLevelStringData);
 

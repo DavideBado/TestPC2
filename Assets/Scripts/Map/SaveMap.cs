@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class SaveMap : MonoBehaviour
     public const string LEVELSAVES = "LevelSaves";
 
     public string LevelToLoad;
-    
+
     public List<string> LevelsID = new List<string>();
 
     private void Start()
@@ -29,7 +30,7 @@ public class SaveMap : MonoBehaviour
         List<LevelData> loadListData = _tempLoadListData.OfType<LevelData>().ToList();
 
         loadListData.RemoveAll((x) => x.ID == _levelName);
-        
+
         string jsonToSave = JsonHelper.ToJson(loadListData.ToArray());
         PlayerPrefs.SetString("Data", jsonToSave);
         PlayerPrefs.Save();
@@ -71,25 +72,37 @@ public class SaveMap : MonoBehaviour
         saveClass.ItemsToStringArray = new string[saveClass.Items.GetLength(0)];
         for (int i = 0; i < saveClass.Items.GetLength(0); i++)
         {
-            saveClass.ItemsToStringArray[i] = JsonHelper.ToJson<CellForSaveData>(saveClass.Items[i]); 
+            saveClass.ItemsToStringArray[i] = JsonHelper.ToJson<CellForSaveData>(saveClass.Items[i]);
         }
 
         saveClass.ArrayItemsToString = JsonHelper.ToJson<string>(saveClass.ItemsToStringArray);
 
         // Salvo livello
         string jsonString = JsonUtility.ToJson(saveClass);
-        PlayerPrefs.SetString(saveClass.ID, jsonString);
+        //PlayerPrefs.SetString(saveClass.ID, jsonString);
         // Salvo il nome del livello nella lista dei livelli
         LevelSaves levelSaves = new LevelSaves();
         levelSaves.LevelsID = LevelsID;
         string jsonStringForLevelID = JsonUtility.ToJson(levelSaves);
-        PlayerPrefs.SetString(LEVELSAVES, jsonStringForLevelID);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetString(LEVELSAVES, jsonStringForLevelID);
+        //PlayerPrefs.Save();
+        SaveItemInfo(jsonString, _levelID);
     }
 
     public void LoadLevel(string _levelID)
     {
-        string jsonLevelStringData = PlayerPrefs.GetString(_levelID);
+        string path = null;
+#if UNITY_EDITOR
+        path = "Assets/Resources/GameJSONData/" + _levelID + ".json";
+#endif
+//#if UNITY_STANDALONE
+//        // You cannot add a subfolder, at least it does not work for me
+//        path = "MyGame_Data/Resources/" + _levelID + ".json";
+//#endif
+        //Load text from a JSON file (Assets/Resources/Text/jsonFile01.json)
+        //var jsonTextFile = Resources.Load<TextAsset>(path);
+        //string jsonLevelStringData = /*PlayerPrefs.GetString(_levelID)*/ jsonTextFile.text;
+        string jsonLevelStringData = File.ReadAllText(path);
 
         LevelData level = JsonUtility.FromJson<LevelData>(jsonLevelStringData);
 
@@ -133,6 +146,29 @@ public class SaveMap : MonoBehaviour
     {
         if (_cell.TypeID != null) return _cell.TypeID;
         else return new int[1] { 0 };
+    }
+
+    public void SaveItemInfo(string _stringData, string _levelID)
+    {
+        string path = null;
+#if UNITY_EDITOR
+        path = "Assets/Resources/GameJSONData/" + _levelID + ".json";
+#endif
+//#if UNITY_STANDALONE
+//        // You cannot add a subfolder, at least it does not work for me
+//        path = "MyGame_Data/Resources/" + _levelID + ".json";
+//#endif
+
+        using (FileStream fs = new FileStream(path, FileMode.Create))
+        {
+            using (StreamWriter writer = new StreamWriter(fs))
+            {
+                writer.Write(_stringData);
+            }
+        }
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+#endif
     }
 }
 
