@@ -16,13 +16,15 @@ public class CamCell : CellTypeBase, ISpotType
     {
         if (m_CameraSpot == null)
         {
-            if (transform.childCount > 0 && GetComponentInChildren<KeySpot>() != null)
+            if (transform.childCount > 0 && GetComponentInChildren<CamSpot>() != null)
             {
-                m_CameraSpot = GetComponentInChildren<KeySpot>().gameObject;
+                m_CameraSpot = GetComponentInChildren<CamSpot>().gameObject;
             }
             else
             {
                 m_CameraSpot = Instantiate(CameraSpotPref, transform);
+                if (GameManager.instance != null)
+                    if (GameManager.instance.Drone != null) GameManager.instance.Drone.camSpots.Add(m_CameraSpot.GetComponent<CamSpot>());
             }
         }
         SpotSetup(m_CameraSpot, CameraSpotPref);

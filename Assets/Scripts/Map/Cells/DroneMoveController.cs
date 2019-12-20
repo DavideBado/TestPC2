@@ -16,6 +16,7 @@ public class DroneMoveController : MonoBehaviour
     public CellTypeBase CurrentIspotType;
     public Transform ZminBorder, ZmaxBorder, XminBorder, XmaxBorder;
 
+    public List<CamSpot> camSpots = new List<CamSpot>();
     private void Update()
     {
         CheckInput();

@@ -16,9 +16,9 @@ public class HidingCell : CellTypeBase, ISpotType
     {
         if (m_HidingSpot == null)
         {
-            if (transform.childCount > 0 && GetComponentInChildren<KeySpot>() != null)
+            if (transform.childCount > 0 && GetComponentInChildren<HidingSpot>() != null)
             {
-                m_HidingSpot = GetComponentInChildren<KeySpot>().gameObject;
+                m_HidingSpot = GetComponentInChildren<HidingSpot>().gameObject;
             }
             else
             {
