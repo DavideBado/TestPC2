@@ -7,6 +7,8 @@ using Cinemachine;
 
 public class PlayerMovController : MonoBehaviour
 {
+    int currentSpotCameraIndex = 0;
+    public List<CamSpot> camSpots = new List<CamSpot>();
     public Camera SpotCamera;
     public RawImage SpotCameraScreen;
     public Rigidbody rb;
@@ -21,6 +23,9 @@ public class PlayerMovController : MonoBehaviour
     public KeyCode interact;
     public KeyCode crouch;
     public KeyCode run;
+
+    public KeyCode NextSpotCam;
+    public KeyCode PrevSpotCam;
 
     Collision Wall;
     public LayerMask WallMask;
@@ -50,6 +55,7 @@ public class PlayerMovController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         currentSpeed = walkSpeed;
+        ChangeCamSpot(0);
     }
 
     // Update is called once per frame
@@ -102,6 +108,22 @@ public class PlayerMovController : MonoBehaviour
             {
                 Noise.MakeNoiseDelegate(runDimensionMod, runDuration, NoiseController.NoiseType.Run);
             } 
+        }
+
+
+        if(Input.GetKeyDown(NextSpotCam))
+        {
+            currentSpotCameraIndex++;
+            if (currentSpotCameraIndex >= camSpots.Count) currentSpotCameraIndex = 0;
+
+            ChangeCamSpot(currentSpotCameraIndex);
+        }
+        if (Input.GetKeyDown(PrevSpotCam))
+        {
+            currentSpotCameraIndex--;
+            if (currentSpotCameraIndex < 0) currentSpotCameraIndex = camSpots.Count-1;
+
+            ChangeCamSpot(currentSpotCameraIndex);
         }
 
     }
@@ -212,6 +234,19 @@ public class PlayerMovController : MonoBehaviour
             rot.x -= rot.x;
             rot.z -= rot.z;
             transform.rotation = rot;
+        }
+    }
+
+    void ChangeCamSpot(int _index)
+    {
+        if (camSpots.Count > 0)
+        {
+            for (int i = 0; i < camSpots.Count; i++)
+            {
+                camSpots[i].GetComponent<CinemachineVirtualCamera>().Priority = 0;
+            }
+            if(camSpots.Count > _index) camSpots[_index].GetComponent<CinemachineVirtualCamera>().Priority = 50;
+
         }
     }
 }
