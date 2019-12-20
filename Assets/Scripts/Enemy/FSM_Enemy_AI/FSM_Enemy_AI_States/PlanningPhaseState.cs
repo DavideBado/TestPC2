@@ -24,6 +24,8 @@ public class PlanningPhaseState : StateMachineBehaviour
         //GameManager.instance.Player.currentSpeed = GameManager.instance.Player.walkSpeed;
         //GameManager.instance.Player.isCrouching = false;
         GameManager.instance.Player.freeLookCamera.Priority = 0;
+        GameManager.instance.Player.SpotCamera.gameObject.SetActive(false);
+        GameManager.instance.Player.SpotCameraScreen.enabled = false;
         GameManager.instance.Drone.DroneCamera.Priority = 50;
 
      GameManager.instance.Player.gameObject.SetActive(false);

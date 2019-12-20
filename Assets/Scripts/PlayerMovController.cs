@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using Cinemachine;
 
 public class PlayerMovController : MonoBehaviour
 {
+    public Camera SpotCamera;
+    public RawImage SpotCameraScreen;
     public Rigidbody rb;
     public float currentSpeed;
     public float walkSpeed;

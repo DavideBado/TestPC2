@@ -17,6 +17,8 @@ public class ExecutionPhaseState : StateMachineBehaviour
 
         GameManager.instance.Drone.gameObject.SetActive(false);
         GameManager.instance.Player.freeLookCamera.Priority = 50;
+        GameManager.instance.Player.SpotCamera.gameObject.SetActive(true);
+        GameManager.instance.Player.SpotCameraScreen.enabled = true;
         GameManager.instance.Drone.DroneCamera.Priority = 0;
 
         GameManager.instance.Player.transform.position = GameManager.instance.Player.ResetPosition;

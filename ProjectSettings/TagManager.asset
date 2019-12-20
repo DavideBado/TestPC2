@@ -22,8 +22,8 @@ TagManager:
   - HidingSpot
   - Sound
   - Wall
-  - 
-  - 
+  - SpotCamera
+  - PlayerCamera
   - 
   - 
   - 
