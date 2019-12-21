@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4d0367fe1a7474eace91b665a7b587, type: 3}
   m_Name: Bado_EditorGrid
   m_EditorClassIdentifier: 
-  HorizontalDim: 30
-  VerticalDim: 30
+  HorizontalDim: 40
+  VerticalDim: 40
