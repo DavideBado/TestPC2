@@ -18,6 +18,11 @@ public class DroneMoveController : MonoBehaviour
     public Transform ZminBorder, ZmaxBorder, XminBorder, XmaxBorder;
 
     public List<CamSpot> camSpots = new List<CamSpot>();
+
+    private void Start()
+    {
+       if(AllSpotPosTypes.Count > 0) CurrentIspotType = AllSpotPosTypes[0];
+    }
     private void Update()
     {
         CheckInput();
