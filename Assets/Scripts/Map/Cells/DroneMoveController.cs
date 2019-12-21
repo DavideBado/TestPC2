@@ -14,6 +14,7 @@ public class DroneMoveController : MonoBehaviour
     public List<CellTypeBase> AllSpotPosTypes = new List<CellTypeBase>();
     [HideInInspector]
     public CellTypeBase CurrentIspotType;
+    public CellTypeBase CamCelLType;
     public Transform ZminBorder, ZmaxBorder, XminBorder, XmaxBorder;
 
     public List<CamSpot> camSpots = new List<CamSpot>();
@@ -69,12 +70,12 @@ public class DroneMoveController : MonoBehaviour
             Debug.DrawLine(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 10)), Currenthit.point, Color.red, 5f);
             if (Currenthit.transform.GetComponent<Cell3D>() != null)
             {
-                Currenthit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
+                Currenthit.transform.GetComponent<MeshRenderer>().material.color = Currenthit.transform.GetComponent<MeshRenderer>().material.color + Color.red;
                 Oldhit = Currenthit;
             }
-            else if (Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Color.white;
+            else if (Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Oldhit.transform.GetComponent<MeshRenderer>().material.color - Color.red;
         }
-        else if(Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Color.white;
+        else if(Oldhit.transform) Oldhit.transform.GetComponent<MeshRenderer>().material.color = Oldhit.transform.GetComponent<MeshRenderer>().material.color - Color.red;
     }
 
     void ActiveSpot()
@@ -93,6 +94,9 @@ public class DroneMoveController : MonoBehaviour
                 if (cellTypeBases[i].GetType() == CurrentIspotType.GetType())
                 {
                     cellTypeBases[i].enabled = true;
+                    if (cellTypeBases[i].GetType() == CamCelLType.GetType())
+                        Currenthit.transform.GetComponent<MeshRenderer>().material.color = Color.blue;
+
                     break;
                 }
             }

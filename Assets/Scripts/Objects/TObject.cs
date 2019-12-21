@@ -12,6 +12,7 @@ public class TObject : MonoBehaviour
     public ParabolaGraphic Graphic;
     bool onUpgrade = false;
     bool onAir = false;
+    public MeshRenderer MyRenderer;
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +23,7 @@ public class TObject : MonoBehaviour
             parabolaController.FollowParabola();
             NoiseController.Reset();
             MyCollider.enabled = true;
+                MyRenderer.enabled = true;
             onUpgrade = false;
         }
     }
@@ -33,6 +35,7 @@ public class TObject : MonoBehaviour
             onUpgrade = true;
             onAir = false;
             Graphic.lineRenderer.enabled = false;
+            MyRenderer.enabled = false;
             NoiseController.MakeNoiseDelegate(NoiseAreaMod, NoiseDuration, NoiseController.NoiseType.Object);
         }
     }

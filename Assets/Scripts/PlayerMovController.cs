@@ -38,7 +38,7 @@ public class PlayerMovController : MonoBehaviour
 
     public bool haveTheKey = false;
 
-    List<Gate> gates = new List<Gate>();
+    //List<Gate> gates = new List<Gate>();
     public string OpenTheGateTrigger;
 
     Vector3 lastPosition;
@@ -62,12 +62,14 @@ public class PlayerMovController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentSpeed = walkSpeed;
         ChangeCamSpot(0);
-        gates = FindObjectsOfType<Gate>().ToList();
+        //gates = FindObjectsOfType<Gate>().ToList();
+        if (camSpots.Count == 0) SpotCameraScreen.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (camSpots.Count == 0) SpotCameraScreen.enabled = false;
         if (InputActive)
         {
             float translationVertical = Input.GetAxis("Vertical") * currentSpeed;
@@ -123,10 +125,13 @@ public class PlayerMovController : MonoBehaviour
                 {
                     if (hit.transform.GetComponent<Gate>() != null)
                     {
-                        for (int i = 0; i < gates.Count; i++)
-                        {
-                            gates[i].GetComponent<Animator>().SetTrigger(OpenTheGateTrigger);
-                        }
+                        //for (int i = 0; i < gates.Count; i++)
+                        //{
+                        //    gates[i].GetComponent<Animator>().SetTrigger(OpenTheGateTrigger);
+                        //}
+
+                        hit.transform.GetComponent<Gate>().TheOtherHalf.GetComponent<Animator>().SetTrigger(OpenTheGateTrigger);
+                        hit.transform.GetComponent<Animator>().SetTrigger(OpenTheGateTrigger);
                     }
                 }
             }

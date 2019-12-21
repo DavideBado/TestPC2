@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
+    public Gate TheOtherHalf;
     // Start is called before the first frame update
     void Start()
     {

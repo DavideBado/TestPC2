@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using System.Linq;
 
 public class PlanningPhaseState : StateMachineBehaviour
 {
@@ -48,6 +49,11 @@ public class PlanningPhaseState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        List<Cell3D> cell3Ds = FindObjectsOfType<Cell3D>().ToList();
+        for (int i = 0; i < cell3Ds.Count; i++)
+        {
+            cell3Ds[i].GetComponent<MeshRenderer>().enabled = false;
+        }
         GameManager.instance.OnPlanPhase = false;
         //SceneManager.sceneLoaded -= StartLevel;
         GameManager.instance.UI_Manager.PhaseTxt.gameObject.SetActive(false);
