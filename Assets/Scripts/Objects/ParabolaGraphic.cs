@@ -6,7 +6,15 @@ public class ParabolaGraphic : MonoBehaviour
 {
     public LineRenderer lineRenderer;
     public ParabolaController parabolaController;
+    public GameObject ParabolaEndPoint;
+    public LayerMask ObstacleLayer;
+    Vector3 ParabolaDestDefaultPoint = new Vector3();
     bool x = false;
+
+    private void Start()
+    {
+        ParabolaDestDefaultPoint = ParabolaEndPoint.transform.localPosition;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +25,7 @@ public class ParabolaGraphic : MonoBehaviour
 
     void DrawParabola(ParabolaController.ParabolaFly gizmo, GameObject ParabolaRoot)
     {
+        ParabolaEndPoint.transform.localPosition = ParabolaDestDefaultPoint;
         if (gizmo == null)
         {
             gizmo = new ParabolaController.ParabolaFly(ParabolaRoot.transform);
@@ -39,7 +48,11 @@ public class ParabolaGraphic : MonoBehaviour
             //Gizmos.DrawLine(prevPos, currPos);
             //Gizmos.DrawSphere(currPos, 0.01f);
             lineRenderer.positionCount++;
-            if(lineRenderer.positionCount != 0) lineRenderer.SetPosition(lineRenderer.positionCount -1, currPos);           
+            if(lineRenderer.positionCount != 0) lineRenderer.SetPosition(lineRenderer.positionCount -1, currPos);
+
+            if (Physics.Raycast(prevPos, currPos, out RaycastHit _hit, Vector3.Distance(prevPos, currPos), ObstacleLayer)) ParabolaEndPoint.transform.position = _hit.point;
+            else ParabolaEndPoint.transform.localPosition = ParabolaDestDefaultPoint;
+
             prevPos = currPos;
         }
         x = true;

@@ -80,25 +80,27 @@ public class PlayerMovController : MonoBehaviour
             translationVertical *= Time.deltaTime;
             HorizontalTranslation *= Time.deltaTime;
 
-            MoveToCameraForward();
+            //MoveToCameraForward();
+            Transform movementTransform = Camera.main.transform;
+            movementTransform.eulerAngles = new Vector3(0, movementTransform.eulerAngles.y, movementTransform.eulerAngles.z);
 
             if (translationVertical > 0)
             {
-                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(0, 0, translationVertical);
+                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.forward, 0.5f, WallMask)) transform.Translate(new Vector3(0, 0, translationVertical), Camera.main.transform);
             }
             else if (translationVertical < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.forward, 0.5f, WallMask))
                 {
-                    transform.Translate(0, 0, translationVertical);
+                    transform.Translate(new Vector3(0, 0, translationVertical), Camera.main.transform);
                     Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
                 }
 
             if (HorizontalTranslation > 0)
             {
-                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.right, 0.5f, WallMask)) transform.Translate(HorizontalTranslation, 0, 0);
+                if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), transform.right, 0.5f, WallMask)) transform.Translate(new Vector3(HorizontalTranslation, 0, 0), Camera.main.transform);
             }
             else if (HorizontalTranslation < 0) if (!Physics.Raycast(new Vector3(transform.position.x, 0.2f, transform.position.z), -transform.right, 0.5f, WallMask))
                 {
-                    transform.Translate(HorizontalTranslation, 0, 0);
+                    transform.Translate(new Vector3(HorizontalTranslation, 0, 0), Camera.main.transform);
                     Debug.DrawLine(transform.position, -transform.forward, Color.red, 1);
                 }
             

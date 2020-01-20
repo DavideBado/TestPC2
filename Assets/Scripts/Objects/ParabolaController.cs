@@ -56,6 +56,7 @@ public class ParabolaController : MonoBehaviour
             Gizmos.color = new Color(mag, 0, 0, 1);
             Gizmos.DrawLine(prevPos, currPos);
             Gizmos.DrawSphere(currPos, 0.01f);
+                        
             prevPos = currPos;
         }
     }
